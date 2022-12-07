@@ -3,5 +3,10 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/content",
+    "@nuxt/image-edge",
+    "@nuxtjs/robots",
+  ],
 });
