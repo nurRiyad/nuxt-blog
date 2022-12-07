@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>This message is from layout</h1>
+    <navbar-com />
     <slot />
+    <footer-com />
   </div>
 </template>
