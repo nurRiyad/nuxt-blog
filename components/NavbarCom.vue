@@ -24,27 +24,27 @@ const theme = ref("light");
       <ul class="flex space-x-4">
         <li>
           <nuxt-link to="/">
-            <icon size="2em" name="uil:github" />
+            <icon size="25px" name="uil:github" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/">
-            <icon size="2em" name="uil:linkedin" />
+            <icon size="25px" name="uil:linkedin" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/">
-            <icon size="2em" name="mdi:stackoverflow" />
+            <icon size="25px" name="mdi:stackoverflow" />
           </nuxt-link>
         </li>
-        <li v-if="theme === 'light'" @click="theme = 'dark'">
+        <li v-show="theme === 'light'" @click="theme = 'dark'">
           <nuxt-link to="/">
-            <icon size="2em" name="ph:sun-dim" />
+            <icon size="25px" name="ph:sun-dim" />
           </nuxt-link>
         </li>
-        <li v-if="theme === 'dark'" @click="theme = 'light'">
+        <li v-show="theme === 'dark'" @click="theme = 'light'">
           <nuxt-link to="/">
-            <icon size="2em" name="ph:moon-stars" />
+            <icon size="25px" name="ph:moon-stars" />
           </nuxt-link>
         </li>
       </ul>
