@@ -8,5 +8,6 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/image-edge",
     "@nuxtjs/robots",
+    "nuxt-icon",
   ],
 });
