@@ -7,7 +7,7 @@ const { data } = await useAsyncData("home", () => queryContent("/").find());
 
 <template>
   <div class="container mx-auto max-w-6xl font-poppins antialiased">
-    <h1 class="font-semibold text-3xl mt-10 mx-5 mb-4 text-slate-800">
+    <h1 class="font-semibold text-3xl mt-10 py-3 mx-5 text-slate-800">
       LATEST CONTENT
     </h1>
     <div class="flex justify-between flex-wrap">

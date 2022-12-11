@@ -5,7 +5,16 @@
         This is latest blog card
       </h4>
     </nuxt-link>
-    <p class="text-xs text-slate-500 pb-3">Create 10 Dec 2022</p>
+    <div class="text-xs text-slate-500 pb-3 flex space-x-4">
+      <div class="flex items-center space-x-1">
+        <icon name="material-symbols:av-timer" />
+        <span class=""> Create at 10 Dec 2022 </span>
+      </div>
+      <div class="flex items-center space-x-1">
+        <icon name="mdi:face-man" />
+        <nuxt-link class="hover:underline" to="/">by riyad</nuxt-link>
+      </div>
+    </div>
 
     <p class="pb-2 text-slate-600">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
