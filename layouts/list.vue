@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-300">
+  <div class="bg-slate-200">
     <navbar-com />
     <div>
       <slot />

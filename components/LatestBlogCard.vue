@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white mx-5 my-2 p-5 max-w-[530px] rounded-md">
+  <div class="bg-white mx-5 my-2 p-5 max-w-[530px] rounded-md shadow-lg">
     <nuxt-link to="/" class="hover:underline">
       <h4 class="text-xl text-slate-800 font-medium py-1">
         This is latest blog card
