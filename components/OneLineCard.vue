@@ -5,7 +5,7 @@
         <span class="mr-2">
           <icon calss="bg-red" name="ant-design:arrow-right-outlined" />
         </span>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, a?
+        How to use vite in your nuxt 3 project a a a a a a a a
       </h4>
     </nuxt-link>
   </div>

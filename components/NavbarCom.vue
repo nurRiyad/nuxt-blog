@@ -3,8 +3,8 @@ const theme = ref("light");
 </script>
 
 <template>
-  <header class="sticky top-0 p-6 bg-[#a2d9ff] font-poppins">
-    <div class="container px-3 mx-auto max-w-6xl flex justify-between">
+  <header class="sticky top-0 p-3 bg-[#a2d9ff] font-poppins">
+    <div class="container px-4 mx-auto max-w-6xl flex justify-between">
       <ul class="flex space-x-8 items-end">
         <li class="align">
           <nuxt-link to="/">
