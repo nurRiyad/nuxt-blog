@@ -4,7 +4,7 @@ let x = ref(10);
 
 <template>
   <div
-    class="container px-4 mx-auto max-w-6xl flex font-poppins gap-14 antialiased"
+    class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased"
   >
     <div class="flex-1">
       <h1 class="text-xl pb-8 tracking-wide text-[#e60067]">

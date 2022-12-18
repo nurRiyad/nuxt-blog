@@ -1,5 +1,5 @@
 <template>
-  <div class="font-mono">
+  <div class="font-ibmmono">
     <nuxt-link class="flex items-baseline space-x-3 space-y-2" to="/">
       <icon name="arcticons:blogger" />
       <h4 class="text-blue-600 hover:underline">

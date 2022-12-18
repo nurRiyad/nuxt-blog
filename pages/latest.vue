@@ -6,7 +6,7 @@ const { data } = await useAsyncData("home", () => queryContent("/").find());
 </script>
 
 <template>
-  <div class="container mx-auto max-w-6xl font-poppins antialiased">
+  <div class="container mx-auto max-w-6xl font-ibmmono antialiased">
     <h1 class="font-semibold text-3xl mt-10 py-3 mx-5 text-slate-800">
       LATEST CONTENT
     </h1>

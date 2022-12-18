@@ -11,22 +11,11 @@ const activeNavbar = computed(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 p-3 bg-[#a2d9ff] font-poppins">
+  <header class="sticky top-0 p-3 bg-[#a2d9ff] font-ibmmono">
     <div class="container px-4 mx-auto max-w-6xl flex justify-between">
       <ul class="flex space-x-8 items-end justify-start">
         <li class="align">
-          <nuxt-link to="/">
-            <icon
-              class="text-cyan-500 hover:scale-110 hover:transition"
-              size="35"
-              name="mdi:robot-excited"
-            />
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link :class="{ underline: activeNavbar === '' }" to="/"
-            >Home</nuxt-link
-          >
+          <nuxt-link to="/"> Rafkhata </nuxt-link>
         </li>
         <li>
           <nuxt-link
@@ -36,10 +25,8 @@ const activeNavbar = computed(() => {
           >
         </li>
         <li>
-          <nuxt-link
-            :class="{ underline: activeNavbar === 'category' }"
-            to="/category"
-            >Category</nuxt-link
+          <nuxt-link :class="{ underline: activeNavbar === 'tags' }" to="/tags"
+            >Tags</nuxt-link
           >
         </li>
         <li>

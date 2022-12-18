@@ -3,7 +3,7 @@ const theme = ref("light");
 </script>
 
 <template>
-  <footer class="p-3 mt-10 bg-[#a2d9ff] font-poppins">
+  <footer class="p-3 mt-10 bg-[#a2d9ff] font-ibmmono">
     <div class="container px-4 mx-auto max-w-6xl flex justify-center">
       <ul class="flex space-x-2 text-sm text-slate-800 items-end justify-start">
         <li>Copyright &#169; 2022 - Present</li>

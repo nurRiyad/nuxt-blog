@@ -1,6 +1,6 @@
 <template>
   <div
-    class="font-semibold antialiased text-slate-800 font-poppins hover:underline"
+    class="font-semibold antialiased text-slate-800 font-ibmmono hover:underline"
   >
     <nuxt-link class="flex items-baseline space-x-3" to="/">
       <div class="hover:scale-125 transition">

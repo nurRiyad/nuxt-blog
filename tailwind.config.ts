@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        ibmmono: ["IBM Plex Mono", "monospace"],
       },
     },
   },
