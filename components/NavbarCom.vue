@@ -1,24 +1,53 @@
 <script setup lang="ts">
+const route = useRoute();
 const theme = ref("light");
+
+const activeNavbar = computed(() => {
+  const path = route.fullPath;
+  const splitedPath = path.split("/");
+  const navbarName = splitedPath[1];
+  return navbarName;
+});
 </script>
 
 <template>
   <header class="sticky top-0 p-3 bg-[#a2d9ff] font-poppins">
     <div class="container px-4 mx-auto max-w-6xl flex justify-between">
-      <ul class="flex space-x-8 items-end">
+      <ul class="flex space-x-8 items-end justify-start">
         <li class="align">
           <nuxt-link to="/">
-            <icon class="text-blue-700" size="35" name="mdi:robot-excited" />
+            <icon
+              class="text-cyan-500 hover:scale-110 hover:transition"
+              size="35"
+              name="mdi:robot-excited"
+            />
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/latest">Latest</nuxt-link>
-        </li>
-        <li class="space-x-2">
-          <nuxt-link to="/category">Category</nuxt-link>
+          <nuxt-link :class="{ underline: activeNavbar === '' }" to="/"
+            >Home</nuxt-link
+          >
         </li>
         <li>
-          <nuxt-link to="/archive">Archive</nuxt-link>
+          <nuxt-link
+            :class="{ underline: activeNavbar === 'latest' }"
+            to="/latest"
+            >Latest</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link
+            :class="{ underline: activeNavbar === 'category' }"
+            to="/category"
+            >Category</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link
+            :class="{ underline: activeNavbar === 'archive' }"
+            to="/archive"
+            >Archive</nuxt-link
+          >
         </li>
       </ul>
       <ul class="flex space-x-3 items-end">
