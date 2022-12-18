@@ -15,7 +15,13 @@ const activeNavbar = computed(() => {
     <div class="container px-4 mx-auto max-w-6xl flex justify-between">
       <ul class="flex space-x-8 items-end justify-start">
         <li class="align">
-          <nuxt-link to="/"> Rafkhata </nuxt-link>
+          <nuxt-link
+            class="font-semibold text-xl text-slate-800"
+            :class="{ underline: activeNavbar === '' }"
+            to="/"
+          >
+            RafKhata
+          </nuxt-link>
         </li>
         <li>
           <nuxt-link
