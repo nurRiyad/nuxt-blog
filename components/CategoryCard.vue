@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white mx-5 my-2 p-6 min-w-[530px] rounded-md shadow-lg">
+  <div class="bg-white mx-5 my-2 p-6 rounded-md shadow-lg">
     <nuxt-link to="/category/js" class="hover:underline">
       <div class="flex items-center">
-        <h4 class="text-2xl text-slate-800 font-medium py-1">VUe</h4>
+        <h4 class="text-2xl text-slate-800 font-medium py-1">Typescript</h4>
       </div>
     </nuxt-link>
 
