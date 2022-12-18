@@ -1,9 +1,9 @@
 <template>
   <div class="bg-slate-200">
     <navbar-com />
-    <div class="container mx-auto max-w-6xl font-poppins antialiased">
+    <div>
       <slot />
     </div>
-    <footer-com />
+    <footer-com class="mt-0" />
   </div>
 </template>
