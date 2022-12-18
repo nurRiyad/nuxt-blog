@@ -7,22 +7,16 @@ let x = ref(10);
     class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased"
   >
     <div class="flex-1">
-      <h1 class="text-xl pb-8 tracking-wide text-[#e60067]">
-        RECENTLY PUBLISHED
-      </h1>
+      <h1 class="text-xl pb-8 text-[#e60067]">RECENTLY PUBLISHED</h1>
       <div class="space-y-8">
         <blog-card v-for="n in 7" :key="n" />
       </div>
     </div>
     <div class="max-w-[400px]">
       <div>
-        <h2 class="text-xl pb-8 tracking-wide text-[#e60067]">
-          TOP CATEGORIES
-        </h2>
+        <h2 class="text-xl pb-8 text-[#e60067]">TOP CATEGORIES</h2>
         <topic-card />
-        <h2 class="text-xl py-8 tracking-wide text-[#e60067]">
-          POPULAR CONTENT
-        </h2>
+        <h2 class="text-xl py-8 text-[#e60067]">POPULAR CONTENT</h2>
         <div class="space-y-5">
           <one-line-card v-for="n in 5" :key="n" />
         </div>

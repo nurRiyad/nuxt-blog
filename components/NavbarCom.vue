@@ -12,11 +12,13 @@ const activeNavbar = computed(() => {
 
 <template>
   <header class="sticky top-0 p-3 bg-[#a2d9ff] font-ibmmono">
-    <div class="container px-4 mx-auto max-w-6xl flex justify-between">
+    <div
+      class="container px-4 mx-auto max-w-6xl flex justify-between text-slate-800"
+    >
       <ul class="flex space-x-8 items-end justify-start">
         <li class="align">
           <nuxt-link
-            class="font-semibold text-xl text-slate-800"
+            class="font-semibold text-xl"
             :class="{ underline: activeNavbar === '' }"
             to="/"
           >
