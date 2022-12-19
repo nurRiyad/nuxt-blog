@@ -1,8 +1,30 @@
+<script setup lang="ts">
+const props = defineProps({
+  title: String,
+  path: String,
+  date: String,
+  type: String,
+});
+</script>
+
 <template>
-  <div class="px-10 font-ibmmono mb-6 text-slate-700">
-    <h4 class="font-semibold text-xl antialiased">Typescript</h4>
-    <div class="px-10">
-      <archive-post-card v-for="n in 5" :key="n" />
+  <div class="font-ibmmono px-10 mb-4 text-slate-800 group">
+    <div class="flex items-center space-x-3 space-y-2">
+      <icon name="ant-design:arrow-right-outlined" />
+      <div>
+        <nuxt-link
+          :to="path"
+          class="group-hover:underline group-hover:text-sky-500 text-lg"
+        >
+          {{ title }}
+        </nuxt-link>
+        <div class="flex italic text-sm text-slate-600 items-center space-x-2">
+          <icon name="material-symbols:calendar-month" />
+          <p>{{ date }}</p>
+          <p>|</p>
+          <p>{{ type }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
