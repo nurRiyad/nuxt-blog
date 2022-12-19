@@ -25,7 +25,9 @@ const getTopCategory = computed(() => {
 </script>
 
 <template>
-  <div class="container mx-auto max-w-6xl font-ibmmono antialiased">
+  <div
+    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[82vh]"
+  >
     <h1 class="font-semibold text-3xl mt-10 py-3 mx-5 text-slate-800">
       ALL TAGS
     </h1>

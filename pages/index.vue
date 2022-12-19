@@ -41,7 +41,7 @@ const getPopularContent = computed(() => {
 
 <template>
   <div
-    class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased"
+    class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased min-h-[72vh]"
   >
     <div class="flex-1">
       <h1 class="text-xl pb-8 text-[#e60067]">RECENTLY PUBLISHED</h1>
