@@ -1,10 +1,10 @@
 ---
-title: "Title of the page"
-description: "meta description of the page"
+title: "Title of the page 2"
+description: "meta description of the page 2"
 draft: false
 head: true
 author: riyad
-date: 22 Jan 2022
+date: 23 Jan 2022
 type: JavaScript
 ---
 
