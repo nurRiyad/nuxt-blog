@@ -2,7 +2,28 @@
 definePageMeta({
   layout: "list",
 });
+
 const { data } = await useAsyncData("home", () => queryContent("/").find());
+
+const getRecentContent = computed(() => {
+  const allpost = data.value || [];
+  const alltypes = allpost.map((post) => {
+    return {
+      title: post.title,
+      description: post.description,
+      path: post._path,
+      date: post.date as string,
+      author: post.author,
+    };
+  });
+
+  alltypes.sort(function (a, b) {
+    const c = new Date(a.date);
+    const d = new Date(b.date);
+    return c < d ? 1 : -1;
+  });
+  return alltypes;
+});
 </script>
 
 <template>
@@ -11,7 +32,15 @@ const { data } = await useAsyncData("home", () => queryContent("/").find());
       LATEST CONTENT
     </h1>
     <div class="flex justify-between flex-wrap">
-      <latest-blog-card v-for="n in 20" :key="n" />
+      <template v-for="pp in getRecentContent" :key="pp">
+        <latest-blog-card
+          :title="pp.title"
+          :description="pp.description"
+          :date="pp.date"
+          :author="pp.author"
+          :path="pp.path"
+        />
+      </template>
     </div>
   </div>
 </template>
