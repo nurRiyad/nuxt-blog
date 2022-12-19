@@ -11,7 +11,7 @@ const { data } = await useAsyncData("home", () => queryContent("/").find());
       ALL TAGS
     </h1>
     <div class="flex justify-start flex-wrap">
-      <category-card v-for="n in 19" :key="n" />
+      <category-card v-for="n in 20" :key="n" />
     </div>
   </div>
 </template>

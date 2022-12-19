@@ -9,7 +9,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="bg-white mx-5 my-2 p-5 max-w-[530px] rounded-md shadow-lg group">
+  <div
+    class="basis-1/2 bg-white mx-5 my-2 p-5 max-w-[530px] rounded-md shadow-lg group"
+  >
     <nuxt-link :to="path" class="group-hover:text-sky-500">
       <h4 class="text-xl font-medium py-1">{{ title }}</h4>
     </nuxt-link>
