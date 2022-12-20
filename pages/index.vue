@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = await useAsyncData("home", () => queryContent("/").find());
+const { data } = await useAsyncData("index", () => queryContent("/").find());
 
 // get all the unique types from content
 const getTopCategory = computed(() => {
@@ -18,6 +18,7 @@ const getRecentContent = computed(() => {
       description: post.description,
       path: post._path,
       date: post.date as string,
+      type: post.type,
     };
   });
 
@@ -42,6 +43,8 @@ const getRecentContent = computed(() => {
             :title="rp.title"
             :description="rp.description"
             :path="rp.path"
+            :date="rp.date"
+            :type="rp.type"
           />
         </template>
       </div>

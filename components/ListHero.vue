@@ -1,14 +1,31 @@
 <script setup lang="ts">
 const route = useRoute();
 
+const routeType = computed(() => {
+  return route.params.topic || "";
+});
+const { data } = await useAsyncData("listhero", () =>
+  queryContent(`/${routeType.value}`).find()
+);
+
+const typeName = computed(() => {
+  return data.value?.at(0)?.type || "";
+});
+
 const title = computed(() => {
   const path = route.fullPath;
   const splitPath = path.split("/");
   const name = splitPath.at(1);
+  const tagName = splitPath.at(2);
 
   if (name === "blogs") return "All Blogs Post";
-  else if (name === "tags") return "All Tags";
-  else return "About Me";
+  else if (name === "tags") {
+    if (tagName) {
+      return `All ${typeName.value} Related Post`;
+    } else {
+      return "All Tags";
+    }
+  } else return "About Me";
 });
 </script>
 

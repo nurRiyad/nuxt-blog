@@ -3,7 +3,7 @@ definePageMeta({
   layout: "list",
 });
 
-const { data } = await useAsyncData("home", () => queryContent("/").find());
+const { data } = await useAsyncData("about", () => queryContent("/").find());
 
 const getAllPost = computed(() => {
   const allpost = data.value || [];

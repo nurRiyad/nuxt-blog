@@ -2,6 +2,8 @@
 const props = defineProps({
   title: String,
   description: String,
+  date: String,
+  type: String,
   path: String,
 });
 </script>
@@ -14,7 +16,13 @@ const props = defineProps({
     >
       {{ title }}
     </nuxt-link>
-    <p class="text-slate-600">
+    <div class="flex italic text-xs text-slate-600 items-center space-x-2">
+      <icon name="material-symbols:calendar-month" />
+      <p>{{ date }}</p>
+      <p>|</p>
+      <p>{{ type }}</p>
+    </div>
+    <p class="text-slate-600 pb-2">
       {{ description }}
     </p>
     <nuxt-link :to="path" class="font-semibold group-hover:text-sky-500">

@@ -8,7 +8,7 @@ const route = useRoute();
 const routeType = computed(() => {
   return route.params.topic || "";
 });
-const { data } = await useAsyncData("home", () =>
+const { data } = await useAsyncData("topic", () =>
   queryContent(`/${routeType.value}`).find()
 );
 
@@ -42,9 +42,6 @@ const getRecentContent = computed(() => {
   <div
     class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[82vh]"
   >
-    <h1 class="font-semibold text-3xl mt-10 py-3 mx-5 text-slate-800">
-      ALL {{ typeName }} POST
-    </h1>
     <div class="flex justify-between flex-wrap">
       <template v-for="pp in getRecentContent" :key="pp">
         <latest-blog-card
