@@ -26,11 +26,8 @@ const getAllPost = computed(() => {
 
 <template>
   <div
-    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[82vh]"
+    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[72vh]"
   >
-    <h1 class="font-semibold text-3xl mt-10 mb-5 py-3 mx-5 text-slate-800">
-      ALL BLOG POST
-    </h1>
     <div>
       <template v-for="pp in getAllPost" :key="pp">
         <archiev-card

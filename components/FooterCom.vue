@@ -4,7 +4,7 @@ const theme = ref("light");
 
 <template>
   <footer class="p-3 mt-10 bg-[#a2d9ff] font-ibmmono">
-    <div class="container px-4 mx-auto max-w-6xl flex justify-center">
+    <div class="container px-4 mx-auto max-w-6xl flex justify-between">
       <ul class="flex space-x-2 text-sm text-slate-800 items-end justify-start">
         <li>Copyright &#169; 2022 - Present</li>
         <li>|</li>
@@ -15,18 +15,24 @@ const theme = ref("light");
             target="_blank"
             to="https://nurriyad.xyz"
           >
-            Al Asad Nur Riyad
+            Riyad
           </nuxt-link>
         </li>
-        <li>|</li>
+      </ul>
+      <ul class="flex space-x-2 text-sm text-slate-800 items-end justify-start">
         <li>
-          Site source on
-          <nuxt-link
-            class="underline"
-            target="_blank"
-            to="https://github.com/nurRiyad/blogs"
-          >
-            GitHub.
+          <nuxt-link to="/">
+            <icon size="22px" name="uil:github" />
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/">
+            <icon size="22px" name="uil:linkedin" />
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/">
+            <icon size="22px" name="mdi:stackoverflow" />
           </nuxt-link>
         </li>
       </ul>

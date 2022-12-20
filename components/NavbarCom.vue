@@ -16,20 +16,20 @@ const activeNavbar = computed(() => {
       class="container px-4 mx-auto max-w-6xl flex justify-between text-slate-800"
     >
       <ul class="flex space-x-8 items-end justify-start">
-        <li class="align">
+        <li>
           <nuxt-link
-            class="font-semibold text-xl"
+            class="font-semibold text-base"
             :class="{ underline: activeNavbar === '' }"
             to="/"
           >
-            RafKhata
+            NurRiyad
           </nuxt-link>
         </li>
         <li>
           <nuxt-link
-            :class="{ underline: activeNavbar === 'latest' }"
-            to="/latest"
-            >Latest</nuxt-link
+            :class="{ underline: activeNavbar === 'blogs' }"
+            to="/blogs"
+            >Blogs</nuxt-link
           >
         </li>
         <li>
@@ -37,30 +37,16 @@ const activeNavbar = computed(() => {
             >Tags</nuxt-link
           >
         </li>
+      </ul>
+      <ul class="flex space-x-8 items-end">
         <li>
           <nuxt-link
-            :class="{ underline: activeNavbar === 'archive' }"
-            to="/archive"
-            >Archive</nuxt-link
+            :class="{ underline: activeNavbar === 'about' }"
+            to="/about"
+            >About</nuxt-link
           >
         </li>
-      </ul>
-      <ul class="flex space-x-3 items-end">
-        <li>
-          <nuxt-link to="/">
-            <icon size="25px" name="uil:github" />
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/">
-            <icon size="25px" name="uil:linkedin" />
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/">
-            <icon size="25px" name="mdi:stackoverflow" />
-          </nuxt-link>
-        </li>
+
         <li v-show="theme === 'light'" @click="theme = 'dark'">
           <nuxt-link to="/">
             <icon size="25px" name="ph:sun-dim" />

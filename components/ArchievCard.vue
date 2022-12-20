@@ -8,7 +8,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="font-ibmmono px-10 mb-4 text-slate-800 group">
+  <div
+    class="font-ibmmono px-10 mb-4 text-slate-800 group shadow-sm bg-white rounded-lg py-4"
+  >
     <div class="flex items-center space-x-3 space-y-2">
       <icon name="ant-design:arrow-right-outlined" />
       <div>

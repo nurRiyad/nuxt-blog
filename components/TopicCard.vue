@@ -6,7 +6,7 @@ const props = defineProps({
 const router = useRouter();
 
 const onClick = () => {
-  router.push(`/tags/${props.title}`);
+  router.push(`/tags/${props.title?.toLocaleLowerCase()}`);
 };
 </script>
 
