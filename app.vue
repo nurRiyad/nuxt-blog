@@ -41,6 +41,7 @@ useHead({
 }
 .layout-enter-from,
 .layout-leave-to {
-  filter: grayscale(1);
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>
