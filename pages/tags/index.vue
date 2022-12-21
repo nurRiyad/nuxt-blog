@@ -2,7 +2,7 @@
 definePageMeta({
   layout: "list",
 });
-const { data } = await useLazyAsyncData("tags", () => queryContent("/").find());
+const { data } = useLazyAsyncData("tags", () => queryContent("/").find());
 
 const getTopCategory = computed(() => {
   const allpost = data.value || [];

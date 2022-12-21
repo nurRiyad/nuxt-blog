@@ -4,9 +4,9 @@ useHead({
     lang: "en",
   },
   title: "",
-  titleTemplate: "%s  riyad",
+  titleTemplate: "%s",
   meta: [
-    { name: "description", content: "Al Asad Nur riyad" },
+    { name: "description", content: "Al Asad Nur riyad's Personal Blog Site" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:site", content: "@nuxt_js" },
     { name: "twitter:creator", content: "@nuxt_js" },
@@ -37,7 +37,7 @@ useHead({
 /* Layout Transition */
 .layout-enter-active,
 .layout-leave-active {
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 .layout-enter-from,
 .layout-leave-to {
