@@ -3,7 +3,9 @@ definePageMeta({
   layout: "list",
 });
 
-const { data } = await useAsyncData("blogs", () => queryContent("/").find());
+const { data, pending } = await useAsyncData("blogs", () =>
+  queryContent("/").find()
+);
 
 const getAllPost = computed(() => {
   const allpost = data.value || [];
@@ -28,7 +30,12 @@ const getAllPost = computed(() => {
   <div
     class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[72vh]"
   >
-    <div>
+    <div v-if="pending">
+      <template v-for="n in 5" :key="n">
+        <archive-card-loader />
+      </template>
+    </div>
+    <div v-else>
       <template v-for="pp in getAllPost" :key="pp">
         <archiev-card
           :title="pp.title"
