@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data } = await useAsyncData("index", () => queryContent("/").find());
+const { data, pending } = await useLazyAsyncData("index", () =>
+  queryContent("/").find()
+);
 
 // get all the unique types from content
 const getTopCategory = computed(() => {
@@ -35,7 +37,14 @@ const getRecentContent = computed(() => {
   <div
     class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased min-h-[72vh]"
   >
-    <div class="flex-1">
+    <div v-if="pending">
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+        accusamus maxime optio neque praesentium! Id ipsa deleniti vero magni
+        expedita?
+      </h1>
+    </div>
+    <div v-else class="flex-1">
       <h1 class="text-xl pb-8 text-[#e60067]">RECENTLY PUBLISHED</h1>
       <div class="space-y-8">
         <template v-for="rp in getRecentContent" :key="rp">
@@ -49,7 +58,13 @@ const getRecentContent = computed(() => {
         </template>
       </div>
     </div>
-    <div class="basis-1/4">
+    <div v-if="pending">
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam labore
+        accusamus sit distinctio fugit commodi quam debitis ratione alias illum?
+      </h1>
+    </div>
+    <div v-else class="basis-1/4">
       <div>
         <h2 class="text-xl pb-8 text-[#e60067]">TOP CATEGORIES</h2>
         <template v-for="cat in getTopCategory" :key="cat">

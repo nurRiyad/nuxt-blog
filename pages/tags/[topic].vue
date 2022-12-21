@@ -8,7 +8,7 @@ const route = useRoute();
 const routeType = computed(() => {
   return route.params.topic || "";
 });
-const { data } = await useAsyncData("topic", () =>
+const { data } = await useLazyAsyncData("topic", () =>
   queryContent(`/${routeType.value}`).find()
 );
 

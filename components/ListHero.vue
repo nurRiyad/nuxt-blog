@@ -4,7 +4,7 @@ const route = useRoute();
 const routeType = computed(() => {
   return route.params.topic || "";
 });
-const { data } = await useAsyncData("listhero", () =>
+const { data } = await useLazyAsyncData("listhero", () =>
   queryContent(`/${routeType.value}`).find()
 );
 

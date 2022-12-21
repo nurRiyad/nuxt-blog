@@ -3,7 +3,7 @@ definePageMeta({
   layout: "list",
 });
 
-const { data, pending } = await useAsyncData("blogs", () =>
+const { data, pending } = await useLazyAsyncData("blogs", () =>
   queryContent("/").find()
 );
 
