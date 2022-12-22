@@ -25,9 +25,6 @@ const getRecentContent = computed(() => {
       dir: post._dir,
     };
   });
-
-  console.log(modifedPost);
-
   const filteredPost = modifedPost.filter(
     (post) => post.dir === routeType.value
   );
