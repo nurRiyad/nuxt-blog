@@ -12,8 +12,7 @@ const getTopCategory = computed(() => {
       dir: post._dir,
     };
   });
-  const uniqType = new Set(alltypes);
-  return uniqType;
+  return [...new Map(alltypes.map((item) => [item["dir"], item])).values()];
 });
 
 // get all post in recent time order

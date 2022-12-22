@@ -11,12 +11,11 @@ const path = computed(() => {
   return route.path || "";
 });
 
-const { data } = await useAsyncData("page-data", () =>
-  queryContent(`${path.value}`).findOne()
-);
+const data = useState("blogData");
 
 const content = computed(() => {
-  return data.value as ParsedContent;
+  const allpost = (data.value as Array<ParsedContent>) || [];
+  return allpost.find((post) => post._path === path.value) || {};
 });
 </script>
 
