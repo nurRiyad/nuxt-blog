@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
 definePageMeta({
   layout: "list",
 });
-const { data } = useLazyAsyncData("tags", () => queryContent("/").find());
+const data = useState("blogData");
 
 const getTopCategory = computed(() => {
-  const allpost = data.value || [];
+  const allpost = (data.value as Array<ParsedContent>) || [];
   const alltypes = allpost.map((post) => post.type);
   const uniqType = new Set(alltypes);
   const cobj = <Array<{ type: string; count: number; path: string }>>[];

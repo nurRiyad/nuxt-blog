@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
 definePageMeta({
   layout: "list",
 });
@@ -8,33 +10,34 @@ const route = useRoute();
 const routeType = computed(() => {
   return route.params.topic || "";
 });
-const { data } = useLazyAsyncData("topic", () =>
-  queryContent(`/${routeType.value}`).find()
-);
 
-const typeName = computed(() => {
-  const t = data.value?.at(0)?.type || "";
-  return t.toUpperCase();
-});
+const data = useState("blogData");
 
 const getRecentContent = computed(() => {
-  const allpost = data.value || [];
-  const alltypes = allpost.map((post) => {
+  const allpost = (data.value as Array<ParsedContent>) || [];
+  const modifedPost = allpost.map((post) => {
     return {
       title: post.title,
       description: post.description,
       path: post._path,
       date: post.date as string,
       author: post.author,
+      dir: post._dir,
     };
   });
 
-  alltypes.sort(function (a, b) {
+  console.log(modifedPost);
+
+  const filteredPost = modifedPost.filter(
+    (post) => post.dir === routeType.value
+  );
+
+  filteredPost.sort(function (a, b) {
     const c = new Date(a.date);
     const d = new Date(b.date);
     return c < d ? 1 : -1;
   });
-  return alltypes;
+  return filteredPost;
 });
 </script>
 

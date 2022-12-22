@@ -1,17 +1,24 @@
 <script setup lang="ts">
-const { data } = useLazyAsyncData("index", () => queryContent("/").find());
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
+const data = useState("blogData");
 
 // get all the unique types from content
 const getTopCategory = computed(() => {
-  const allpost = data.value || [];
-  const alltypes = allpost.map((post) => post.type);
+  const allpost = (data.value as Array<ParsedContent>) || [];
+  const alltypes = allpost.map((post) => {
+    return {
+      type: post.type,
+      dir: post._dir,
+    };
+  });
   const uniqType = new Set(alltypes);
   return uniqType;
 });
 
 // get all post in recent time order
 const getRecentContent = computed(() => {
-  const allpost = data.value || [];
+  const allpost = (data.value as Array<ParsedContent>) || [];
   const customizePost = allpost.map((post) => {
     return {
       title: post.title,
@@ -27,13 +34,13 @@ const getRecentContent = computed(() => {
     const d = new Date(b.date);
     return c < d ? 1 : -1;
   });
-  return customizePost;
+  return customizePost.filter((post, idx) => idx < 6);
 });
 </script>
 
 <template>
   <div
-    class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased min-h-[72vh]"
+    class="container px-4 mx-auto max-w-6xl flex font-ibmmono gap-14 antialiased min-h-screen"
   >
     <div class="flex-1">
       <h1 class="text-xl pb-8 text-[#e60067]">RECENTLY PUBLISHED</h1>
@@ -54,7 +61,7 @@ const getRecentContent = computed(() => {
       <div>
         <h2 class="text-xl pb-8 text-[#e60067]">TOP CATEGORIES</h2>
         <template v-for="cat in getTopCategory" :key="cat">
-          <topic-card :title="cat" />
+          <topic-card :title="cat.type" :dir="cat.dir" />
         </template>
       </div>
     </div>

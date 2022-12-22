@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
 definePageMeta({
   layout: "list",
 });
 
-const { data } = useLazyAsyncData("blogs", () => queryContent("/").find());
+const data = useState("blogData");
 
+// get all blog post
 const getAllPost = computed(() => {
-  const allpost = data.value || [];
+  const allpost = (data.value as Array<ParsedContent>) || [];
   const alltypes = allpost.map((post) => {
     return {
       title: post.title,
@@ -26,7 +29,7 @@ const getAllPost = computed(() => {
 
 <template>
   <div
-    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[72vh]"
+    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-screen"
   >
     <div>
       <template v-for="pp in getAllPost" :key="pp">

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 const props = defineProps({
   title: String,
+  dir: String,
 });
 
 const router = useRouter();
 
 const onClick = () => {
-  router.push(`/tags/${props.title?.toLocaleLowerCase()}`);
+  router.push(`/tags/${props.dir}`);
 };
 </script>
 

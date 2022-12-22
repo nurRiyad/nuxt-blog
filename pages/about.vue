@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <div
-    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-[72vh]"
+    class="container mx-auto max-w-6xl font-ibmmono antialiased min-h-screen"
   >
     <div class="flex gap-14">
       <div class="m-2 rounded-lg object-cover">

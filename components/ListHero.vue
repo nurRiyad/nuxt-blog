@@ -1,15 +1,17 @@
 <script setup lang="ts">
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
 const route = useRoute();
 
 const routeType = computed(() => {
   return route.params.topic || "";
 });
-const { data } = await useLazyAsyncData("listhero", () =>
-  queryContent(`/${routeType.value}`).find()
-);
+const data = useState("blogData");
 
 const typeName = computed(() => {
-  return data.value?.at(0)?.type || "";
+  const allpost = (data.value as Array<ParsedContent>) || [];
+  const filteredType = allpost.filter((post) => post._dir === routeType.value);
+  return filteredType.at(0)?.type || "";
 });
 
 const title = computed(() => {

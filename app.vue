@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
 useHead({
   htmlAttrs: {
     lang: "en",
@@ -12,6 +14,10 @@ useHead({
     { name: "twitter:creator", content: "@nuxt_js" },
   ],
 });
+
+const { data } = await useAsyncData("index", () => queryContent("/").find());
+
+useState("blogData", () => (data.value as Array<ParsedContent>) || []);
 </script>
 
 <template>
@@ -37,7 +43,7 @@ useHead({
 /* Layout Transition */
 .layout-enter-active,
 .layout-leave-active {
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 .layout-enter-from,
 .layout-leave-to {
