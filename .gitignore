@@ -1,17 +1,7 @@
-*.log
-nuxt.d.ts
-
-# private config
-.env
-
-# deps
-node_modules
-
-# build or generate
-.nuxt
-dist
+# Nuxt dev/build outputs
 .output
-
-# IDE
-.idea
-.vercel
+.nuxt
+# Node dependencies
+node_modules
+# System files
+*.log
