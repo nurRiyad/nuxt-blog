@@ -1,9 +1,9 @@
 <template>
   <div>
-    <PageHeader/>
-    <div class="h-full bg-slate-600">
+    <PageHeader />
+    <div class="h-full">
       <slot />
     </div>
-    <PageFooter/>
+    <PageFooter />
   </div>
 </template>

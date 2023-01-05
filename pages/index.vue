@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-
-
 useHead({
   title: "Home",
   meta: [
@@ -11,12 +9,18 @@ useHead({
   ],
   titleTemplate: "Elon's Blog - %s",
 });
-
 </script>
 <template>
   <main>
-    
-   <h1>This ia main section</h1>
+    <div class="flex m-5 p-3 flex-wrap">
+      <template v-for="n in 10" :key="n">
+        <BlogCard
+          title="sldkfsl"
+          excerpt="sldkfj"
+          image="sdlfkj"
+          slug="sdlkfj"
+        />
+      </template>
+    </div>
   </main>
 </template>
-
