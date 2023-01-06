@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  plugins: [require("@tailwindcss/typography")],
+export default {
+  tailwindcss: {
+    // Options
+  },
 };
