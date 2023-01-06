@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 defineProps<{
-  title: string;
-  excerpt?: string;
-  image?: string;
-  slug?: string;
-}>();
+  title: string
+  excerpt?: string
+  image?: string
+  slug?: string
+}>()
 </script>
 
 <template>
@@ -16,10 +16,9 @@ defineProps<{
     </h1>
 
     <p class="text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore
-      cupiditate ducimus, ipsam harum, adipisci laudantium similique voluptate
-      officiis sunt nesciunt dolorem repellat cumque obcaecati nulla, sed dolore
-      unde. Atque!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore cupiditate ducimus,
+      ipsam harum, adipisci laudantium similique voluptate officiis sunt nesciunt dolorem repellat
+      cumque obcaecati nulla, sed dolore unde. Atque!
     </p>
     <nuxt-link class="underline" :to="slug">
       {{ slug }}

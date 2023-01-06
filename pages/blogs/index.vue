@@ -1,5 +1,3 @@
 <template>
-  <div>
-    There will be all blogs
-  </div>
+  <div>There will be all blogs</div>
 </template>

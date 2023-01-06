@@ -6,7 +6,6 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
-  
   },
   "devDependencies": {
     "@nuxt/content": "^2.3.0",
@@ -14,6 +13,5 @@
     "@tailwindcss/typography": "^0.5.8",
     "nuxt": "3.0.0",
     "prettier": "2.8.1"
-    
   }
 }

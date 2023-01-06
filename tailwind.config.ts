@@ -2,4 +2,4 @@ export default {
   tailwindcss: {
     // Options
   },
-};
+}
