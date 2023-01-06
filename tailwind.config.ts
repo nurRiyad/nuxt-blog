@@ -1,5 +1,7 @@
-export default {
-  tailwindcss: {
-    // Options
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
   },
+  plugins: [require('@tailwindcss/typography')],
 }
