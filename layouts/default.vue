@@ -3,7 +3,8 @@
     <header class="fixed w-full backdrop-blur-3xl">
       <MainHeader />
     </header>
-    <main class="mt-20">
+    <main>
+      <div class="p-9"></div>
       <slot />
     </main>
     <footer>

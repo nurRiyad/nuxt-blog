@@ -1,26 +1,37 @@
 <script setup lang="ts">
-let x = ref('10')
+let isDark = ref(false)
 </script>
 
 <template>
-  <nav class="py-5 border-b">
-    <div class="container flex justify-between mx-auto items-baseline">
+  <div class="py-5 px-4 border-b text-zinc-600">
+    <div class="flex container max-w-5xl justify-between mx-auto items-baseline">
       <ul class="flex items-baseline space-x-5">
         <li>
-          <NuxtLink to="/" class="text-2xl font-medium"> Home </NuxtLink>
+          <NuxtLink to="/" class="text-2xl text-black font-bold"> Home </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories" class="font-medium"> Categories </NuxtLink>
+          <NuxtLink to="/categories"> Categories </NuxtLink>
         </li>
       </ul>
-      <ul class="flex space-x-3">
+      <ul class="flex items-center space-x-3">
         <li>
-          <NuxtLink to="/blogs"> Blogs </NuxtLink>
+          <NuxtLink to="/blogs"> Archive </NuxtLink>
         </li>
-        <li>
-          <NuxtLink to="/blogs"> Icon </NuxtLink>
-        </li>
+        <Icon
+          v-if="isDark"
+          size="1.2em"
+          @click="isDark = !isDark"
+          class="cursor-pointer"
+          name="line-md:moon-to-sunny-outline-loop-transition"
+        />
+        <Icon
+          v-else
+          size="1.2em"
+          @click="isDark = !isDark"
+          class="cursor-pointer"
+          name="line-md:sunny-outline-to-moon-loop-transition"
+        />
       </ul>
     </div>
-  </nav>
+  </div>
 </template>
