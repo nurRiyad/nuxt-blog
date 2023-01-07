@@ -4,7 +4,11 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        spacegrotesk: ['Space Grotesk', 'sans-serif'],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }

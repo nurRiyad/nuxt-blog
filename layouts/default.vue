@@ -1,5 +1,5 @@
 <template>
-  <div class="gd-container">
+  <div class="gd-container font-spacegrotesk">
     <header class="fixed w-full backdrop-blur-3xl">
       <MainHeader />
     </header>
