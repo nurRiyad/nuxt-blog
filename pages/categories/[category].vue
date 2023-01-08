@@ -1,5 +1,5 @@
 <template>
   <div>
-    {{ $route.params }}
+    <h1>Categories</h1>
   </div>
 </template>
