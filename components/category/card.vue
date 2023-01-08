@@ -27,7 +27,7 @@ const randbgcolor = ref(`${color.at(getRandomInt(0, 8))}`)
 
 <template>
   <div class="text-white px-5 py-3 rounded hover:underline randbgcolor">
-    <NuxtLink to="/" class="text-xl font-extrabold">
+    <NuxtLink :to="`/categories/${title}`" class="text-xl font-extrabold">
       <h1>#{{ title }}</h1>
     </NuxtLink>
   </div>
