@@ -11,7 +11,7 @@ defineProps<{
   <article class="group border p-5 m-2 rounded-2xl shadow-lg text-zinc-700">
     <NuxtLink to="/home" class="">
       <img
-        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-105 transition-all"
+        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
         src="/blogs/hello-world/riyad.jpg"
         alt="card photo"
       />
