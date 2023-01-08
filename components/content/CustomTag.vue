@@ -1,5 +1,25 @@
 <template>
-  <div class="py-5 px-2 m-2 text-center prose-h1:no-underline">
-    <slot />
+  <div class="flex w-full justify-center">
+    <div class="text-black content-center flex gap-7">
+      <div class="flex items-center">
+        <LogoDate />
+        <slot name="date"></slot>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap punder">
+        <LogoTag />
+        <slot name="tag1"></slot>
+        <slot name="tag2"></slot>
+        <slot name="tag3"></slot>
+        <slot name="tag4"></slot>
+        <slot name="tag5"></slot>
+        <slot></slot>
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.punder {
+  text-decoration-line: underline;
+}
+</style>
