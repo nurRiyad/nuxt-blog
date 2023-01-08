@@ -8,20 +8,35 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="grid shadow-xl group overflow-hidden rounded max-w-md p-5 m-5 bg-slate-700 text-white"
-  >
-    <h1 class="text-xl">
-      {{ title }}
-    </h1>
-
-    <p class="text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore cupiditate ducimus,
-      ipsam harum, adipisci laudantium similique voluptate officiis sunt nesciunt dolorem repellat
-      cumque obcaecati nulla, sed dolore unde. Atque!
-    </p>
-    <nuxt-link class="underline" :to="slug">
-      {{ slug }}
-    </nuxt-link>
-  </div>
+  <article class="group border p-5 m-5 rounded-2xl shadow-lg text-zinc-700">
+    <NuxtLink to="/home" class="">
+      <img
+        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-105 transition-all"
+        src="/blogs/hello-world/riyad.jpg"
+        alt="card photo"
+      />
+      <div class="text-black text-sm pt-4 pb-2">
+        <div class="flex items-center">
+          <LogoDate />
+          3rd July 2022
+        </div>
+        <div class="flex items-center gap-1 flex-wrap">
+          <LogoTag />
+          <span>JavaScript</span>
+          <span>Typescript</span>
+          <span>Clean</span>
+        </div>
+      </div>
+      <h2 class="text-3xl font-semibold text-black pb-1 group-hover:text-sky-600">
+        This is the card title
+      </h2>
+      <p class="text-ellipsis line-clamp-3">
+        {{ excerpt }}
+      </p>
+      <div class="flex group-hover:underline text-sky-600 items-center pt-2">
+        <p>Read More</p>
+        <LogoArrow />
+      </div>
+    </NuxtLink>
+  </article>
 </template>

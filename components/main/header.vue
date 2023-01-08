@@ -3,7 +3,7 @@ let isDark = ref(false)
 </script>
 
 <template>
-  <div class="py-5 font-spacegrotesk border-b text-zinc-600">
+  <div class="py-5 border-b text-zinc-700">
     <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline">
       <ul class="flex items-baseline space-x-5">
         <li class="">
