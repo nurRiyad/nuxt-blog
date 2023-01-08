@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <article class="group border p-5 m-2 rounded-2xl shadow-lg text-zinc-700">
-    <NuxtLink to="/home" class="grid grid-cols-1 sm:grid-cols-9 gap-5">
+    <NuxtLink :to="slug" class="grid grid-cols-1 sm:grid-cols-9 gap-5">
       <div class="sm:col-span-2">
         <img
           class="lg:h-48 md:h-36 sm:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
