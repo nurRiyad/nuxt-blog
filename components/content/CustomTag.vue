@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full justify-center">
+  <div class="flex w-full justify-center text-xs md:text-base">
     <div class="text-black content-center flex gap-7">
       <div class="flex items-center">
         <LogoDate />
