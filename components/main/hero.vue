@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid grid-cols-1 items-center md:grid-cols-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
       <div class="px-6">
-        <h1 class="text-black text-4xl font-semibold md:text-5xl mb-5 leading-tight">
+        <h1 class="text-black font-semibold leading-tight text-4xl md:text-5xl mb-5">
           Welcome To My Blog Site
         </h1>
         <p>
@@ -10,7 +10,7 @@
           Learning resource and more.
         </p>
       </div>
-      <div class="px-6 max-w-[400px] flex justify-center">
+      <div class="px-6 justify-self-center">
         <LogoDog />
       </div>
     </div>
