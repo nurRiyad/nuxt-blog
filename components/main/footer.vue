@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5 border-t text-zinc-700">
+  <div class="py-5 border-t mt-5 text-zinc-700">
     <div class="px-6 container max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3">
         <div>
@@ -48,8 +48,13 @@
           </button>
         </div>
       </div>
-      <div class="border-t">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloremque?</h1>
+
+      <div class="border-t mt-5 text-center p-2">
+        © 2020-2022 No Right is reserved. Who cares 🤷‍♂️? It's
+        <a href="https://github.com/nurriyad/blog" target="_blank" rel="nofollow" class="underline"
+          >open source</a
+        >
+        anyway.
       </div>
     </div>
   </div>
