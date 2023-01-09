@@ -7,16 +7,26 @@ useHead({
       content: 'Home',
     },
   ],
-  titleTemplate: "Elon's Blog - %s",
+  titleTemplate: "Riyad's Blog - %s",
 })
-const { data } = await useAsyncData('home', () => queryContent('/blogs').find())
+
+// Get Last 6 Publish Post from the content/blog directory
+const { data } = await useAsyncData('home', () =>
+  queryContent('/blogs').limit(6).sort({ _id: -1 }).find()
+)
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="n in data" :key="n">
-        <BlogCard :title="n.title || ''" :excerpt="n.description" image="sdlfkj" :slug="n._path" />
+      <template v-for="post in data" :key="n">
+        <BlogCard
+          :title="post.title"
+          :description="post.description"
+          :link="post._path"
+          :time="post.time"
+          :tags="post.tags"
+        />
       </template>
     </div>
   </main>
