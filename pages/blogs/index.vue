@@ -14,7 +14,7 @@ const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ 
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ArchiveHero />
-    <div>
+    <div class="space-y-5 my-5">
       <template v-for="post in data" :key="n">
         <ArchiveCard
           :title="post.title"

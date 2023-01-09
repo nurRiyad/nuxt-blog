@@ -17,17 +17,17 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <article class="group border p-5 m-2 rounded-2xl shadow-lg text-zinc-700">
-    <NuxtLink :to="link" class="grid grid-cols-1 sm:grid-cols-9 gap-5">
+  <article class="group border m-2 rounded-2xl overflow-hidden shadow-md text-zinc-700">
+    <NuxtLink :to="link" class="grid grid-cols-1 sm:grid-cols-9 gap-3">
       <div class="sm:col-span-2">
         <img
-          class="lg:h-48 md:h-36 sm:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
+          class="md:h-full sm:h-36 w-full object-cover object-center rounded-l-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
           :src="`${link}/cover.jpg`"
           :alt="title"
         />
       </div>
-      <div class="sm:col-span-7">
-        <h2 class="text-3xl font-semibold text-black pb-1 group-hover:text-sky-600">
+      <div class="sm:col-span-7 p-5">
+        <h2 class="text-2xl font-semibold text-black pb-1 group-hover:text-sky-600">
           {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2">
