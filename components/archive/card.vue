@@ -21,7 +21,7 @@ withDefaults(defineProps<Props>(), {
     <NuxtLink :to="link" class="grid grid-cols-1 sm:grid-cols-9 gap-3">
       <div class="sm:col-span-2">
         <img
-          class="md:h-full sm:h-36 w-full object-cover object-center rounded-l-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
+          class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.05] transition-all duration-500"
           :src="`${link}/cover.jpg`"
           :alt="title"
         />
