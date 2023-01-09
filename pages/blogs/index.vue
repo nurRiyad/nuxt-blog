@@ -7,7 +7,7 @@ useHead({
       content: 'Home',
     },
   ],
-  titleTemplate: "Elon's Blog - %s",
+  titleTemplate: "Riyad's Blog - %s",
 })
 const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
 </script>

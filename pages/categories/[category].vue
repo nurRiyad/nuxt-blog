@@ -7,7 +7,7 @@ useHead({
       content: 'Home',
     },
   ],
-  titleTemplate: "Elon's Blog - %s",
+  titleTemplate: "Riyad's Blog - %s",
 })
 
 const route = useRoute()
