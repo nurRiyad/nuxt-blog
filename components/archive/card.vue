@@ -1,39 +1,48 @@
 <script lang="ts" setup>
-defineProps<{
+interface Props {
   title: string
-  excerpt?: string
-  image?: string
-  slug?: string
-}>()
+  description: string
+  time: string
+  link: string
+  tags: Array<string>
+}
+
+withDefaults(defineProps<Props>(), {
+  title: 'No title availabe',
+  description: 'No description available',
+  time: 'No time available',
+  link: '/',
+  tags: () => ['no-tag'],
+})
 </script>
 
 <template>
   <article class="group border p-5 m-2 rounded-2xl shadow-lg text-zinc-700">
-    <NuxtLink :to="slug" class="grid grid-cols-1 sm:grid-cols-9 gap-5">
+    <NuxtLink :to="link" class="grid grid-cols-1 sm:grid-cols-9 gap-5">
       <div class="sm:col-span-2">
         <img
           class="lg:h-48 md:h-36 sm:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
-          src="/blogs/hello-world/riyad.jpg"
-          alt="card photo"
+          :src="`${link}/cover.jpg`"
+          :alt="title"
         />
       </div>
       <div class="sm:col-span-7">
         <h2 class="text-3xl font-semibold text-black pb-1 group-hover:text-sky-600">
-          This is the card title
+          {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2">
-          {{ excerpt }}
+          {{ description }}
         </p>
         <div class="text-black text-sm pt-4 pb-2">
           <div class="flex items-center">
             <LogoDate />
-            3rd July 2022
+            {{ time }}
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
-            <span>JavaScript</span>
-            <span>Typescript</span>
-            <span>Clean</span>
+            <template v-for="tag in tags" :key="tag">
+              <span>{{ tag }}</span>
+            </template>
           </div>
         </div>
         <div class="flex group-hover:underline text-sky-600 items-center pt-2">

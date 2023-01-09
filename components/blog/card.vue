@@ -21,7 +21,7 @@ withDefaults(defineProps<Props>(), {
     <NuxtLink :to="link">
       <img
         class="lg:h-48 md:h-36 w-full object-cover object-center rounded-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
-        src="/blogs/hello-world/riyad.jpg"
+        :src="`${link}/cover.jpg`"
         :alt="title"
       />
       <div class="text-black text-sm pt-4 pb-2">

@@ -32,8 +32,14 @@ const { data } = await useAsyncData('home', () =>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <CategoryTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="n in data" :key="n">
-        <BlogCard :title="n.title || ''" :excerpt="n.description" image="sdlfkj" :slug="n._path" />
+      <template v-for="post in data" :key="n">
+        <BlogCard
+          :title="post.title"
+          :description="post.description"
+          :link="post._path"
+          :time="post.time"
+          :tags="post.tags"
+        />
       </template>
       <template v-if="data?.length === 0">
         <BlogEmpty />
