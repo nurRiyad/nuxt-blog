@@ -28,6 +28,9 @@ const { data } = await useAsyncData('home', () =>
           :tags="post.tags"
         />
       </template>
+      <template v-if="data?.length === 0">
+        <BlogEmpty />
+      </template>
     </div>
   </main>
 </template>

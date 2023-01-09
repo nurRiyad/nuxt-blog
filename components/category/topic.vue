@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { makeFirstCharUpper } from '@/utils/helper'
+
 const route = useRoute()
 
-// The the category name and make the first char upper
+// take category from route params & make first char upper
 const category = computed(() => {
-  const name = route.params.category || ''
-  const firstChar = name.at(0)?.toLocaleUpperCase() || ''
-  const otherChar = name.slice(1)
+  let name = route.params.category || ''
+  let strName = ''
 
-  return firstChar + otherChar
+  if (name instanceof Array) strName = name.at(0) || ''
+  else strName = name
+  return makeFirstCharUpper(strName)
 })
 </script>
 

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { makeFirstCharUpper } from '@/utils/helper'
+
 useHead({
   title: 'Home',
   meta: [
@@ -10,18 +12,18 @@ useHead({
   titleTemplate: "Riyad's Blog - %s",
 })
 const topics = [
-  'Javascript',
-  'Typescript',
-  'Git',
-  'Docker',
-  'Kubernetes',
-  'Vue',
-  'Nuxt',
-  'Pinia',
-  'Vuex',
-  'Firebase',
-  'Supabse',
-  'Cypress',
+  'javascript',
+  'typescript',
+  'git',
+  'docker',
+  'kubernetes',
+  'vue',
+  'nuxt',
+  'pinia',
+  'vuex',
+  'firebase',
+  'supabse',
+  'cypress',
 ]
 </script>
 <template>
@@ -29,7 +31,7 @@ const topics = [
     <CategoryHero />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
       <template v-for="topic in topics" :key="n">
-        <CategoryCard :title="topic" />
+        <CategoryCard :title="makeFirstCharUpper(topic)" />
       </template>
     </div>
   </main>
