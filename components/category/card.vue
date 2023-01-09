@@ -1,9 +1,14 @@
 <script setup lang="ts">
-defineProps({
-  title: String,
+interface Props {
+  title: string
+}
+
+withDefaults(defineProps<Props>(), {
+  title: 'No title available',
 })
 
-let color = [
+// some random color for tags
+const color = [
   '#dc2626',
   '#d97706',
   '#65a30d',
@@ -16,20 +21,21 @@ let color = [
   '#db2777',
 ]
 
+// get a random number
 const getRandomInt = (min: number, max: number) => {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const randbgcolor = ref(`${color.at(getRandomInt(0, 8))}`)
+const picAColor = ref(`${color.at(getRandomInt(0, 8))}`)
 </script>
 
 <template>
   <div
     class="text-white px-5 py-3 rounded hover:underline randbgcolor hover:scale-[1.05] transition-all duration-500"
   >
-    <NuxtLink :to="`/categories/${title}`" class="text-xl font-extrabold">
+    <NuxtLink :to="`/categories/${title.toLocaleLowerCase()}`" class="text-xl font-extrabold">
       <h1>#{{ title }}</h1>
     </NuxtLink>
   </div>
@@ -37,6 +43,6 @@ const randbgcolor = ref(`${color.at(getRandomInt(0, 8))}`)
 
 <style scoped>
 .randbgcolor {
-  background-color: v-bind(randbgcolor);
+  background-color: v-bind(picAColor);
 }
 </style>

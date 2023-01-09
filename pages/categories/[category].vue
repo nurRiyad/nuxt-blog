@@ -9,7 +9,8 @@ useHead({
   ],
   titleTemplate: "Elon's Blog - %s",
 })
-const { data } = await useAsyncData('home', () => queryContent('/blogs').find())
+
+const { data } = await useAsyncData('home', () => queryContent('/blogs').where({}).find())
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
