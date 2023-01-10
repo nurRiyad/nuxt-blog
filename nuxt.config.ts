@@ -8,6 +8,7 @@ export default defineNuxtConfig({
       titleTemplate: "%s - Riyad's Blog",
       meta: [{ name: 'description', content: "Riyad's awesome blog" }],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
   },
 
   typescript: {
@@ -15,4 +16,10 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-icon'],
+
+  content: {
+    highlight: {
+      theme: 'dracula',
+    },
+  },
 })
