@@ -1,9 +1,59 @@
+<script setup lang="ts">
+import type { BlogPost } from '@/types/blog'
+const { path } = useRoute()
+const articles = await queryContent(path).findOne()
+
+const data = computed<BlogPost>(() => {
+  return {
+    title: articles.title || 'no-title available',
+    description: articles.description || 'no-descriptoin available',
+    image:
+      articles.image ||
+      'https://res.cloudinary.com/dmecmyphj/image/upload/v1673378250/nuxt-blog/no-image_cyyits.png',
+    alt: articles.alt || 'no alter data available',
+    ogImage:
+      articles.ogImage ||
+      'https://res.cloudinary.com/dmecmyphj/image/upload/v1673378250/nuxt-blog/no-image_cyyits.png',
+    provider: articles.provider,
+    date: articles.date || 'not-date-available',
+    tags: articles.tags || [],
+    published: articles.published || false,
+  }
+})
+</script>
+
 <template>
   <main class="px-6 container max-w-5xl mx-auto">
+    <header>
+      <h1 class="text-5xl m-7 font-bold text-center">{{ data.title || '' }}</h1>
+      <NuxtImg
+        :src="data.image || ''"
+        :alt="data.alt || ''"
+        class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
+      />
+      <div class="flex w-full justify-center text-xs md:text-base my-8">
+        <div class="md:flex text-black content-center gap-7">
+          <div class="flex items-center font-semibold">
+            <LogoDate />
+            <p>{{ data.date || '' }}</p>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap my-5">
+            <LogoTag />
+            <template v-for="tag in data.tags">
+              <p class="bg-gray-200 rounded-md px-3 py-1 font-semibold">{{ tag }}</p>
+            </template>
+          </div>
+        </div>
+      </div>
+    </header>
     <div
       class="prose md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
     >
-      <ContentDoc />
+      <ContentDoc>
+        <template #not-found>
+          <h1>Document not found</h1>
+        </template>
+      </ContentDoc>
     </div>
   </main>
 </template>

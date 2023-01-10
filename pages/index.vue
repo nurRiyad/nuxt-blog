@@ -19,7 +19,7 @@ const { data } = await useAsyncData('home', () =>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="post in data" :key="n">
+      <template v-for="post in data" :key="post.title">
         <BlogCard
           :title="post.title"
           :description="post.description"

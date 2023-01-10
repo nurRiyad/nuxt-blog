@@ -30,7 +30,7 @@ const topics = [
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <CategoryHero />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
-      <template v-for="topic in topics" :key="n">
+      <template v-for="topic in topics" :key="topic">
         <CategoryCard :title="makeFirstCharUpper(topic)" />
       </template>
     </div>
