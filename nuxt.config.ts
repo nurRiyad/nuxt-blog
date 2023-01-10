@@ -22,4 +22,10 @@ export default defineNuxtConfig({
       theme: 'dracula',
     },
   },
+
+  image: {
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673372476/',
+    },
+  },
 })

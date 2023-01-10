@@ -1,34 +1,45 @@
 <script lang="ts" setup>
 interface Props {
+  path: string
   title: string
+  date: string
   description: string
-  time: string
-  link: string
+  image: string
+  alt: string
+  ogImage: string
+  provider: string
   tags: Array<string>
+  published: boolean
 }
 
 withDefaults(defineProps<Props>(), {
-  title: 'No title availabe',
-  description: 'No description available',
-  time: 'No time available',
-  link: '/',
-  tags: () => ['no-tag'],
+  path: '/',
+  title: 'no-title',
+  date: 'no-date',
+  description: 'no-description',
+  image: '/nuxt-blog/no-image_cyyits.png',
+  alt: 'no-alt',
+  ogImage: '/nuxt-blog/no-image_cyyits.png',
+  provider: 'cloudinary',
+  tags: () => [],
+  published: false,
 })
 </script>
 
 <template>
   <article class="group border m-2 overflow-hidden rounded-2xl shadow-lg text-zinc-700">
-    <NuxtLink :to="link">
+    <NuxtLink :to="path">
       <NuxtImg
+        :provider="provider"
         class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
-        :src="`${link}/cover.jpg`"
-        :alt="title"
+        :src="image"
+        :alt="alt"
       />
       <div class="p-5">
         <div class="text-black text-sm pt-4 pb-2">
           <div class="flex items-center">
             <LogoDate />
-            {{ time }}
+            {{ date }}
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />

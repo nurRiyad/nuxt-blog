@@ -7,14 +7,10 @@ const data = computed<BlogPost>(() => {
   return {
     title: articles.title || 'no-title available',
     description: articles.description || 'no-descriptoin available',
-    image:
-      articles.image ||
-      'https://res.cloudinary.com/dmecmyphj/image/upload/v1673378250/nuxt-blog/no-image_cyyits.png',
+    image: articles.image || '/nuxt-blog/no-image_cyyits.png',
     alt: articles.alt || 'no alter data available',
-    ogImage:
-      articles.ogImage ||
-      'https://res.cloudinary.com/dmecmyphj/image/upload/v1673378250/nuxt-blog/no-image_cyyits.png',
-    provider: articles.provider,
+    ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
+    provider: articles.provider || 'cloudinary',
     date: articles.date || 'not-date-available',
     tags: articles.tags || [],
     published: articles.published || false,
@@ -27,6 +23,7 @@ const data = computed<BlogPost>(() => {
     <header>
       <h1 class="text-5xl m-7 font-bold text-center">{{ data.title || '' }}</h1>
       <NuxtImg
+        :provider="data.provider"
         :src="data.image || ''"
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
