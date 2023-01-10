@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-icon'],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/image-edge'],
 
   content: {
     highlight: {
