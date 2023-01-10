@@ -31,6 +31,7 @@ const data = computed<BlogPost>(() => {
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
       />
+      <p class="text-sm my-3 mx-10 text-center text-zinc-600">{{ data.description }}</p>
       <div class="flex w-full justify-center text-xs md:text-base my-8">
         <div class="md:flex text-black content-center gap-7">
           <div class="flex items-center font-semibold">
