@@ -1,15 +1,4 @@
 <script lang="ts" setup>
-useHead({
-  title: 'Home',
-  meta: [
-    {
-      name: 'description',
-      content: 'Home',
-    },
-  ],
-  titleTemplate: "Riyad's Blog - %s",
-})
-
 // Get Last 6 Publish Post from the content/blog directory
 const { data } = await useAsyncData('home', () =>
   queryContent('/blogs').limit(6).sort({ _id: -1 }).find()
@@ -30,6 +19,18 @@ const formatedData = computed(() => {
       published: articles.published || false,
     }
   })
+})
+
+useHead({
+  title: 'Home',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+    },
+  ],
+  titleTemplate: "Riyad's Blog - %s",
 })
 </script>
 <template>

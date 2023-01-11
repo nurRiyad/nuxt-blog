@@ -1,14 +1,4 @@
 <script lang="ts" setup>
-useHead({
-  title: 'Home',
-  meta: [
-    {
-      name: 'description',
-      content: 'Home',
-    },
-  ],
-  titleTemplate: "Riyad's Blog - %s",
-})
 const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
 
 const formatedData = computed(() => {
@@ -26,6 +16,17 @@ const formatedData = computed(() => {
       published: articles.published || false,
     }
   })
+})
+
+useHead({
+  title: 'Archive',
+  meta: [
+    {
+      name: 'description',
+      content: 'Here you will find all the blog posts I have written & published on this site.',
+    },
+  ],
+  titleTemplate: "Riyad's Blog - %s",
 })
 </script>
 <template>

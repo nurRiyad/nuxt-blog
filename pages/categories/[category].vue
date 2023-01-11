@@ -1,15 +1,4 @@
 <script lang="ts" setup>
-useHead({
-  title: 'Home',
-  meta: [
-    {
-      name: 'description',
-      content: 'Home',
-    },
-  ],
-  titleTemplate: "Riyad's Blog - %s",
-})
-
 const route = useRoute()
 
 // take category from route params & make first char upper
@@ -43,6 +32,17 @@ const formatedData = computed(() => {
       published: articles.published || false,
     }
   })
+})
+
+useHead({
+  title: category.value,
+  meta: [
+    {
+      name: 'description',
+      content: `You will find all the ${category.value} related post here`,
+    },
+  ],
+  titleTemplate: "Riyad's Blog - %s",
 })
 </script>
 <template>

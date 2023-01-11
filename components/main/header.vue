@@ -19,13 +19,7 @@ let isDark = ref(false)
         </li>
         <li title="About Me">
           <NuxtLink to="https://www.nurriyad.xyz/">
-            <Icon
-              v-if="isDark"
-              size="1.2em"
-              @click="isDark = !isDark"
-              class="cursor-pointer"
-              name="emojione:boy-dark-skin-tone"
-            />
+            <Icon size="1.2em" class="cursor-pointer" name="emojione:boy-dark-skin-tone" />
           </NuxtLink>
         </li>
       </ul>

@@ -1,16 +1,6 @@
 <script lang="ts" setup>
 import { makeFirstCharUpper } from '@/utils/helper'
 
-useHead({
-  title: 'Home',
-  meta: [
-    {
-      name: 'description',
-      content: 'Home',
-    },
-  ],
-  titleTemplate: "Riyad's Blog - %s",
-})
 const topics = [
   'javascript',
   'typescript',
@@ -25,6 +15,18 @@ const topics = [
   'supabse',
   'cypress',
 ]
+
+useHead({
+  title: 'Categories',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Blow All the topics are listed on which either I have written a blog or will write a blog in near future.',
+    },
+  ],
+  titleTemplate: "Riyad's Blog - %s",
+})
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
