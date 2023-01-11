@@ -17,6 +17,10 @@ const data = computed<BlogPost>(() => {
   }
 })
 
+const comImg = computed(() => {
+  return 'https://res.cloudinary.com/dmecmyphj/image/fetch/v1673371143/https://res.cloudinary.com/dmecmyphj/image/upload/v1673371119/53835458_1012834392239582_6610542001026760704_n_1_psvrpo.jpg'
+})
+
 useHead({
   title: data.value.title || '',
   meta: [
@@ -42,7 +46,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: data.value.ogImage || data.value.image,
+      content: comImg.value,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@@qdnvubp' },
@@ -61,7 +65,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: data.value.ogImage || data.value.image,
+      content: comImg.value,
     },
   ],
   link: [
