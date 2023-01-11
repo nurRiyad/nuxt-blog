@@ -21,7 +21,7 @@ const data = computed<BlogPost>(() => {
 <template>
   <main class="px-6 container max-w-5xl mx-auto">
     <header>
-      <h1 class="md:text-xl lg:text-5xl m-7 font-bold text-center">
+      <h1 class="text-xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
         {{ data.title || '' }}
       </h1>
       <NuxtImg
@@ -49,7 +49,7 @@ const data = computed<BlogPost>(() => {
       </div>
     </header>
     <div
-      class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
+      class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
     >
       <ContentDoc>
         <template #not-found>
