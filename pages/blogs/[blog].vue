@@ -28,9 +28,9 @@ const data = computed<BlogPost>(() => {
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
       />
-      <p class="text-sm my-3 mx-10 text-center text-zinc-600">{{ data.description }}</p>
+      <p class="text-sm my-3 max-w-3xl mx-auto text-center text-zinc-600">{{ data.description }}</p>
       <div class="flex w-full justify-center text-xs md:text-base my-8">
-        <div class="md:flex text-black content-center gap-7">
+        <div class="md:flex text-black content-center gap-8 text-sm">
           <div class="flex items-center font-semibold">
             <LogoDate />
             <p>{{ data.date || '' }}</p>
@@ -38,7 +38,7 @@ const data = computed<BlogPost>(() => {
           <div class="flex items-center gap-2 flex-wrap my-5">
             <LogoTag />
             <template v-for="tag in data.tags">
-              <p class="bg-gray-200 rounded-md px-3 py-1 font-semibold">{{ tag }}</p>
+              <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
             </template>
           </div>
         </div>

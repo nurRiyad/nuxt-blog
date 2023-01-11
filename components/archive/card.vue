@@ -28,8 +28,8 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <article class="group border m-2 rounded-2xl overflow-hidden shadow-md text-zinc-700">
-    <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-9 gap-3">
-      <div class="sm:col-span-2">
+    <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
+      <div class="sm:col-span-3">
         <NuxtImg
           class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.05] transition-all duration-500"
           :provider="provider"
@@ -44,7 +44,7 @@ withDefaults(defineProps<Props>(), {
         <p class="text-ellipsis line-clamp-2">
           {{ description }}
         </p>
-        <div class="text-black text-sm pt-4 pb-2">
+        <div class="text-black text-sm pt-2 pb-1 sm:space-y-1 md:flex md:space-x-6">
           <div class="flex items-center">
             <LogoDate />
             {{ date }}

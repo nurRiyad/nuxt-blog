@@ -4,7 +4,7 @@
     stroke="currentColor"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    class="w-4 h-4 mr-2"
+    class="w-4 h-4 mr-1"
   >
     <path
       stroke-linecap="round"
