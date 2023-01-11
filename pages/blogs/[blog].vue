@@ -21,16 +21,20 @@ const data = computed<BlogPost>(() => {
 <template>
   <main class="px-6 container max-w-5xl mx-auto">
     <header>
-      <h1 class="text-5xl m-7 font-bold text-center">{{ data.title || '' }}</h1>
+      <h1 class="sm:text-xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
+        {{ data.title || '' }}
+      </h1>
       <NuxtImg
         :provider="data.provider"
         :src="data.image || ''"
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
       />
-      <p class="text-sm my-3 max-w-3xl mx-auto text-center text-zinc-600">{{ data.description }}</p>
+      <p class="text-xs sm:text-sm my-3 max-w-3xl mx-auto text-center text-zinc-600">
+        {{ data.description }}
+      </p>
       <div class="flex w-full justify-center text-xs md:text-base my-8">
-        <div class="md:flex text-black content-center gap-8 text-sm">
+        <div class="md:flex text-black content-center gap-8 text-xs sm:text-sm">
           <div class="flex items-center font-semibold">
             <LogoDate />
             <p>{{ data.date || '' }}</p>
