@@ -6,8 +6,8 @@
           Welcome To My Blog Site
         </h1>
         <p>
-          Get Web Development, Javascript, Typescript, NodeJs, Vue and Nuxt, Related Articles, Tips,
-          Learning resource and more.
+          Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles,
+          Tips, Learning resources and more.
         </p>
       </div>
       <div class="px-6 justify-self-center">

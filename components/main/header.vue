@@ -17,20 +17,17 @@ let isDark = ref(false)
         <li>
           <NuxtLink to="/blogs"> Archive </NuxtLink>
         </li>
-        <Icon
-          v-if="isDark"
-          size="1.2em"
-          @click="isDark = !isDark"
-          class="cursor-pointer"
-          name="line-md:moon-to-sunny-outline-loop-transition"
-        />
-        <Icon
-          v-else
-          size="1.2em"
-          @click="isDark = !isDark"
-          class="cursor-pointer"
-          name="line-md:sunny-outline-to-moon-loop-transition"
-        />
+        <li title="About Me">
+          <NuxtLink to="https://www.nurriyad.xyz/">
+            <Icon
+              v-if="isDark"
+              size="1.2em"
+              @click="isDark = !isDark"
+              class="cursor-pointer"
+              name="emojione:boy-dark-skin-tone"
+            />
+          </NuxtLink>
+        </li>
       </ul>
     </div>
   </div>

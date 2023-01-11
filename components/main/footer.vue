@@ -5,20 +5,36 @@
         <div>
           <p class="text-black text-2xl py-1 font-semibold">Al Asad Nur Riyad</p>
           <p class="py-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia soluta voluptatum
-            eligendi laboriosam non reprehenderit.
+            Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently
+            working at Appscode Inc.
           </p>
           <div class="my-3 space-x-3 pb-3">
-            <NuxtLink class="p-2 bg-gray-300 rounded-md">
+            <NuxtLink
+              to="https://github.com/nurRiyad"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+            >
               <Icon name="fa:github" size="1em" />
             </NuxtLink>
-            <NuxtLink class="p-2 bg-gray-300 rounded-md">
+            <NuxtLink
+              to="https://www.linkedin.com/in/nur-riyad/"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+            >
               <Icon name="fa:linkedin-square" size="1em" />
             </NuxtLink>
-            <NuxtLink class="p-2 bg-gray-300 rounded-md">
+            <NuxtLink
+              to="https://twitter.com/qdnvubp"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+            >
               <Icon name="fa:twitter-square" size="1em" />
             </NuxtLink>
-            <NuxtLink class="p-2 bg-gray-300 rounded-md">
+            <NuxtLink
+              to="https://stackoverflow.com/users/16781395/nur-riyad"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+            >
               <Icon name="fa:stack-overflow" size="1em" />
             </NuxtLink>
           </div>
@@ -26,26 +42,25 @@
         <div class="flex flex-col my-5 md:my-0 md:justify-self-center">
           <p class="text-black text-base font-semibold">Quick Link</p>
           <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
-          <NuxtLink to="/" class="hover:underline">Categories</NuxtLink>
-          <NuxtLink to="/" class="hover:underline">Archive</NuxtLink>
-          <NuxtLink to="/" class="hover:underline">About Me</NuxtLink>
+          <NuxtLink to="/categories" class="hover:underline">Categories</NuxtLink>
+          <NuxtLink to="/blogs" class="hover:underline">Archive</NuxtLink>
+          <NuxtLink to="https://www.nurriyad.xyz/" target="_blank" class="hover:underline">
+            About Me
+          </NuxtLink>
         </div>
         <div>
           <p class="text-black text-base font-semibold">Connect</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eaque inventore
-            quia nesciunt?
+            I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you
+            have an interesting idea, either open source or paid let's connect.
           </p>
-          <input
-            id="email"
-            type="email"
-            name="EMAIL"
-            placeholder="Enter your email"
-            class="mt-3 form-control w-full border-2 rounded-lg p-2 text-sm bg-gray-100"
-          />
-          <button class="btn w-full bg-sky-600 p-2 rounded-lg text-white mt-3 text-sm">
-            Subscribe
-          </button>
+
+          <a
+            href="mailto: alasadnurriyad4@gmail.com"
+            class="block text-center w-full bg-sky-600 p-2 rounded-lg text-white mt-3 text-sm"
+          >
+            Sent Mail
+          </a>
         </div>
       </div>
 
