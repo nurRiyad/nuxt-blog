@@ -1,12 +1,12 @@
 <script setup>
 const description =
-  'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 2 years experience in Frontend development.'
+  'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 1.5 years experience in Frontend development.'
 const ogTitle =
   'Riyad codes and helps others learning Javascript, Typescript, Vue, Nuxt, & Problem Solving'
 const twitterDescription =
   'My website of where I play around with Nuxt, Vue and more and showcase my blog, resources etc'
 const twitterCard = 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673369821/cld-sample-2.jpg'
-const mySite = 'http://localhost:3000/'
+const mySite = 'https://blog-nurriyad.vercel.app/'
 useHead({
   htmlAttrs: {
     lang: 'en',

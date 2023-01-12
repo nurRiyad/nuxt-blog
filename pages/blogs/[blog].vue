@@ -30,7 +30,7 @@ useHead({
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
-      content: 'https://blog-nurriyad.vercel.app/',
+      content: `https://blog-nurriyad.vercel.app/${path}`,
     },
     {
       property: 'og:title',
@@ -49,7 +49,7 @@ useHead({
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
-      content: 'https://blog-nurriyad.vercel.app/',
+      content: `https://blog-nurriyad.vercel.app/${path}`,
     },
     {
       name: 'twitter:title',
