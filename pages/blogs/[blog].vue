@@ -17,10 +17,6 @@ const data = computed<BlogPost>(() => {
   }
 })
 
-const comImg = computed(() => {
-  return 'https://res.cloudinary.com/dmecmyphj/image/fetch/v1673371143/https://res.cloudinary.com/dmecmyphj/image/upload/v1673371119/53835458_1012834392239582_6610542001026760704_n_1_psvrpo.jpg'
-})
-
 useHead({
   title: data.value.title || '',
   meta: [
@@ -46,7 +42,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: comImg.value,
+      content: data.value.ogImage || data.value.image,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@@qdnvubp' },
@@ -65,7 +61,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: comImg.value,
+      content: data.value.ogImage || data.value.image,
     },
   ],
   link: [
@@ -110,11 +106,11 @@ useHead({
     <div
       class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
     >
-      <ContentDoc>
-        <template #not-found>
-          <h1>Document not found</h1>
+      <ContentRenderer :value="articles">
+        <template #empty>
+          <p>No content found.</p>
         </template>
-      </ContentDoc>
+      </ContentRenderer>
     </div>
   </main>
 </template>
