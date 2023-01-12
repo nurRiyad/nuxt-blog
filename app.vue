@@ -2,10 +2,11 @@
 const description =
   'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 1.5 years experience in Frontend development.'
 const ogTitle =
-  'Riyad codes and helps others learning Javascript, Typescript, Vue, Nuxt, & Problem Solving'
+  'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving'
 const twitterDescription =
-  'My website of where I play around with Nuxt, Vue and more and showcase my blog, resources etc'
-const twitterCard = 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673369821/cld-sample-2.jpg'
+  'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc'
+const image =
+  'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp'
 const mySite = 'https://blog-nurriyad.vercel.app/'
 useHead({
   htmlAttrs: {
@@ -33,7 +34,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: twitterCard,
+      content: image,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@debs_obrien' },
@@ -52,7 +53,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: twitterCard,
+      content: image,
     },
   ],
 })
