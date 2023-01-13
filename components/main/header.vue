@@ -18,7 +18,7 @@ let isDark = ref(false)
           <NuxtLink to="/blogs"> Archive </NuxtLink>
         </li>
         <li title="About Me">
-          <NuxtLink to="https://www.nurriyad.xyz/">
+          <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
             <Icon size="1.2em" class="cursor-pointer" name="emojione:boy-dark-skin-tone" />
           </NuxtLink>
         </li>

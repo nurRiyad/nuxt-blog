@@ -10,6 +10,8 @@
   "devDependencies": {
     "@nuxt/content": "^2.3.0",
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxtjs/fontaine": "^0.2.4",
+    "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",

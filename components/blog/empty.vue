@@ -7,11 +7,11 @@
         <LogoConfused />
       </div>
       <div class="p-5">
-        <h2 class="text-3xl font-semibold text-black pb-1 group-hover:text-sky-600">
+        <h2 class="text-3xl font-semibold text-black pb-1 group-hover:text-sky-700">
           No Post Available
         </h2>
 
-        <div class="flex group-hover:underline text-sky-600 items-center pt-2">
+        <div class="flex group-hover:underline text-sky-700 items-center pt-2">
           <p>Back To Home</p>
           <LogoArrow />
         </div>
