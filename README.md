@@ -1,42 +1,57 @@
-# Nuxt 3 Minimal Starter
+# Personal Blog Site
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### Built with
 
-## Setup
+<p align="center">
+    <img width="200" src="./assets/images/logo.png">
+</p>
 
-Make sure to install the dependencies:
+Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
+
+## Features
+
+- Server Side Rendered(SSR) with Nuxt3
+- Used Typescript mean fully typesafe
+- Use Nuxt-Content-v2 as CMS to utilize MDC syntax
+- Added Nuxt Image with Cloudinary Provider
+- Properly Search Engin optimized
+- Use TailwindCss For designing
+
+## Preview
+
+<p align="center">
+  <a href="https://blog.nurriyad.xyz" target="_blank">
+    <img width="1090" src="./assets/images/preview1.png">
+    <img width="1090" src="./assets/images/preview2.png">
+    <img width="1090" src="./assets/images/preview3.png">
+    <img width="1090" src="./assets/images/preview4.png">
+    <img width="1090" src="./assets/images/preview5.png">
+    <br>
+    Live Demo
+  </a>
+</p>
+
+## Demo
+
+https://blog.nurriyad.xyz
+
+> Hosted on [Vercel](https://vercel.com/): `npm run build`
+
+## Build Setup
+
+**Requires Node.js 16+**
 
 ```bash
-# yarn
+# install dependencies
 yarn install
 
-# npm
-npm install
+# serve in dev mode, with hot reload at localhost:5173
+yarn run dev
 
-# pnpm
-pnpm install --shamefully-hoist
+# build for production
+yarn run build
+
+# serve in production mode
+yarn run  preview
+
 ```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
