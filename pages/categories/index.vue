@@ -14,6 +14,8 @@ const topics = [
   'firebase',
   'supabse',
   'cypress',
+  'vercel',
+  'namecheap',
 ]
 
 useHead({

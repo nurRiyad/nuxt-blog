@@ -8,5 +8,5 @@
     "**/.svn/**",
     "**/.nuxt/**"
   ],
-  "cSpell.words": ["Nuxt", "Tailwindcss"]
+  "cSpell.words": ["cloudinary", "Namecheap", "Nuxt", "Tailwindcss"]
 }
