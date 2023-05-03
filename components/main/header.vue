@@ -1,5 +1,5 @@
 <script setup lang="ts">
-let isDark = ref(false)
+
 </script>
 
 <template>
@@ -7,19 +7,25 @@ let isDark = ref(false)
     <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline">
       <ul class="flex items-baseline space-x-5">
         <li class="">
-          <NuxtLink to="/" class="text-2xl text-black font-bold"> Home </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/categories"> Categories </NuxtLink>
+          <NuxtLink to="/" class="text-2xl text-black font-bold">
+            Home
+          </NuxtLink>
         </li>
       </ul>
-      <ul class="flex items-center space-x-3">
+      <ul class="flex items-center space-x-3 font-bold">
         <li>
-          <NuxtLink to="/blogs"> Archive </NuxtLink>
+          <NuxtLink to="/categories">
+            Categories
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/blogs">
+            Archive
+          </NuxtLink>
         </li>
         <li title="About Me">
-          <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
-            <Icon size="1.2em" class="cursor-pointer" name="emojione:boy-dark-skin-tone" />
+          <NuxtLink to="/myself" aria-label="About me">
+            Myself
           </NuxtLink>
         </li>
       </ul>

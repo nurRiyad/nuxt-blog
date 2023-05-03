@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { BlogPost } from '@/types/blog'
+
 const { path } = useRoute()
 const articles = await queryContent(path).findOne()
 
@@ -26,7 +27,7 @@ useHead({
       content: data.value.description,
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
-    { property: 'og:site_name', content: `Riyad's Blog` },
+    { property: 'og:site_name', content: 'Riyad\'s Blog' },
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
@@ -96,7 +97,7 @@ useHead({
           </div>
           <div class="flex items-center gap-2 flex-wrap my-5">
             <LogoTag />
-            <template v-for="tag in data.tags">
+            <template v-for="tag in data.tags" :key="tag">
               <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
             </template>
           </div>

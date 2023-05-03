@@ -3,10 +3,11 @@ const route = useRoute()
 
 // take category from route params & make first char upper
 const category = computed(() => {
-  let name = route.params.category || ''
+  const name = route.params.category || ''
   let strName = ''
 
-  if (name instanceof Array) strName = name.at(0) || ''
+  if (Array.isArray(name))
+    strName = name.at(0) || ''
   else strName = name
   return strName
 })
@@ -14,7 +15,7 @@ const category = computed(() => {
 const { data } = await useAsyncData('home', () =>
   queryContent('/blogs')
     .where({ tags: { $contains: category.value } })
-    .find()
+    .find(),
 )
 
 const formatedData = computed(() => {
@@ -42,9 +43,10 @@ useHead({
       content: `You will find all the ${category.value} related post here`,
     },
   ],
-  titleTemplate: "Riyad's Blog - %s",
+  titleTemplate: 'Riyad\'s Blog - %s',
 })
 </script>
+
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <CategoryTopic />
@@ -57,7 +59,7 @@ useHead({
           :description="post.description"
           :image="post.image"
           :alt="post.alt"
-          :ogImage="post.ogImage"
+          :og-image="post.ogImage"
           :provider="post.provider"
           :tags="post.tags"
           :published="post.published"

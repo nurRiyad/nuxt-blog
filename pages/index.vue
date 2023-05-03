@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // Get Last 6 Publish Post from the content/blog directory
 const { data } = await useAsyncData('home', () =>
-  queryContent('/blogs').limit(6).sort({ _id: -1 }).find()
+  queryContent('/blogs').limit(6).sort({ _id: -1 }).find(),
 )
 
 const formatedData = computed(() => {
@@ -30,9 +30,10 @@ useHead({
         'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
     },
   ],
-  titleTemplate: "Riyad's Blog - %s",
+  titleTemplate: 'Riyad\'s Blog - %s',
 })
 </script>
+
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero />
@@ -45,7 +46,7 @@ useHead({
           :description="post.description"
           :image="post.image"
           :alt="post.alt"
-          :ogImage="post.ogImage"
+          :og-image="post.ogImage"
           :provider="post.provider"
           :tags="post.tags"
           :published="post.published"

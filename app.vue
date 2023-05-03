@@ -1,12 +1,12 @@
 <script setup>
-const description =
-  'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 1.5 years experience in Frontend development.'
-const ogTitle =
-  'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving'
-const twitterDescription =
-  'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc'
-const image =
-  'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp'
+const description
+  = 'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 1.5 years experience in Frontend development.'
+const ogTitle
+  = 'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving'
+const twitterDescription
+  = 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc'
+const image
+  = 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp'
 const mySite = 'https://blog-nurriyad.vercel.app/'
 useHead({
   htmlAttrs: {
@@ -67,6 +67,7 @@ useHead({
     </NuxtLayout>
   </div>
 </template>
+
 <style>
 .page-enter-active,
 .page-leave-active {

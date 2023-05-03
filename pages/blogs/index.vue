@@ -26,9 +26,10 @@ useHead({
       content: 'Here you will find all the blog posts I have written & published on this site.',
     },
   ],
-  titleTemplate: "Riyad's Blog - %s",
+  titleTemplate: 'Riyad\'s Blog - %s',
 })
 </script>
+
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ArchiveHero />
@@ -41,7 +42,7 @@ useHead({
           :description="post.description"
           :image="post.image"
           :alt="post.alt"
-          :ogImage="post.ogImage"
+          :og-image="post.ogImage"
           :provider="post.provider"
           :tags="post.tags"
           :published="post.published"
