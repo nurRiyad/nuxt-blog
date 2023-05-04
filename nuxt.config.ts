@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       meta: [{ name: 'description', content: 'Riyad\'s awesome blog' }],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
   typescript: {

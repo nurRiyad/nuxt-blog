@@ -1,0 +1,65 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: 'bio',
+})
+</script>
+
+<template>
+  <div class="py-5">
+    <div class="grid grid-cols-8 px-6 py-9 gap-5 container max-w-5xl  mx-auto">
+      <div class="col-span-5  max-w-md">
+        <h1 class="text-4xl  pb-2 font-bold ">
+          Al Asad Nur Riyad
+        </h1>
+        <div class="my-3 space-x-3 pb-10">
+          <NuxtLink
+            to="https://github.com/nurRiyad"
+            target="_blank"
+            class="p-2 bg-gray-300 rounded-md"
+            aria-label="Github"
+          >
+            <Icon name="fa:github" size="1em" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://www.linkedin.com/in/nur-riyad/"
+            target="_blank"
+            class="p-2 bg-gray-300 rounded-md"
+            aria-label="LinkedIn"
+          >
+            <Icon name="fa:linkedin-square" size="1em" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://twitter.com/qdnvubp"
+            target="_blank"
+            class="p-2 bg-gray-300 rounded-md"
+            aria-label="Twitter"
+          >
+            <Icon name="fa:twitter-square" size="1em" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://stackoverflow.com/users/16781395/nur-riyad"
+            target="_blank"
+            class="p-2 bg-gray-300 rounded-md"
+            aria-label="StackOverflow"
+          >
+            <Icon name="fa:stack-overflow" size="1em" />
+          </NuxtLink>
+        </div>
+        <h3 class="text-3xl font-semibold pb-12">
+          Software Engineer, Lorem, ipsum. Lorem, ipsum dolor.
+        </h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ipsam eos aliquam alias eligendi praesentium molestias veniam delectus dolorem, similique sint voluptatum amet adipisci vero ad consequatur expedita nulla commodi dolor veritatis atque. Optio perferendis harum asperiores quas consequuntur, autem repellat ea enim quibusdam sed praesentium, pariatur quos cumque blanditiis.</p>
+      </div>
+      <div class="col-span-3">
+        <NuxtImg
+          src="/riyad.jpg"
+          width="450"
+          height="500"
+          quality="50"
+          class="rounded-md"
+        />
+      </div>
+    </div>
+  </div>
+</template>
