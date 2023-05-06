@@ -13,7 +13,6 @@ const formatedData = computed(() => {
       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
       alt: articles.alt || 'no alter data available',
       ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
-      provider: articles.provider,
       date: articles.date || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
@@ -39,9 +38,9 @@ useHead({
     <div class="px-6">
       <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
         <Icon name="mdi:star-three-points-outline" size="2em" class="text-black" />
-        <h3 class="text-4xl font-semibold text-black ">
+        <h2 class="text-4xl font-semibold text-black ">
           Recent Post
-        </h3>
+        </h2>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -54,7 +53,6 @@ useHead({
           :image="post.image"
           :alt="post.alt"
           :og-image="post.ogImage"
-          :provider="post.provider"
           :tags="post.tags"
           :published="post.published"
         />
