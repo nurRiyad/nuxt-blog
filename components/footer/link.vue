@@ -6,13 +6,13 @@
     <NuxtLink to="/" class="hover:underline">
       Home
     </NuxtLink>
+    <NuxtLink to="/blogs" class="hover:underline">
+      Blogs
+    </NuxtLink>
     <NuxtLink to="/categories" class="hover:underline">
       Categories
     </NuxtLink>
-    <NuxtLink to="/blogs" class="hover:underline">
-      Archive
-    </NuxtLink>
-    <NuxtLink to="https://www.nurriyad.xyz/" target="_blank" class="hover:underline">
+    <NuxtLink to="/about" class="hover:underline">
       About Me
     </NuxtLink>
   </div>
