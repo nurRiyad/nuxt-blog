@@ -77,7 +77,7 @@ useHead({
 <template>
   <main class="px-6 container max-w-5xl mx-auto">
     <header>
-      <h1 class="text-xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
+      <h1 class="text-xl md:text-3xl lg:text-4xl m-7 font-bold text-center">
         {{ data.title || '' }}
       </h1>
       <NuxtImg
