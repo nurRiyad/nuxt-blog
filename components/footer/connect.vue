@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-black text-base font-semibold">
-      Connect
+      Connect With Me
     </p>
     <p>
       I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you

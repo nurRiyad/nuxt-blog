@@ -58,10 +58,10 @@
           </div>
         </div>
         <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
-          Software Engineer, Lorem, ipsum. Lorem, ipsum dolor.
+          Software Engineer, Problem Solver, Web Enthusiast.
         </h3>
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ipsam eos aliquam alias eligendi praesentium molestias veniam delectus dolorem, similique sint voluptatum amet adipisci vero ad consequatur expedita nulla commodi dolor veritatis atque. Optio perferendis harum asperiores quas consequuntur, autem repellat ea enim quibusdam sed praesentium, pariatur quos cumque blanditiis.</p>
+        <p>Hello, fellow human! I'm a software wizard who spends most of his day crafting code spells at @AppsCode in the Bytebuilders team. When I'm not crafting code, you can find me summoning solutions to problems on online judges. Just don't ask me to cast any love spells, my magic only works on machines!</p>
       </div>
       <div class="hidden sm:block col-span-3">
         <NuxtImg

@@ -4,7 +4,7 @@
       About This Site
     </p>
     <p class="py-2">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus obcaecati saepe ratione excepturi, unde nesciunt esse magnam vero qui quam.
+      This is a personal blog site built with Nuxt3, TailwindCSS, NuxtContent, Nuxt Icon. Currently it's deployed in Vercel.
     </p>
   </div>
 </template>
