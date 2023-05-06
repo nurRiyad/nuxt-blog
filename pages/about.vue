@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'bio',
-})
+
 </script>
 
 <template>
