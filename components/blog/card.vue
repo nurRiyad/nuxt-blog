@@ -7,7 +7,6 @@ interface Props {
   image: string
   alt: string
   ogImage: string
-  provider: string
   tags: Array<string>
   published: boolean
 }
@@ -20,7 +19,6 @@ withDefaults(defineProps<Props>(), {
   image: '/nuxt-blog/no-image_cyyits.png',
   alt: 'no-alt',
   ogImage: '/nuxt-blog/no-image_cyyits.png',
-  provider: 'cloudinary',
   tags: () => [],
   published: false,
 })
@@ -30,7 +28,6 @@ withDefaults(defineProps<Props>(), {
   <article class="group border m-2 overflow-hidden rounded-2xl shadow-md text-zinc-700">
     <NuxtLink :to="path">
       <NuxtImg
-        :provider="provider"
         class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500"
         :src="image"
         :alt="alt"

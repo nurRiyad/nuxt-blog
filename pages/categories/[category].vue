@@ -27,7 +27,6 @@ const formatedData = computed(() => {
       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
       alt: articles.alt || 'no alter data available',
       ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
-      provider: articles.provider,
       date: articles.date || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
@@ -60,7 +59,6 @@ useHead({
           :image="post.image"
           :alt="post.alt"
           :og-image="post.ogImage"
-          :provider="post.provider"
           :tags="post.tags"
           :published="post.published"
         />

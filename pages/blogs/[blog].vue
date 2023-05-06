@@ -11,7 +11,6 @@ const data = computed<BlogPost>(() => {
     image: articles.image || '/nuxt-blog/no-image_cyyits.png',
     alt: articles.alt || 'no alter data available',
     ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
-    provider: articles.provider || 'cloudinary',
     date: articles.date || 'not-date-available',
     tags: articles.tags || [],
     published: articles.published || false,
@@ -81,7 +80,6 @@ useHead({
         {{ data.title || '' }}
       </h1>
       <NuxtImg
-        :provider="data.provider"
         :src="data.image || ''"
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
