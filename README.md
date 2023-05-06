@@ -27,7 +27,6 @@ Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://
     <img width="1090" src="./assets/images/preview4.png">
     <img width="1090" src="./assets/images/preview5.png">
     <img width="1090" src="./assets/images/preview6.png">
-
     <br>
     Live Demo
   </a>
