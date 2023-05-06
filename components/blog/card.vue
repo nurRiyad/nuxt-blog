@@ -27,16 +27,16 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <article class="group border m-2 overflow-hidden rounded-2xl shadow-lg text-zinc-700">
+  <article class="group border m-2 overflow-hidden rounded-2xl shadow-md text-zinc-700">
     <NuxtLink :to="path">
       <NuxtImg
         :provider="provider"
-        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
+        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500"
         :src="image"
         :alt="alt"
       />
-      <div class="p-5">
-        <div class="text-black text-sm pt-4 pb-2">
+      <div class="px-3 pb-4">
+        <div class="text-black  pt-3 pb-2">
           <div class="flex items-center">
             <LogoDate />
             {{ date }}
@@ -48,13 +48,13 @@ withDefaults(defineProps<Props>(), {
             </template>
           </div>
         </div>
-        <h2 class="text-2xl font-semibold text-black pb-1 group-hover:text-sky-700">
+        <h2 class="text-xl font-semibold  text-black pb-1 group-hover:text-sky-700">
           {{ title }}
         </h2>
-        <p class="text-ellipsis line-clamp-3">
+        <p class="text-ellipsis line-clamp-2 text-base">
           {{ description }}
         </p>
-        <div class="flex group-hover:underline text-sky-700 items-center pt-2">
+        <div class="flex group-hover:underline text-sky-700 items-center py-2">
           <p>Read More</p>
           <LogoArrow />
         </div>

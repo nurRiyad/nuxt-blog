@@ -4,7 +4,7 @@
       <MainHeader />
     </header>
     <main>
-      <div class="p-9"></div>
+      <div class="p-9" />
       <slot />
     </main>
     <footer>

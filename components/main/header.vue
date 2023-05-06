@@ -1,25 +1,33 @@
 <script setup lang="ts">
-let isDark = ref(false)
+const route = useRoute()
+
+const path = computed(() => route.fullPath.replace('/', ''))
 </script>
 
 <template>
-  <div class="py-5 border-b text-zinc-700">
-    <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline">
+  <div class="py-5 border-b font-semibold">
+    <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline ">
       <ul class="flex items-baseline space-x-5">
-        <li class="">
-          <NuxtLink to="/" class="text-2xl text-black font-bold"> Home </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/categories"> Categories </NuxtLink>
+        <li class="text-lg sm:text-2xl font-bold">
+          <NuxtLink to="/" :class="{ underline: path === '' }">
+            Riyad's Blog
+          </NuxtLink>
         </li>
       </ul>
-      <ul class="flex items-center space-x-3">
+      <ul class="flex items-center space-x-3 sm:space-x-6 text-sm sm:text-lg">
         <li>
-          <NuxtLink to="/blogs"> Archive </NuxtLink>
+          <NuxtLink to="/blogs" :class="{ underline: path === 'blogs' }">
+            Blogs
+          </NuxtLink>
         </li>
-        <li title="About Me">
-          <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
-            <Icon size="1.2em" class="cursor-pointer" name="emojione:boy-dark-skin-tone" />
+        <li>
+          <NuxtLink to="/categories" :class="{ underline: path === 'categories' }">
+            Categories
+          </NuxtLink>
+        </li>
+        <li title="About Me" :class="{ underline: path === 'about' }">
+          <NuxtLink to="/about" aria-label="About me">
+            About
           </NuxtLink>
         </li>
       </ul>

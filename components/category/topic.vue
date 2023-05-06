@@ -5,10 +5,11 @@ const route = useRoute()
 
 // take category from route params & make first char upper
 const category = computed(() => {
-  let name = route.params.category || ''
+  const name = route.params.category || ''
   let strName = ''
 
-  if (name instanceof Array) strName = name.at(0) || ''
+  if (Array.isArray(name))
+    strName = name.at(0) || ''
   else strName = name
   return makeFirstCharUpper(strName)
 })

@@ -31,14 +31,14 @@ withDefaults(defineProps<Props>(), {
     <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
       <div class="sm:col-span-3">
         <NuxtImg
-          class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.05] transition-all duration-500"
+          class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500"
           :provider="provider"
           :src="image"
           :alt="alt"
         />
       </div>
       <div class="sm:col-span-7 p-5">
-        <h2 class="text-2xl font-semibold text-black pb-1 group-hover:text-sky-700">
+        <h2 class="text-xl font-semibold text-black pb-1 group-hover:text-sky-700">
           {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2">

@@ -1,21 +1,7 @@
 <script lang="ts" setup>
-const route = useRoute()
-
-// take category from route params & make first char upper
-const category = computed(() => {
-  const name = route.params.category || ''
-  let strName = ''
-
-  if (Array.isArray(name))
-    strName = name.at(0) || ''
-  else strName = name
-  return strName
-})
-
-const { data } = await useAsyncData('home', () =>
-  queryContent('/blogs')
-    .where({ tags: { $contains: category.value } })
-    .find(),
+// Get Last 6 Publish Post from the content/blog directory
+const { data } = await useAsyncData('recent-post', () =>
+  queryContent('/blogs').limit(3).sort({ _id: -1 }).find(),
 )
 
 const formatedData = computed(() => {
@@ -36,11 +22,12 @@ const formatedData = computed(() => {
 })
 
 useHead({
-  title: category.value,
+  title: 'Home',
   meta: [
     {
       name: 'description',
-      content: `You will find all the ${category.value} related post here`,
+      content:
+        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
     },
   ],
   titleTemplate: 'Riyad\'s Blog - %s',
@@ -48,8 +35,15 @@ useHead({
 </script>
 
 <template>
-  <main class="container max-w-5xl mx-auto text-zinc-600">
-    <CategoryTopic />
+  <div class="pb-10">
+    <div class="px-6">
+      <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
+        <Icon name="mdi:star-three-points-outline" size="2em" class="text-black" />
+        <h3 class="text-4xl font-semibold text-black ">
+          Recent Post
+        </h3>
+      </div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formatedData" :key="post.title">
         <BlogCard
@@ -69,5 +63,5 @@ useHead({
         <BlogEmpty />
       </template>
     </div>
-  </main>
+  </div>
 </template>
