@@ -1,5 +1,11 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <div>
-    <h1>Catch All Routes</h1>
+  <div class="py-5">
+    <div class="container max-w-xl   mx-auto">
+      <Logo404 />
+    </div>
   </div>
 </template>
