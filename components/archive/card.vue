@@ -25,7 +25,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <article class="group border m-2 rounded-2xl overflow-hidden shadow-md text-zinc-700">
+  <article class="group border m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700">
     <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
       <div class="sm:col-span-3">
         <NuxtImg
