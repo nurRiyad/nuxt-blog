@@ -11,9 +11,9 @@ Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://
 ## Features
 
 - Server Side Rendered(SSR) with Nuxt3
-- Used Typescript mean fully typesafe
+- Full Typescript support 
 - Use Nuxt-Content-v2 as CMS to utilize MDC syntax
-- Added Nuxt Image with Cloudinary Provider
+- Added Nuxt Image
 - Properly Search Engin optimized
 - Use TailwindCss For designing
 
@@ -26,6 +26,8 @@ Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://
     <img width="1090" src="./assets/images/preview3.png">
     <img width="1090" src="./assets/images/preview4.png">
     <img width="1090" src="./assets/images/preview5.png">
+    <img width="1090" src="./assets/images/preview6.png">
+
     <br>
     Live Demo
   </a>
