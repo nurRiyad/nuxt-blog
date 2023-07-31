@@ -12,8 +12,24 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
+  site: {
+    url: 'https://blog.nurriyad.xyz',
+  },
+
   typescript: {
     strict: true,
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+      ],
+    },
   },
 
   modules: [
@@ -23,6 +39,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxtjs/robots',
     '@nuxtjs/fontaine',
+    'nuxt-simple-sitemap',
   ],
 
   content: {
