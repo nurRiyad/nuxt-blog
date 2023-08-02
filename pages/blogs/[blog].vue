@@ -17,6 +17,8 @@ const data = computed<BlogPost>(() => {
   }
 })
 
+const links = articles.body.toc.links
+
 useHead({
   title: data.value.title || '',
   meta: [
@@ -74,42 +76,52 @@ useHead({
 </script>
 
 <template>
-  <main class="px-6 container max-w-5xl mx-auto">
-    <header>
-      <h1 class="text-xl md:text-3xl lg:text-4xl m-7 font-bold text-center">
-        {{ data.title || '' }}
-      </h1>
-      <NuxtImg
-        :src="data.image || ''"
-        :alt="data.alt || ''"
-        class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
-      />
-      <p class="text-xs sm:text-sm my-3 max-w-3xl mx-auto text-center text-zinc-600">
-        {{ data.description }}
-      </p>
-      <div class="flex w-full justify-center text-xs md:text-base my-8">
-        <div class="md:flex text-black content-center gap-8 text-xs sm:text-sm">
-          <div class="flex items-center font-semibold">
-            <LogoDate />
-            <p>{{ data.date || '' }}</p>
-          </div>
-          <div class="flex items-center gap-2 flex-wrap my-5">
-            <LogoTag />
-            <template v-for="tag in data.tags" :key="tag">
-              <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
-            </template>
+  <main class="px-6 container max-w-6xl mx-auto grid grid-cols-12 space-x-8">
+    <div class="col-span-12 lg:col-span-9">
+      <header>
+        <h1 class="text-xl md:text-3xl lg:text-4xl m-7 font-bold text-center">
+          {{ data.title || '' }}
+        </h1>
+        <NuxtImg
+          :src="data.image || ''"
+          :alt="data.alt || ''"
+          class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
+        />
+        <p class="text-xs sm:text-sm my-3 max-w-3xl mx-auto text-center text-zinc-600">
+          {{ data.description }}
+        </p>
+        <div class="flex w-full justify-center text-xs md:text-base my-8">
+          <div class="md:flex text-black content-center gap-8 text-xs sm:text-sm">
+            <div class="flex items-center font-semibold">
+              <LogoDate />
+              <p>{{ data.date || '' }}</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap my-5">
+              <LogoTag />
+              <template v-for="tag in data.tags" :key="tag">
+                <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
+              </template>
+            </div>
           </div>
         </div>
+      </header>
+      <div
+        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
+      >
+        <ContentRenderer :value="articles">
+          <template #empty>
+            <p>No content found.</p>
+          </template>
+        </ContentRenderer>
       </div>
-    </header>
-    <div
-      class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
-    >
-      <ContentRenderer :value="articles">
-        <template #empty>
-          <p>No content found.</p>
-        </template>
-      </ContentRenderer>
+    </div>
+    <div class="lg:col-span-3 sticky top-28 h-96  p-2 hidden lg:block">
+      <h1 class="text-lg font-bold mb-4">
+        Table Of Content
+      </h1>
+      <NuxtLink v-for="link in links" :key="link.id" :to="`#${link.id}`" class="block underline text-md mb-3">
+        {{ link.text }}
+      </NuxtLink>
     </div>
   </main>
 </template>
