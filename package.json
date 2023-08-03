@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
-    "@nuxt/content": "^2.6.0",
+    "@nuxt/content": "^2.7.2",
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxtjs/fontaine": "^0.2.5",
     "@nuxtjs/robots": "^3.0.0",
