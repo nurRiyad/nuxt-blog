@@ -36,14 +36,14 @@ function onPreviousPageClick() {
     pageNumber.value -= 1
 }
 
-const isNextpageAvailable = computed(() => {
-  if (pageNumber.value * elementPerPgae.value <= formatedData.value.length)
-    return true
-  else return false
+const totalPage = computed(() => {
+  const ttlContent = formatedData.value.length || 0
+  const totalPage = Math.ceil(ttlContent / elementPerPgae.value)
+  return totalPage
 })
 
 function onNextPageClick() {
-  if (isNextpageAvailable.value)
+  if (pageNumber.value < totalPage.value)
     pageNumber.value += 1
 }
 
@@ -90,9 +90,9 @@ useHead({
       <button :disabled="pageNumber <= 1" @click="onPreviousPageClick">
         <Icon name="mdi:code-less-than" size="30" :class="{ 'text-sky-700': pageNumber > 1 }" />
       </button>
-      <p>{{ pageNumber }}</p>
-      <button :disabled="!isNextpageAvailable" @click="onNextPageClick">
-        <Icon name="mdi:code-greater-than" size="30" :class="{ 'text-sky-700': isNextpageAvailable }" />
+      <p>{{ pageNumber }} / {{ totalPage }}</p>
+      <button :disabled="pageNumber >= totalPage" @click="onNextPageClick">
+        <Icon name="mdi:code-greater-than" size="30" :class="{ 'text-sky-700': pageNumber < totalPage }" />
       </button>
     </div>
   </main>
