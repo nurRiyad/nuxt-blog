@@ -97,6 +97,12 @@ useHead({
             :published="post.published"
           />
         </template>
+
+        <ArchiveCard
+          v-if="paginatedData.length <= 0"
+          title="No Post Found"
+          image="/not-found.jpg"
+        />
       </div>
 
       <template #fallback>
