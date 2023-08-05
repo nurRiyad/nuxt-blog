@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
     <NuxtImg
       :src="image || ''"
       :alt="alt || ''"
-      class="m-auto rounded-2xl shadow-lg h-32 md:h-72 w-4/5 content-center object-cover"
+      class="m-auto rounded-2xl shadow-lg h-32 md:h-72 w-3/6 md:w-4/5 content-center object-cover"
     />
     <p class="text-xs sm:text-sm my-3 max-w-xl mx-auto text-center text-zinc-600">
       {{ description }}
