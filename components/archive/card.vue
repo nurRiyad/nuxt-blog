@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 interface Props {
-  path: string
-  title: string
-  date: string
-  description: string
-  image: string
-  alt: string
-  ogImage: string
-  tags: Array<string>
-  published: boolean
+  path?: string
+  title?: string
+  date?: string
+  description?: string
+  image?: string
+  alt?: string
+  ogImage?: string
+  tags?: Array<string>
+  published?: boolean
 }
 
 withDefaults(defineProps<Props>(), {

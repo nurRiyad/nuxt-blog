@@ -17,6 +17,7 @@
     "@nuxtjs/fontaine": "^0.2.5",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.6.7",
+    "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",
     "eslint": "^8.39.0",
     "nuxt": "^3.6.5",
