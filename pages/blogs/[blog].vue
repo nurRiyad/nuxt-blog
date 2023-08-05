@@ -74,7 +74,7 @@ useHead({
 </script>
 
 <template>
-  <div class="px-6 container max-w-5xl mx-auto grid grid-cols-12 gap-x-12 ">
+  <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
         :title="data.title"
