@@ -3,6 +3,7 @@ const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ 
 
 const elementPerPgae = ref(4)
 const pageNumber = ref(1)
+const searchTest = ref('')
 
 const formatedData = computed(() => {
   return data.value?.map((articles) => {
@@ -20,8 +21,17 @@ const formatedData = computed(() => {
   }) || []
 })
 
+const searchData = computed(() => {
+  return formatedData.value.filter((data) => {
+    const lowerTitle = data.title.toLocaleLowerCase()
+    if (lowerTitle.search(searchTest.value) !== -1)
+      return true
+    else return false
+  }) || []
+})
+
 const paginatedData = computed(() => {
-  return formatedData.value.filter((data, idx) => {
+  return searchData.value.filter((data, idx) => {
     const startInd = ((pageNumber.value - 1) * elementPerPgae.value)
     const endInd = (pageNumber.value * elementPerPgae.value) - 1
 
@@ -37,7 +47,7 @@ function onPreviousPageClick() {
 }
 
 const totalPage = computed(() => {
-  const ttlContent = formatedData.value.length || 0
+  const ttlContent = searchData.value.length || 0
   const totalPage = Math.ceil(ttlContent / elementPerPgae.value)
   return totalPage
 })
@@ -62,6 +72,16 @@ useHead({
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ArchiveHero />
+
+    <div class="px-3">
+      <input
+        v-model="searchTest"
+        placeholder="Search"
+        type="text"
+        class="block w-full  rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+      >
+    </div>
+
     <ClientOnly>
       <div v-auto-animate class="space-y-5 my-5">
         <template v-for="post in paginatedData" :key="post.title">
