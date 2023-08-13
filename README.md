@@ -6,16 +6,15 @@
     <img width="200" src="./assets/images/logo.png">
 </p>
 
-Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
+ Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
 
 ## Features
-
+- Write blog with markdown file
+- Auto generate category from blog post
+- Blog list page with search and pagination
+- About me page for user info
+- Auto generate table of content for blog post
 - Server Side Rendered(SSR) with Nuxt3
-- Full Typescript support 
-- Use Nuxt-Content-v2 as CMS to utilize MDC syntax
-- Added Nuxt Image
-- Properly Search Engin optimized
-- Use TailwindCss For designing
 
 ## Preview
 
