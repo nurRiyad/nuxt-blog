@@ -1,4 +1,4 @@
-# Personal Blog Site
+# Nuxt Blog A Personal Blog Site
 
 ### Built with
 
