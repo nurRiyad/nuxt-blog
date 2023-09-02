@@ -41,16 +41,16 @@ withDefaults(defineProps<Props>(), {
         <p class="text-ellipsis line-clamp-2">
           {{ description }}
         </p>
-        <div class="text-black text-sm pt-2 pb-1 sm:space-y-1 md:flex md:space-x-6">
+        <div class="text-black text-sm mt-2 mb-1 md:flex md:space-x-6">
           <div class="flex items-center">
             <LogoDate />
-            {{ date }}
+            <p> {{ date }}</p>
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
-            <template v-for="tag in tags" :key="tag">
-              <span>{{ tag }}</span>
-            </template>
+            <p v-for="tag in tags" :key="tag">
+              {{ tag }}
+            </p>
           </div>
         </div>
         <div class="flex group-hover:underline text-sky-700 items-center pt-2">
