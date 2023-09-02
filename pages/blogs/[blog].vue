@@ -2,18 +2,22 @@
 import type { BlogPost } from '@/types/blog'
 
 const { path } = useRoute()
-const articles = await queryContent(path).findOne()
+
+const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
+
+if (error.value)
+  navigateTo('/404')
 
 const data = computed<BlogPost>(() => {
   return {
-    title: articles.title || 'no-title available',
-    description: articles.description || 'no-descriptoin available',
-    image: articles.image || '/nuxt-blog/no-image_cyyits.png',
-    alt: articles.alt || 'no alter data available',
-    ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
-    date: articles.date || 'not-date-available',
-    tags: articles.tags || [],
-    published: articles.published || false,
+    title: articles.value?.title || 'no-title available',
+    description: articles.value?.description || 'no-descriptoin available',
+    image: articles.value?.image || '/nuxt-blog/no-image_cyyits.png',
+    alt: articles.value?.alt || 'no alter data available',
+    ogImage: articles.value?.ogImage || '/nuxt-blog/no-image_cyyits.png',
+    date: articles.value?.date || 'not-date-available',
+    tags: articles.value?.tags || [],
+    published: articles.value?.published || false,
   }
 })
 
@@ -87,7 +91,7 @@ useHead({
       <div
         class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg"
       >
-        <ContentRenderer :value="articles">
+        <ContentRenderer v-if="articles" :value="articles">
           <template #empty>
             <p>No content found.</p>
           </template>
