@@ -6,12 +6,17 @@ const links = articles.body.toc.links
 </script>
 
 <template>
-  <div class="lg:col-span-3 sticky top-28 h-96  p-2 hidden lg:block  justify-self-end">
-    <h1 class="text-lg font-bold mb-4">
-      Table Of Content
-    </h1>
-    <NuxtLink v-for="link in links" :key="link.id" :to="`#${link.id}`" class="block text-md mb-3">
-      {{ link.text }}
-    </NuxtLink>
+  <div class="lg:col-span-3 sticky top-28 h-96  hidden lg:block  justify-self-end">
+    <div class="border p-3 rounded-md min-w-[200px]">
+      <h1 class="text-sm font-bold mb-3 border-b pb-2">
+        Table Of Content
+      </h1>
+      <NuxtLink
+        v-for="link in links" :key="link.id" :to="`#${link.id}`"
+        class="block text-xs mb-3 hover:underline"
+      >
+        {{ link.text }}
+      </NuxtLink>
+    </div>
   </div>
 </template>
