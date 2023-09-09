@@ -1,3 +1,5 @@
+![img](/assets//images/Untitled.png)
+
 # Nuxt Blog A Personal Blog Site
 
 ### Built with
