@@ -32,6 +32,12 @@ export default defineNuxtConfig({
     },
   },
 
+  colorMode: {
+    classSuffix: '',
+    dataValue: 'light',
+    fallback: 'light',
+  },
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
@@ -39,7 +45,9 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxtjs/robots',
     '@nuxtjs/fontaine',
+    '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
+    '@vueuse/nuxt',
   ],
 
   content: {

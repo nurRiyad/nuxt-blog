@@ -60,7 +60,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-[#F1F2F4]">
+  <div class="bg-[#F1F2F4] dark:text-zinc-300   dark:bg-[#151818]">
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
@@ -87,5 +87,9 @@ useHead({
 .layout-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+
+html.dark{
+  color-scheme: dark;
 }
 </style>
