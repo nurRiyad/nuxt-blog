@@ -60,7 +60,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="bg-[#F1F2F4]">
     <NuxtLayout>
       <NuxtLoadingIndicator />
       <NuxtPage />
