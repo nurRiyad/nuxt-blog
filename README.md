@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://blog.nurriyad.xyz" target="_blank">
+    <img  src="./assets/images/dark.png">
+  </a>
+</p>
+
 # Nuxt Blog A Personal Blog Site
 
 ### Built with
@@ -20,7 +26,6 @@
 
 <p align="center">
   <a href="https://blog.nurriyad.xyz" target="_blank">
-    <img width="610" src="./assets/images/dark.png">
     <img width="1090" src="./assets/images/preview1.png">
     <img width="1090" src="./assets/images/preview2.png">
     <img width="1090" src="./assets/images/preview3.png">
