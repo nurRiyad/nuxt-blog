@@ -47,6 +47,7 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
+    'nuxt-og-image',
     '@vueuse/nuxt',
   ],
 
