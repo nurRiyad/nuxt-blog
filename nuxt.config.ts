@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
