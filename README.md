@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Nuxt Blog A Personal Blog Site
+<h1 style="text-align: center">A Personal Blog Site</h1>
 
 ### Built with
 
@@ -20,6 +20,8 @@
 - Blog list page with search and pagination
 - About me page for user info
 - Auto generate table of content for blog post
+- Auto generate Sitemap
+- Url preview with Nuxt ogImage
 - Server Side Rendered(SSR) with Nuxt3
 
 ## Preview
