@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 style="text-align: center">A Personal Blog Site</h1>
+<h1 align="center">A Personal Blog Site</h1>
 
 ### Built with
 
@@ -22,6 +22,7 @@
 - Auto generate table of content for blog post
 - Auto generate Sitemap
 - Url preview with Nuxt ogImage
+- Dark and light mode
 - Server Side Rendered(SSR) with Nuxt3
 
 ## Preview
