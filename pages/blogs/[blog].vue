@@ -78,7 +78,6 @@ useHead({
 
 defineOgImage({
   component: 'Blog',
-  image: data.value.image,
   title: data.value.title,
   description: data.value.description,
 })

@@ -76,7 +76,7 @@ const siteName = computed(() => {
 
 <template>
   <div class="bg w-full flex flex-row z-10">
-    <div class="w-3/5" style="padding: 50px;">
+    <div style="padding: 50px;">
       <div class="flex flex-col h-full justify-between text-gray-100">
         <div class="flex flex-row justify-between items-center">
           <div class="flex flex-col">
@@ -94,9 +94,6 @@ const siteName = computed(() => {
           </div>
         </div>
       </div>
-    </div>
-    <div class="w-2/5 flex items-center justify-center">
-      <img v-if="image" :src="image" style="object-fit: cover;" class="rounded-xl max-w-full h-full">
     </div>
   </div>
 </template>
