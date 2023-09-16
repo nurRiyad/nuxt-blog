@@ -11,7 +11,11 @@ useHead({
   titleTemplate: 'Riyad\'s Blog - %s',
 })
 
-defineOgImageScreenshot()
+// a. Use the Composition API
+defineOgImage({
+  title: 'Riyad\'s Blog',
+  description: 'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more',
+})
 </script>
 
 <template>

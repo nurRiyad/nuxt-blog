@@ -17,6 +17,10 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://blog.nurriyad.xyz',
+    identity: {
+      type: 'Person',
+    },
+    twitter: '@qdnvubp',
   },
 
   typescript: {
@@ -39,16 +43,17 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@nuxt/image',
+    '@vueuse/nuxt',
+    'nuxt-og-image',
+    '@nuxt/content',
     '@nuxtjs/robots',
+    '@nuxtseo/module',
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
-    'nuxt-og-image',
-    '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
   ],
 
   content: {

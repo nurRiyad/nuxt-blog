@@ -68,7 +68,7 @@ useHead({
   titleTemplate: 'Riyad\'s Blog - %s',
 })
 
-defineOgImageScreenshot()
+defineOgImage()
 </script>
 
 <template>
