@@ -76,12 +76,7 @@ useHead({
   ],
 })
 
-const ogImageOptions = {
-  title: data.value.title,
-  description: data.value.description,
-}
-// a. Use the Composition API
-defineOgImage(ogImageOptions)
+defineOgImageScreenshot()
 </script>
 
 <template>

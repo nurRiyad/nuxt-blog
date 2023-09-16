@@ -11,11 +11,7 @@ useHead({
   titleTemplate: 'Riyad\'s Blog - %s',
 })
 
-const ogImageOptions = {
-  title: 'Al Asad Nur Riyad.',
-}
-// a. Use the Composition API
-defineOgImage(ogImageOptions)
+defineOgImageScreenshot()
 </script>
 
 <template>
