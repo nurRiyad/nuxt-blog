@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@nuxt/content',
-    '@nuxtjs/robots',
+    'nuxt-simple-robots',
     '@nuxtseo/module',
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
