@@ -49,7 +49,6 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxt/content',
     '@nuxtjs/robots',
-    '@nuxtseo/module',
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
