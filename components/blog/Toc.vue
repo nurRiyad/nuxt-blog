@@ -2,7 +2,7 @@
 const { path } = useRoute()
 const articles = await queryContent(path).findOne()
 
-const links = articles.body.toc.links
+const links = articles?.body?.toc?.links || []
 </script>
 
 <template>
