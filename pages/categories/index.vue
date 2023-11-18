@@ -24,7 +24,7 @@ useHead({
     {
       name: 'description',
       content:
-        'Blow All the topics are listed on which either I have written a blog or will write a blog in near future.',
+        'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
     },
   ],
   titleTemplate: 'Riyad\'s Blog - %s',
@@ -37,9 +37,7 @@ defineOgImage()
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <CategoryHero />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
-      <template v-for="topic in topics" :key="topic">
-        <CategoryCard :title="makeFirstCharUpper(topic)" />
-      </template>
+      <CategoryCard v-for="topic in topics" :key="topic" :title="makeFirstCharUpper(topic)" />
     </div>
   </main>
 </template>

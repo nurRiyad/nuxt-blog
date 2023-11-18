@@ -12,18 +12,18 @@ const category = computed(() => {
   return strName
 })
 
-const { data } = await useAsyncData('home', () =>
+const { data } = await useAsyncData(`category-data-${category.value}`, () =>
   queryContent('/blogs')
     .where({ tags: { $contains: category.value } })
     .find(),
 )
 
-const formatedData = computed(() => {
+const formattedData = computed(() => {
   return data.value?.map((articles) => {
     return {
       path: articles._path,
       title: articles.title || 'no-title available',
-      description: articles.description || 'no-descriptoin available',
+      description: articles.description || 'no-description available',
       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
       alt: articles.alt || 'no alter data available',
       ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
@@ -52,22 +52,20 @@ defineOgImage()
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <CategoryTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="post in formatedData" :key="post.title">
-        <BlogCard
-          :path="post.path"
-          :title="post.title"
-          :date="post.date"
-          :description="post.description"
-          :image="post.image"
-          :alt="post.alt"
-          :og-image="post.ogImage"
-          :tags="post.tags"
-          :published="post.published"
-        />
-      </template>
-      <template v-if="data?.length === 0">
-        <BlogEmpty />
-      </template>
+      <BlogCard
+        v-for="post in formattedData"
+        :key="post.title"
+        :path="post.path"
+        :title="post.title"
+        :date="post.date"
+        :description="post.description"
+        :image="post.image"
+        :alt="post.alt"
+        :og-image="post.ogImage"
+        :tags="post.tags"
+        :published="post.published"
+      />
+      <BlogEmpty v-if="data?.length === 0" />
     </div>
   </main>
 </template>
