@@ -4,15 +4,15 @@ const { data } = await useAsyncData('trending-post', () =>
   queryContent('/blogs').limit(3).sort({ _id: 1 }).find(),
 )
 
-const formatedData = computed(() => {
+const formattedData = computed(() => {
   return data.value?.map((articles) => {
     return {
       path: articles._path,
       title: articles.title || 'no-title available',
-      description: articles.description || 'no-descriptoin available',
-      image: articles.image || '/nuxt-blog/no-image_cyyits.png',
+      description: articles.description || 'no-description available',
+      image: articles.image || '/not-found.jpg',
       alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
+      ogImage: articles.ogImage || '/not-found.jpg',
       date: articles.date || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
@@ -34,17 +34,15 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <div class="px-6">
-      <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
-        <Icon name="mdi:star-three-points-outline" size="2em" class="text-black dark:text-zinc-300  " />
-        <h2 class="text-4xl font-semibold text-black dark:text-zinc-300  ">
-          Trending Post
-        </h2>
-      </div>
+  <div class="px-4">
+    <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
+      <Icon name="mdi:star-three-points-outline" size="2em" class="text-black dark:text-zinc-300  " />
+      <h2 class="text-4xl font-semibold text-black dark:text-zinc-300  ">
+        Trending Post
+      </h2>
     </div>
     <div class="grid grid-cols-1 ">
-      <template v-for="post in formatedData" :key="post.title">
+      <template v-for="post in formattedData" :key="post.title">
         <ArchiveCard
           :path="post.path"
           :title="post.title"

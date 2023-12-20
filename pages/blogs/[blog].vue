@@ -11,10 +11,10 @@ if (error.value)
 const data = computed<BlogPost>(() => {
   return {
     title: articles.value?.title || 'no-title available',
-    description: articles.value?.description || 'no-descriptoin available',
-    image: articles.value?.image || '/nuxt-blog/no-image_cyyits.png',
+    description: articles.value?.description || 'no-description available',
+    image: articles.value?.image || '/not-found.jpg',
     alt: articles.value?.alt || 'no alter data available',
-    ogImage: articles.value?.ogImage || '/nuxt-blog/no-image_cyyits.png',
+    ogImage: articles.value?.ogImage || '/not-found.jpg',
     date: articles.value?.date || 'not-date-available',
     tags: articles.value?.tags || [],
     published: articles.value?.published || false,

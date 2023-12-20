@@ -6,8 +6,7 @@
           Categories
         </h1>
         <p class="dark:text-zinc-300">
-          Blow All the topics are listed on which either I have written a blog or will write a blog
-          in near future.
+          Blow this category is generated from all the tags are mentioned in the different blog post
         </p>
       </div>
       <div class="px-6 justify-self-center">

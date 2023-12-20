@@ -1,10 +1,12 @@
 <script setup lang="ts">
 interface Props {
   title: string
+  count: number
 }
 
 withDefaults(defineProps<Props>(), {
   title: 'No title available',
+  count: 0,
 })
 
 // some random color for tags
@@ -37,7 +39,7 @@ const picAColor = ref(`${color.at(getRandomInt(0, 8))}`)
     rand-bg-color hover:scale-[1.05] transition-all duration-500"
   >
     <NuxtLink :to="`/categories/${title.toLocaleLowerCase()}`" class="text-lg font-extrabold">
-      <h1>#{{ title }}</h1>
+      <h1>#{{ title }}({{ count }})</h1>
     </NuxtLink>
   </div>
 </template>
