@@ -11,10 +11,12 @@ useHead({
   titleTemplate: 'Riyad\'s Blog - %s',
 })
 
-// a. Use the Composition API
-defineOgImage({
+// Generate OG Image
+defineOgImageComponent('About', {
+  headline: 'Greetings 👋',
   title: 'Riyad\'s Blog',
-  description: 'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more',
+  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  link: '/riyad.jpg',
 })
 </script>
 

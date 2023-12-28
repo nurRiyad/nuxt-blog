@@ -1,5 +1,10 @@
 <script setup lang="ts">
-defineOgImage()
+defineOgImageComponent('About', {
+  headline: 'Greetings 👋',
+  title: 'Riyad\'s Blog',
+  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  link: '/riyad.jpg',
+})
 </script>
 
 <template>

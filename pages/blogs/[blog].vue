@@ -76,9 +76,13 @@ useHead({
   ],
 })
 
-defineOgImage({
-  title: data.value.title,
-  description: data.value.description,
+// Generate OG Image
+defineOgImageComponent('Test', {
+  headline: 'Greetings 👋',
+  title: data.value.title || '',
+  description: data.value.description || '',
+  link: data.value.ogImage,
+
 })
 </script>
 
