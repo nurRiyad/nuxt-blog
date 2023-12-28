@@ -16,9 +16,9 @@ withDefaults(defineProps<Props>(), {
   title: 'no-title',
   date: 'no-date',
   description: 'no-description',
-  image: '/nuxt-blog/no-image_cyyits.png',
+  image: '/blogs-img/blog.jpg',
   alt: 'no-alt',
-  ogImage: '/nuxt-blog/no-image_cyyits.png',
+  ogImage: '/blogs-img/blog.jpg',
   tags: () => [],
   published: false,
 })
