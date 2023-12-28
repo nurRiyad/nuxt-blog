@@ -24,9 +24,9 @@ const formattedData = computed(() => {
       path: articles._path,
       title: articles.title || 'no-title available',
       description: articles.description || 'no-description available',
-      image: articles.image || '/nuxt-blog/no-image_cyyits.png',
+      image: articles.image || '/blogs-img/blog.jpg',
       alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
+      ogImage: articles.ogImage || '/blogs-img/blog.jpg',
       date: articles.date || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
@@ -45,7 +45,15 @@ useHead({
   titleTemplate: 'Riyad\'s Blog - %s',
 })
 
-defineOgImage()
+// Generate OG Image
+const siteData = useSiteConfig()
+defineOgImage({
+  props: {
+    title: category.value?.toUpperCase(),
+    description: `You will find all the ${category.value} related post here`,
+    siteName: siteData.url,
+  },
+})
 </script>
 
 <template>
