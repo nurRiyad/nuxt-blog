@@ -12,12 +12,12 @@ useHead({
 })
 
 // Generate OG Image
-defineOgImageComponent('Мой блог', {
-  headline: 'Привет 👋',
-  title: 'dllpl блог',
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-  link: '/riyad.jpg',
-})
+// defineOgImageComponent('Мой блог', {
+//   headline: 'Привет 👋',
+//   title: 'dllpl блог',
+//   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+//   link: '/riyad.jpg',
+// })
 </script>
 
 <template>

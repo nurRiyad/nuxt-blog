@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     identity: {
       type: 'Person',
     },
-    twitter: false,
+    twitter: true,
   },
 
   typescript: {
