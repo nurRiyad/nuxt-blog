@@ -7,10 +7,10 @@ const twitterDescription
   = 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc'
 const image
   = 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp'
-const mySite = 'https://blog-nurriyad.vercel.app/'
+const mySite = 'https://dllpl.ru/'
 useHead({
   htmlAttrs: {
-    lang: 'en',
+    lang: 'ru',
   },
   meta: [
     {
@@ -60,7 +60,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-[#F1F2F4] dark:text-zinc-300   dark:bg-slate-950">
+  <div class="bg-[#F1F2F4] dark:text-zinc-300 dark:bg-slate-950">
     <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />

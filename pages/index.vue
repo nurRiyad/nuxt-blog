@@ -1,20 +1,20 @@
 <script lang="ts" setup>
 useHead({
-  title: 'Home',
+  title: 'Главная',
   meta: [
     {
       name: 'description',
       content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+        'Добро пожаловать',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
+  titleTemplate: 'dllpl - %s',
 })
 
 // Generate OG Image
-defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
-  title: 'Riyad\'s Blog',
+defineOgImageComponent('Мой блог', {
+  headline: 'Привет 👋',
+  title: 'dllpl блог',
   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
   link: '/riyad.jpg',
 })

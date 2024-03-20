@@ -2,11 +2,11 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      charset: 'utf-16',
+      charset: 'utf-8',
       viewport: 'width=device-width,initial-scale=1',
-      title: 'Riyad\'s Blog',
-      titleTemplate: '%s - Riyad\'s Blog',
-      meta: [{ name: 'description', content: 'Riyad\'s awesome blog' }],
+      title: 'dllpl веб-блог',
+      titleTemplate: '%s - dllpl веб-блог',
+      meta: [{ name: 'description', content: 'Full-stack веб-разработка' }],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -16,11 +16,11 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   site: {
-    url: 'https://blog.nurriyad.xyz',
+    url: 'https://dllpl.ru',
     identity: {
       type: 'Person',
     },
-    twitter: '@qdnvubp',
+    twitter: false,
   },
 
   typescript: {
@@ -40,6 +40,10 @@ export default defineNuxtConfig({
     classSuffix: '',
     preference: 'dark',
     fallback: 'light',
+  },
+
+  devServer: {
+    host: '127.0.0.1'
   },
 
   modules: [
