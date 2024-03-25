@@ -30,7 +30,7 @@ useHead({
       content: data.value.description,
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
-    { property: 'og:site_name', content: 'Riyad\'s Blog' },
+    { property: 'og:site_name', content: 'Blog HoppR' },
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
@@ -49,7 +49,7 @@ useHead({
       content: data.value.ogImage || data.value.image,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
-    { name: 'twitter:site', content: '@qdnvubp' },
+    { name: 'twitter:site', content: '@HoppR_Tech' },
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
