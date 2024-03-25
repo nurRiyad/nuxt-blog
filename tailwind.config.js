@@ -8,6 +8,14 @@ module.exports = {
     extend: {
       fontFamily: {
         spacegrotesk: ['Space Grotesk', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
+      },
+      colors: {
+        'hoppr-black': '#23272A',
+        'hoppr-green': '#00cca5',
+        'hoppr-red': '#F85352',
+        'hoppr-purple': '#2F2D85',
       },
     },
   },

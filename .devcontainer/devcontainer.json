@@ -1,0 +1,26 @@
+{
+    "name": "Nuxt Blog Development",
+    "image": "node:20",
+    "customizations": {
+        "settings": {
+            "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "octref.vetur",
+                "Vue.volar",
+                "sdras.vue-vscode-snippets"
+            ]
+        }
+    },
+    "forwardPorts": [
+        3000,
+        5173
+    ],
+    "postCreateCommand": "yarn install",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+}

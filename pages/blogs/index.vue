@@ -58,22 +58,22 @@ function onNextPageClick() {
 }
 
 useHead({
-  title: 'Archive',
+  title: 'Articles',
   meta: [
     {
       name: 'description',
-      content: 'Here you will find all the blog posts I have written & published on this site.',
+      content: 'Toutes les publications sur le blog d\'HoppR sont ici.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
+  titleTemplate: 'Blog HoppR - %s',
 })
 
 // Generate OG Image
 const siteData = useSiteConfig()
 defineOgImage({
   props: {
-    title: 'Archive',
-    description: 'Here you will find all the blog posts I have written & published on this site.',
+    title: 'Articles',
+    description: 'Toutes les publications sur le blog d\'HoppR sont ici.',
     siteName: siteData.url,
   },
 })
@@ -88,7 +88,7 @@ defineOgImage({
         v-model="searchTest"
         placeholder="Search"
         type="text"
-        class="block w-full bg-[#F1F2F4] dark:bg-slate-900 dark:placeholder-zinc-500 text-zinc-300  rounded-md border-gray-300 dark:border-gray-800 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+        class="block w-full bg-[#F1F2F4] dark:bg-slate-900 dark:placeholder-zinc-500 text-zinc-800 dark:text-zinc-300 rounded-md border-gray-300 dark:border-gray-800 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
       >
     </div>
 

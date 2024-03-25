@@ -5,18 +5,18 @@ useHead({
     {
       name: 'description',
       content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+        'Bienvenue sur le Blog Tech d\'HoppR. Partage, veille et ressources de la communauté sur les thématiques du Software Craftsmanship, du Cloud, de l\'architecture et de la Tech en générale.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
+  titleTemplate: 'Blog HoppR - %s',
 })
 
 // Generate OG Image
 defineOgImageComponent('About', {
   headline: 'Greetings 👋',
-  title: 'Riyad\'s Blog',
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-  link: '/riyad.jpg',
+  title: 'Blog Hoppr Tech',
+  description: 'Partage, veille et ressources de la communauté sur les thématiques du Software Craftsmanship, du Cloud, de l\'architecture et de la Tech en générale.',
+  link: '/hoppr.png',
 })
 </script>
 

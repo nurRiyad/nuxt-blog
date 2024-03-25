@@ -2,6 +2,7 @@
 const route = useRoute()
 
 const path = computed(() => route.fullPath.replace('/', ''))
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
@@ -16,8 +17,8 @@ const path = computed(() => route.fullPath.replace('/', ''))
       </div>
 
       <div class="border-t dark:border-gray-800 mt-5 text-center p-2">
-        © 2020-2023 No Right is reserved. Who cares 🤷‍♂️? It's
-        <a href="https://github.com/nurriyad/blog" target="_blank" rel="nofollow" class="underline">open source</a>
+        © 2023-{{ currentYear }} No Right is reserved. Who cares 🤷‍♂️? It's
+        <a href="https://github.com/HoppR-tech/blog" target="_blank" rel="nofollow" class="underline">open source</a>
         anyway.
       </div>
     </div>

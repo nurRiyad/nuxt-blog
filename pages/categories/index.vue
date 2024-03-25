@@ -24,10 +24,10 @@ useHead({
     {
       name: 'description',
       content:
-        'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
+        'Tous les sujets sur lesquels nous avons écrit un article ou sur lesquels nous allons écrire un article prochainement sont listés ci-dessous.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
+  titleTemplate: 'Blog HoppR - %s',
 })
 
 // Generate OG Image
@@ -35,7 +35,7 @@ const siteData = useSiteConfig()
 defineOgImage({
   props: {
     title: 'Categories',
-    description: 'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
+    description: 'Tous les sujets sur lesquels nous avons écrit un article ou sur lesquels nous allons écrire un article prochainement sont listés ci-dessous.',
     siteName: siteData.url,
   },
 })

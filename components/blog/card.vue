@@ -46,13 +46,13 @@ withDefaults(defineProps<Props>(), {
             </template>
           </div>
         </div>
-        <h2 class="text-xl font-semibold  text-black dark:text-zinc-300   pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400">
+        <h2 class="text-xl font-semibold  text-black dark:text-zinc-300   pb-1 group-hover:text-hoppr-red dark:group-hover:text-hoppr-red">
           {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2 text-base">
           {{ description }}
         </p>
-        <div class="flex group-hover:underline text-sky-700 dark:text-sky-400 items-center py-2">
+        <div class="flex group-hover:underline text-hoppr-red items-center py-2">
           <p>Read More</p>
           <LogoArrow />
         </div>

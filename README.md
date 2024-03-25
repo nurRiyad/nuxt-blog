@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Nuxt Blog A Personal Blog Site</h1>
+<h1 align="center">HoppR's Blog</h1>
 
 ### Built with
 
@@ -38,27 +38,23 @@
   </a>
 </p>
 
-## Demo
-
-https://blog.nurriyad.xyz
-
 > Hosted on [Vercel](https://vercel.com/): `npm run build`
 
 ## Build Setup
 
-**Requires Node.js 16+**
+**Requires Node.js 20+**
 
 ```bash
 # install dependencies
-yarn install
+npm install
 
 # serve in dev mode, with hot reload at localhost:5173
-yarn run dev
+npm run dev
 
 # build for production
-yarn run build
+npm run build
 
 # serve in production mode
-yarn run  preview
+npm run  preview
 
 ```

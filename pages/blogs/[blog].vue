@@ -34,7 +34,7 @@ useHead({
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
-      content: `https://blog-nurriyad.vercel.app/${path}`,
+      content: `https://blog.hoppr.tech/${path}`,
     },
     {
       property: 'og:title',
@@ -53,7 +53,7 @@ useHead({
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
-      content: `https://blog-nurriyad.vercel.app/${path}`,
+      content: `https://blog.hoppr.tech/${path}`,
     },
     {
       name: 'twitter:title',
@@ -71,7 +71,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://blog-nurriyad.vercel.app/${path}`,
+      href: `https://blog.hoppr.tech/${path}`,
     },
   ],
 })

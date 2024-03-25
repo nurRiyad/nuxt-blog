@@ -10,7 +10,8 @@
         </p>
       </div>
       <div class="px-6 justify-self-center">
-        <LogoDogs />
+        <!-- <LogoDogs /> -->
+        <LogoBlogimg class="w-full h-auto" />
       </div>
     </div>
   </div>

@@ -26,10 +26,10 @@ useHead({
     {
       name: 'description',
       content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+        'Bienvenue sur le Blog Tech d\'HoppR. Partage, veille et ressources de la communauté sur les thématiques du Software Craftsmanship, du Cloud, de l\'architecture et de la Tech en générale.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
+  titleTemplate: 'Blog HoppR - %s',
 })
 </script>
 
@@ -37,8 +37,8 @@ useHead({
   <div class="px-4">
     <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
       <Icon name="mdi:star-three-points-outline" size="2em" class="text-black dark:text-zinc-300  " />
-      <h2 class="text-4xl font-semibold text-black dark:text-zinc-300  ">
-        Trending Post
+      <h2 class="text-4xl font-semibold text-black dark:text-zinc-3000 font-orbitron ">
+        Articles Populaires
       </h2>
     </div>
     <div class="grid grid-cols-1 ">

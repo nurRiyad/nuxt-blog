@@ -4,9 +4,9 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=device-width,initial-scale=1',
-      title: 'Riyad\'s Blog',
-      titleTemplate: '%s - Riyad\'s Blog',
-      meta: [{ name: 'description', content: 'Riyad\'s awesome blog' }],
+      title: 'HoppR Blog',
+      titleTemplate: '%s | HoppR Blog',
+      meta: [{ name: 'description', content: 'Blog Tech HoppR' }],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -16,9 +16,9 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   site: {
-    url: 'https://blog.nurriyad.xyz',
+    url: 'https://blog.hoppr.tech',
     identity: {
-      type: 'Person',
+      type: 'Company',
     },
     twitter: '@qdnvubp',
   },
