@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import {computed, ref} from 'vue'
+import HoppRLogo from "~/components/logo/hoppRLogo.vue";
 
 const route = useRoute()
 const path = computed(() => route.fullPath.replace('/', ''))
@@ -29,7 +30,8 @@ const toggleNav = () => (showMenu.value = !showMenu.value)
             text-gray-100
             md:text-2xl
             hover:text-indigo-400
-          "> HoppR Tech
+          ">
+          <HoppRLogo/>
         </router-link>
         <!-- Mobile menu button -->
         <div @click="toggleNav" class="flex md:hidden">
@@ -40,7 +42,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value)
             ">
             <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
               <path fill-rule="evenodd"
-                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
               </path>
             </svg>
           </button>
@@ -77,15 +79,15 @@ const toggleNav = () => (showMenu.value = !showMenu.value)
         <li>
           <ClientOnly>
             <button v-if="colorMode.value === 'light'" name="light-mode" title="Light"
-              class="hover:scale-110 transition-all ease-out hover:cursor-pointer" @click="onClick('dark')">
-              <Icon name="icon-park:moon" size="20" />
+                    class="hover:scale-110 transition-all ease-out hover:cursor-pointer" @click="onClick('dark')">
+              <Icon name="icon-park:moon" size="20"/>
             </button>
             <button v-if="colorMode.value === 'dark'" name="dark-mode" title="Dark"
-              class="hover:scale-110 transition-all ease-out hover:cursor-pointer" @click="onClick('light')">
-              <Icon name="noto:sun" size="20" />
+                    class="hover:scale-110 transition-all ease-out hover:cursor-pointer" @click="onClick('light')">
+              <Icon name="noto:sun" size="20"/>
             </button>
             <template #fallback>
-              <Icon name="svg-spinners:180-ring" size="20" />
+              <Icon name="svg-spinners:180-ring" size="20"/>
             </template>
           </ClientOnly>
         </li>
