@@ -22,19 +22,22 @@ withDefaults(defineProps<Props>(), {
   tags: () => [],
   published: false,
 })
+
+// lg:h-48 md:h-36 w-full
 </script>
 
 <template>
   <article class="group border dark:border-gray-800  m-2 overflow-hidden rounded-2xl shadow-sm text-zinc-700 dark:text-zinc-300  ">
     <NuxtLink :to="path">
       <NuxtImg
-        class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500"
-        width="300"
+        class="w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500"
+        sizes="350px"
+        format="avif"
         :src="image"
         :alt="alt"
       />
       <div class="px-3 pb-4">
-        <div class="text-black dark:text-zinc-300    pt-3 pb-2">
+        <div class="text-black dark:text-zinc-300 pt-3 pb-2">
           <div class="flex items-center">
             <LogoDate />
             {{ date }}
