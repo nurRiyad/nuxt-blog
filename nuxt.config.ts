@@ -27,6 +27,10 @@ export default defineNuxtConfig({
     strict: true,
   },
 
+  image: {
+    provider: process.env.VERCEL_ENV ? 'vercel' : 'ipx',
+  },
+
   nitro: {
     prerender: {
       crawlLinks: true,
