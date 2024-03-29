@@ -55,7 +55,8 @@ defineOgImageComponent('About', {
           <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
             <NuxtImg
               src="/riyad.jpg"
-              width="125"
+              sizes="125px"
+              format="avif"
               height="115"
               quality="50"
               class="rounded-md"
@@ -71,9 +72,10 @@ defineOgImageComponent('About', {
       <div class="hidden sm:block col-span-3">
         <NuxtImg
           src="/riyad.jpg"
-          width="450"
+          sizes="450px"
           height="500"
           quality="50"
+          format="avif"
           class="rounded-md"
         />
       </div>

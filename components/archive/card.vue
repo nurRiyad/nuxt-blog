@@ -30,7 +30,8 @@ withDefaults(defineProps<Props>(), {
       <div class="sm:col-span-3">
         <NuxtImg
           class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500"
-          width="300"
+          sizes="350px"
+          format="avif"
           :src="image"
           :alt="alt"
         />
