@@ -8,20 +8,28 @@
       veille et fait grandir ses équipes.
     </p>
     <div class="my-3 space-x-3 pb-3">
-      <NuxtLink to="https://github.com/HoppR-tech" target="_blank"
-        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="Github">
+      <NuxtLink
+        to="https://github.com/HoppR-tech" target="_blank"
+        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="Github"
+      >
         <Icon name="fa:github" size="1em" />
       </NuxtLink>
-      <NuxtLink to="https://www.linkedin.com/company/hopprtech" target="_blank"
-        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="LinkedIn">
+      <NuxtLink
+        to="https://www.linkedin.com/company/hopprtech" target="_blank"
+        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="LinkedIn"
+      >
         <Icon name="fa:linkedin-square" size="1em" />
       </NuxtLink>
-      <NuxtLink to="https://twitter.com/HoppR_Tech" target="_blank"
-        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="X">
+      <NuxtLink
+        to="https://twitter.com/HoppR_Tech" target="_blank"
+        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="X"
+      >
         <Icon name="fa:twitter-square" size="1em" />
       </NuxtLink>
-      <NuxtLink to="https://hoppr.tech" target="_blank"
-        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="Website">
+      <NuxtLink
+        to="https://hoppr.tech" target="_blank"
+        class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="Website"
+      >
         <Icon name="fa:globe" size="1em" />
       </NuxtLink>
     </div>

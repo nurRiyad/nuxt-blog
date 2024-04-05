@@ -7,4 +7,5 @@ export interface BlogPost {
   ogImage: string
   tags: string[]
   published: boolean
+  authorId: number
 }

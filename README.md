@@ -15,6 +15,7 @@
  Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
 
 ## Features
+
 - Write blog with markdown file
 - Auto generate category from blog post
 - Blog list page with search and pagination
