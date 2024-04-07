@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const route = useRoute()
-
-const path = computed(() => route.fullPath.replace('/', ''))
-
 const colorMode = useColorMode()
 function onClick(val: string) {
   colorMode.preference = val
@@ -14,23 +10,23 @@ function onClick(val: string) {
     <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline ">
       <ul class="flex items-baseline space-x-5">
         <li class="text-base sm:text-2xl font-bold">
-          <NuxtLink to="/" :class="{ underline: path === '' }">
+          <NuxtLink to="/">
             Riyad's Blog
           </NuxtLink>
         </li>
       </ul>
       <ul class="flex items-center space-x-3 sm:space-x-6 text-sm sm:text-lg">
         <li>
-          <NuxtLink to="/blogs" :class="{ underline: path === 'blogs' }">
+          <NuxtLink to="/blogs">
             Blogs
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories" :class="{ underline: path === 'categories' }">
+          <NuxtLink to="/categories">
             Categories
           </NuxtLink>
         </li>
-        <li title="About Me" :class="{ underline: path === 'about' }">
+        <li title="About Me">
           <NuxtLink to="/about" aria-label="About me">
             About
           </NuxtLink>
@@ -65,3 +61,9 @@ function onClick(val: string) {
     </div>
   </div>
 </template>
+
+<style>
+.router-link-active .router-link-exact-active  {
+  @apply underline
+}
+</style>
