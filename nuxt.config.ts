@@ -42,6 +42,12 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
+  runtimeConfig: {
+    public: {
+      baseUrl: 'https://blog.hoppr.tech',
+    },
+  },
+
   modules: [
     'nuxt-icon',
     '@nuxt/image',

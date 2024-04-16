@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { BlogPost } from '@/types/blog'
 
+import type { Author } from '@/types/author'
+
+const runtimeConfig = useRuntimeConfig()
+
+const BASE_URL = runtimeConfig.public.baseUrl
+
 const { path } = useRoute()
 
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
@@ -8,7 +14,7 @@ const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => 
 if (error.value)
   navigateTo('/404')
 
-const data = computed<BlogPost>(() => {
+const blogPostProps = computed<BlogPost>(() => {
   return {
     title: articles.value?.title || 'no-title available',
     description: articles.value?.description || 'no-description available',
@@ -18,17 +24,53 @@ const data = computed<BlogPost>(() => {
     date: articles.value?.date || 'not-date-available',
     tags: articles.value?.tags || [],
     published: articles.value?.published || false,
-    authorId: articles.value?.id || 0,
+    authorId: articles.value?.authorId || 0,
   }
 })
 
+const papa = usePapaParse()
+const author = await fetchAuthor(blogPostProps.value.authorId)
+
+async function fetchAuthor(id: number): Promise<Author> {
+  const csvUrl = `${BASE_URL}/config/authors.csv`
+
+  let author: Author = {
+    id: 0,
+    name: 'Anonymous',
+    surname: 'M.',
+  }
+
+  try {
+    const response = await fetch(csvUrl)
+    if (!response.ok)
+      throw new Error('Failed to load the authors CSV')
+    const csvText = await response.text()
+
+    papa.parse(csvText, {
+      header: true,
+      dynamicTyping: true,
+      skipEmptyLines: true,
+      complete: (result: { data: Author[] }) => {
+        const authors: Author[] = result.data
+        const foundAuthor = authors.find(author => author.id === id)
+        author = foundAuthor || author
+      },
+    })
+  }
+  catch (error) {
+    console.error('Error fetching or parsing authors CSV:', error)
+  }
+
+  return author
+}
+
 useHead({
-  title: data.value.title || '',
+  title: blogPostProps.value.title || '',
   meta: [
-    { name: 'description', content: data.value.description },
+    { name: 'description', content: blogPostProps.value.description },
     {
       name: 'description',
-      content: data.value.description,
+      content: blogPostProps.value.description,
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
     { property: 'og:site_name', content: 'Blog HoppR' },
@@ -39,15 +81,15 @@ useHead({
     },
     {
       property: 'og:title',
-      content: data.value.title,
+      content: blogPostProps.value.title,
     },
     {
       property: 'og:description',
-      content: data.value.description,
+      content: blogPostProps.value.description,
     },
     {
       property: 'og:image',
-      content: data.value.ogImage || data.value.image,
+      content: blogPostProps.value.ogImage || blogPostProps.value.image,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@HoppR_Tech' },
@@ -58,15 +100,15 @@ useHead({
     },
     {
       name: 'twitter:title',
-      content: data.value.title,
+      content: blogPostProps.value.title,
     },
     {
       name: 'twitter:description',
-      content: data.value.description,
+      content: blogPostProps.value.description,
     },
     {
       name: 'twitter:image',
-      content: data.value.ogImage || data.value.image,
+      content: blogPostProps.value.ogImage || blogPostProps.value.image,
     },
   ],
   link: [
@@ -80,9 +122,9 @@ useHead({
 // Generate OG Image
 defineOgImageComponent('Test', {
   headline: 'Greetings 👋',
-  title: data.value.title || '',
-  description: data.value.description || '',
-  link: data.value.ogImage,
+  title: blogPostProps.value.title || '',
+  description: blogPostProps.value.description || '',
+  link: blogPostProps.value.ogImage,
 
 })
 </script>
@@ -91,13 +133,8 @@ defineOgImageComponent('Test', {
   <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
-        :title="data.title"
-        :image="data.image"
-        :alt="data.alt"
-        :date="data.date"
-        :description="data.description"
-        :tags="data.tags"
-        :author-id="data.authorId"
+        :title="blogPostProps.title" :image="blogPostProps.image" :alt="blogPostProps.alt" :date="blogPostProps.date"
+        :description="blogPostProps.description" :tags="blogPostProps.tags" :author="author"
       />
       <div
         class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
@@ -109,6 +146,7 @@ defineOgImageComponent('Test', {
           </template>
         </ContentRenderer>
       </div>
+      <BlogFooter :author="author" />
     </div>
     <BlogToc />
   </div>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import type { Author } from '../../types/Author'
+import type { Author } from '@/types/author'
 
 interface Props {
   title: string
@@ -9,7 +8,7 @@ interface Props {
   description: string
   date: string
   tags: Array<string>
-  authorId: number
+  author: Author
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,43 +18,12 @@ const props = withDefaults(defineProps<Props>(), {
   description: 'no description',
   date: 'no-date',
   tags: () => ([]),
-  authorId: 0,
-})
-
-const papa = usePapaParse()
-const author = await fetchAuthor(props.authorId)
-
-async function fetchAuthor(id: number): Promise<Author> {
-  const csvUrl = 'http://localhost:3000/config/authors.csv'
-  let author: Author = {
+  author: () => ({
     id: 0,
     name: 'Anonymous',
     surname: 'M.',
-  }
-
-  try {
-    const response = await fetch(csvUrl)
-    if (!response.ok)
-      throw new Error('Failed to load the authors CSV')
-    const csvText = await response.text()
-
-    papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: true,
-      complete: (result: { data: Author[] }) => {
-        const authors: Author[] = result.data
-        const foundAuthor = authors.find(author => author.id === id)
-        author = foundAuthor || author
-      },
-    })
-  }
-  catch (error) {
-    console.error('Error fetching or parsing authors CSV:', error)
-  }
-
-  return author
-}
+  }),
+})
 </script>
 
 <template>
@@ -74,7 +42,7 @@ async function fetchAuthor(id: number): Promise<Author> {
       <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
         <div class="flex items-center font-semibold">
           <LogoAuthor />
-          <p>{{ author.surname || '' }} {{ author.name || '' }}</p>
+          <p>{{ props.author.surname || '' }} {{ props.author.name || '' }}</p>
         </div>
         <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
           <div class="flex items-center font-semibold">
@@ -83,7 +51,7 @@ async function fetchAuthor(id: number): Promise<Author> {
           </div>
           <div class="flex items-center gap-2 flex-wrap my-5">
             <LogoTag />
-            <template v-for="tag in tags" :key="tag">
+            <template v-for="tag in props.tags" :key="tag">
               <span class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
             </template>
           </div>
