@@ -37,7 +37,6 @@ defineOgImage({
     title: 'Categories',
     description: 'Tous les sujets sur lesquels nous avons écrit un article ou sur lesquels nous allons écrire un article prochainement sont listés ci-dessous.',
     siteName: siteData.url,
-    theme: '#2F2D85',
   },
 })
 </script>
