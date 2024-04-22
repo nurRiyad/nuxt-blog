@@ -1,10 +1,9 @@
 <script setup lang="ts">
 defineOgImageComponent('About', {
-  headline: 'Bienvenue 👋',
-  title: 'Blog Hoppr Tech',
-  description: 'Partage, veille et ressources de la communauté sur les thématiques du Software Craftsmanship, du Cloud, de l\'architecture et de la Tech en générale.',
+  headline: 'Greetings 👋',
+  title: 'HoppR Blog',
+  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
   link: '/hoppr.png',
-  theme: '#2F2D85',
 })
 </script>
 

@@ -8,7 +8,7 @@ interface Props {
   description: string
   date: string
   tags: Array<string>
-  authors: Array<Author> // Modifié pour accepter un tableau d'auteurs
+  author: Author
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -18,13 +18,11 @@ const props = withDefaults(defineProps<Props>(), {
   description: 'no description',
   date: 'no-date',
   tags: () => ([]),
-  authors: () => ([ // Modifié pour retourner un tableau
-    {
-      id: 0,
-      name: 'Anonymous',
-      surname: 'M.',
-    },
-  ]),
+  author: () => ({
+    id: 0,
+    name: 'Anonymous',
+    surname: 'M.',
+  }),
 })
 </script>
 
@@ -42,9 +40,9 @@ const props = withDefaults(defineProps<Props>(), {
     </p>
     <div class="flex w-full justify-center text-xs md:text-base my-8">
       <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
-        <div v-for="author in props.authors" :key="author.id" class="flex items-center font-semibold">
+        <div class="flex items-center font-semibold">
           <LogoAuthor />
-          <p>{{ author.surname || '' }} {{ author.name || '' }}</p>
+          <p>{{ props.author.surname || '' }} {{ props.author.name || '' }}</p>
         </div>
         <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
           <div class="flex items-center font-semibold">
