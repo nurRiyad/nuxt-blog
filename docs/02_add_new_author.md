@@ -12,7 +12,7 @@ id, name, surname, linkedin, x
 - `name` : Le prénom de l'auteur.
 - `surname` : Le nom de famille de l'auteur.
 - `linkedin` : (Optionnel) Le lien vers le profil LinkedIn de l'auteur.
-- `x` : (Optionnel) Autres informations ou liens pertinents pour l'auteur.
+- `x` : (Optionnel) Le lien vers le profil X de l'auteur.
 
 **Le fichier CSV des auteurs se trouve dans le dossier `public/config/authors.csv`.**
 
