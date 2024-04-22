@@ -125,7 +125,6 @@ defineOgImageComponent('Test', {
   title: blogPostProps.value.title || '',
   description: blogPostProps.value.description || '',
   link: blogPostProps.value.ogImage,
-
 })
 </script>
 
