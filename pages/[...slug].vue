@@ -3,6 +3,7 @@ defineOgImageComponent('About', {
   headline: 'Wrong Path',
   title: '404',
   description: 'Page Not Found',
+  theme: '#2F2D85',
 })
 </script>
 
