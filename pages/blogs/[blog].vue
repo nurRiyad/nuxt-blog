@@ -121,7 +121,7 @@ useHead({
 
 // Generate OG Image
 defineOgImageComponent('Test', {
-  headline: 'Greetings 👋',
+  headline: 'Bienvenue 👋',
   title: blogPostProps.value.title || '',
   description: blogPostProps.value.description || '',
   link: blogPostProps.value.ogImage,

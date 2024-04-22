@@ -13,7 +13,7 @@ useHead({
 
 // Generate OG Image
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
+  headline: 'Bienvenue 👋',
   title: 'Blog Hoppr Tech',
   description: 'Partage, veille et ressources de la communauté sur les thématiques du Software Craftsmanship, du Cloud, de l\'architecture et de la Tech en générale.',
   link: '/hoppr.png',
