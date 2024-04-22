@@ -120,12 +120,12 @@ useHead({
 })
 
 // Generate OG Image
-defineOgImageComponent('Test', {
-  headline: 'Greetings 👋',
+defineOgImageComponent('Blog', {
+  headline: 'Bienvenue 👋',
   title: blogPostProps.value.title || '',
   description: blogPostProps.value.description || '',
   link: blogPostProps.value.ogImage,
-
+  theme: '#2F2D85',
 })
 </script>
 

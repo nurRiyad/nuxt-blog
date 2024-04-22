@@ -52,6 +52,7 @@ defineOgImage({
     title: category.value?.toUpperCase(),
     description: `Tu trouveras tous les articles en relation avec la ${category.value}.`,
     siteName: siteData.url,
+    theme: '#2F2D85',
   },
 })
 </script>
