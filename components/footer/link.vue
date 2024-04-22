@@ -7,7 +7,7 @@
       Accueil
     </NuxtLink>
     <NuxtLink to="/blogs" class="hover:underline">
-      Tous Nos Articles
+      Tous nos Articles
     </NuxtLink>
     <NuxtLink to="/categories" class="hover:underline">
       Catégories

@@ -72,7 +72,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value)
         </li>
         <li class="text-gray-100 hover:text-indigo-400 underline-offset-4">
           <NuxtLink to="/blogs" :class="{ underline: path === 'blogs' }">
-            Tous Nos Articles
+            Tous nos Articles
           </NuxtLink>
         </li>
         <li class="text-gray-100 hover:text-indigo-400 underline-offset-4">
