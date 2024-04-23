@@ -2,7 +2,7 @@
 
 Pour publier un article sur ce blog, suivez ces étapes :
 
-1. **Créez un fichier Markdown pour votre article** dans le dossier `content/blogs`. Le nom du fichier doit être descriptif. Par exemple : `mon-premier-article.md`.
+1. **Créez un fichier Markdown pour votre article** dans le dossier `content/blogs`. Le nom du fichier doit être descriptif et suivre une nomenclature spécifique pour faciliter l'organisation et la recherche. Utilisez le format suivant : `IDauteur-titre-article-simplifie.md`, où `IDauteur` est l'identifiant unique de l'auteur et `titre-article-simplifie` est une version simplifiée du titre de l'article, avec les espaces remplacés par des tirets (-) et les caractères spéciaux omis ou simplifiés. Par exemple : `42-mon-premier-article-sur-le-cloud.md`.
 
 2. **Structurez votre fichier Markdown** avec les métadonnées nécessaires et le contenu de votre article. Utilisez le format suivant en haut de votre fichier :
 
@@ -36,7 +36,7 @@ description: Cet article est un exemple de publication sur le blog HoppR.
 image: /blogs-img/mon-premier-article.jpg
 alt: Mon Premier Article
 ogImage: /blogs-img/mon-premier-article-og.jpg
-tags: ['cratf', 'cloud']
+tags: ['craft', 'cloud']
 published: true
 authorId: 1
 ---
