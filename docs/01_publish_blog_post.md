@@ -54,6 +54,10 @@ Ici, vous écrivez le contenu principal de votre article. Vous pouvez ajouter de
 En conclusion, écrire un article sur le blog HoppR est simple. Suivez les étapes mentionnées ci-dessus pour publier votre propre article.
 ```
 
-**Vous pouvez trouver des exemples d'articles dans le dossier `docs/examples`.**
+**Vous pouvez trouver des exemples d'articles dans le dossier [docs/examples](/docs/examples).**
 
 Assurez-vous de remplacer les valeurs des métadonnées et le contenu par les informations de votre article.
+
+3. **Ajoutez vos images dans le dossier [public/blogs-img](/public/blogs-img).** Pour les images associées à un article, suivez cette nomenclature : `IDauteur-titre-article-simplifie_type.jpg`, où `IDauteur` est l'identifiant unique de l'auteur, `titre-article-simplifie` est une version simplifiée du titre de l'article, et `type` indique la fonction de l'image (par exemple, `couverture`, `architecture-hexagonal`, `stats-recrutement`, etc.). Cela aide à organiser les images par article et par auteur, rendant les fichiers facilement identifiables et associés à leur contenu spécifique.
+
+> Consultez le prochain tutoriel: [Ajouter un nouvel autheur au blog](/docs/02_add_new_author.md).
