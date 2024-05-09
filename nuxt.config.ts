@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
     '@nuxtjs/tailwindcss',
+    '@stefanobartoletti/nuxt-social-share',
   ],
 
   content: {
