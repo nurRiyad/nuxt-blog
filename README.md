@@ -25,6 +25,13 @@
 - Dark and light mode
 - Server Side Rendered(SSR) with Nuxt3
 
+
+## How to Make This Blog Template Yours in 5 Minutes
+- Clone this repo or use it as a template
+- Go to ./data/index.ts file & add your personal info
+- Then head over to the ./content/blogs folder to add new blogs
+- Voilà! You've got a personalized blog site!
+
 ## Preview
 
 <p align="center">
