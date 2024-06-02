@@ -10,7 +10,6 @@ const path = computed(() => route.fullPath.replace('/', ''))
       <div class="grid grid-cols-1 md:grid-cols-3">
         <FooterSite v-if="path === 'about'" />
         <FooterDeveloper v-else />
-
         <FooterLink />
         <FooterConnect />
       </div>

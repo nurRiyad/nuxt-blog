@@ -1,11 +1,14 @@
+<script setup lang="ts">
+import { footerData } from '~/data'
+</script>
+
 <template>
   <div>
     <p class="text-black dark:text-zinc-300   text-base font-semibold">
       Connect With Me
     </p>
     <p class="dark:text-zinc-300  ">
-      I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you
-      have an interesting idea, either open source or paid let's connect.
+      {{ footerData.authorInterest }}
     </p>
 
     <a
