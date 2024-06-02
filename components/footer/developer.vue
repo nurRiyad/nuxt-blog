@@ -1,11 +1,14 @@
+<script setup lang="ts">
+import { footerData } from '~/data'
+</script>
+
 <template>
   <div>
     <p class="text-black dark:text-zinc-300   text-2xl py-1 font-semibold">
-      Al Asad Nur Riyad
+      {{ footerData.author }}
     </p>
     <p class="py-2 dark:text-zinc-300  ">
-      Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently
-      working at Appscode Inc.
+      {{ footerData.aboutAuthor }}
     </p>
     <div class="my-3 space-x-3 pb-3">
       <NuxtLink

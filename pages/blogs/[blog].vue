@@ -110,14 +110,15 @@ defineOgImageComponent('Test', {
     </div>
     <BlogToc />
 
-    <div class="flex flex-row gap-2">
+    <div class="flex mt-10 flex-row gap-2">
       <SocialShare
         v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
         :key="network"
+        aria-label="Share with {network}"
         :network="network"
         :styled="true"
-        :label="false"
-        class="p-4"
+        :label="true"
+        class="p-1"
       />
     </div>
   </div>

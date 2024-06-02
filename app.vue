@@ -1,61 +1,11 @@
 <script setup>
-const description
-  = 'Riyad, Software Engineer at AppsCode working on ByteBuilders, with over 2+ years experience in Frontend development.'
-const ogTitle
-  = 'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving'
-const twitterDescription
-  = 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc'
-const image
-  = 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp'
-const mySite = 'https://blog-nurriyad.vercel.app/'
+import { siteMetaData } from './data'
+
 useHead({
   htmlAttrs: {
     lang: 'en',
   },
-  meta: [
-    {
-      name: 'description',
-      content: description,
-    },
-    // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
-    { property: 'og:site_name', content: mySite },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: mySite,
-    },
-    {
-      property: 'og:title',
-      content: ogTitle,
-    },
-    {
-      property: 'og:description',
-      content: description,
-    },
-    {
-      property: 'og:image',
-      content: image,
-    },
-    // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
-    { name: 'twitter:site', content: '@qdnvubp' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:url',
-      content: mySite,
-    },
-    {
-      name: 'twitter:title',
-      content: ogTitle,
-    },
-    {
-      name: 'twitter:description',
-      content: twitterDescription,
-    },
-    {
-      name: 'twitter:image',
-      content: image,
-    },
-  ],
+  meta: () => siteMetaData,
 })
 </script>
 

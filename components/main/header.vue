@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { navbarData } from '../../data'
+
 const colorMode = useColorMode()
 function onClick(val: string) {
   colorMode.preference = val
@@ -11,7 +13,7 @@ function onClick(val: string) {
       <ul class="flex items-baseline space-x-5">
         <li class="text-base sm:text-2xl font-bold">
           <NuxtLink to="/">
-            Riyad's Blog
+            {{ navbarData.homeTitle }}
           </NuxtLink>
         </li>
       </ul>
