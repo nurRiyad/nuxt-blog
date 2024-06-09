@@ -16,6 +16,7 @@
     "Namecheap",
     "Nuxt",
     "spacegrotesk",
-    "Tailwindcss"
+    "Tailwindcss",
+    "vuex"
   ]
 }
