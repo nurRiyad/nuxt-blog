@@ -26,21 +26,6 @@
 - Dark and light mode
 - Server Side Rendered(SSR) with Nuxt3
 
-## Preview
-
-<p align="center">
-  <a href="https://blog.nurriyad.xyz" target="_blank">
-    <img width="1090" src="./assets/images/preview1.png">
-    <img width="1090" src="./assets/images/preview2.png">
-    <img width="1090" src="./assets/images/preview3.png">
-    <img width="1090" src="./assets/images/preview4.png">
-    <br>
-    Live Demo
-  </a>
-</p>
-
-> Hosted on [Vercel](https://vercel.com/): `npm run build`
-
 ## Build Setup
 
 **Requires Node.js 20+**
@@ -59,3 +44,8 @@ npm run build
 npm run  preview
 
 ```
+
+## User Documentation
+
+- [Comment publier un article de blog ?](/docs/01_publish_blog_post.md)
+- [Comment ajouter un nouvel auteur ?](/docs/02_add_new_author.md)
