@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { navbarData } from '~/data'
+
 useHead({
   title: 'Home',
   meta: [
@@ -8,13 +10,12 @@ useHead({
         'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
 })
 
 // Generate OG Image
 defineOgImageComponent('About', {
   headline: 'Greetings 👋',
-  title: 'Riyad\'s Blog',
+  title: navbarData.homeTitle,
   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
   link: '/riyad.jpg',
 })

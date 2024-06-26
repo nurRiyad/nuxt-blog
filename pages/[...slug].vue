@@ -1,4 +1,14 @@
 <script setup lang="ts">
+useHead({
+  title: '404',
+  meta: [
+    {
+      name: 'description',
+      content: 'Page not found',
+    },
+  ],
+})
+
 defineOgImageComponent('About', {
   headline: 'Wrong Path',
   title: '404',

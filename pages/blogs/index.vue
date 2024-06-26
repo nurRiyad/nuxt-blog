@@ -65,7 +65,6 @@ useHead({
       content: 'Here you will find all the blog posts I have written & published on this site.',
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
 })
 
 // Generate OG Image

@@ -35,7 +35,9 @@ export const seoData = {
   ogTitle: 'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving',
   twitterDescription: 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc',
   image: 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
-  mySite: 'https://blog-nurriyad.vercel.app/',
+  mySite: 'https://blog-nurriyad.vercel.app',
+  twitterHandle: '@qdnvubp',
+  mailAddress: 'asadnurriyad@gmail.com',
 }
 
 export const siteMetaData = [
@@ -63,7 +65,7 @@ export const siteMetaData = [
     content: seoData.image,
   },
   // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
-  { name: 'twitter:site', content: '@qdnvubp' },
+  { name: 'twitter:site', content: seoData.twitterHandle },
   { name: 'twitter:card', content: 'summary_large_image' },
   {
     name: 'twitter:url',

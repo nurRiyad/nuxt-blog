@@ -1,12 +1,13 @@
+import { navbarData, seoData } from './data'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-16',
       viewport: 'width=device-width,initial-scale=1',
-      title: 'Riyad\'s Blog',
-      titleTemplate: '%s - Riyad\'s Blog',
-      meta: [{ name: 'description', content: 'Riyad\'s awesome blog' }],
+      title: navbarData.homeTitle,
+      titleTemplate: `%s - ${navbarData.homeTitle}`,
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -16,11 +17,11 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   site: {
-    url: 'https://blog.nurriyad.xyz',
+    url: seoData.mySite,
     identity: {
       type: 'Person',
     },
-    twitter: '@qdnvubp',
+    twitter: seoData.twitterHandle,
   },
 
   typescript: {

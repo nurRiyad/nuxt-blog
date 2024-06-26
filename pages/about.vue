@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import { aboutPage } from '~/data'
+import { aboutPage, footerData, navbarData } from '~/data'
+
+useHead({
+  title: 'About',
+  meta: [
+    {
+      name: 'description',
+      content: footerData.aboutAuthor,
+    },
+  ],
+})
 
 defineOgImageComponent('About', {
   headline: 'Greetings 👋',
-  title: 'Riyad\'s Blog',
+  title: navbarData.homeTitle,
   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
   link: '/riyad.jpg',
 })
