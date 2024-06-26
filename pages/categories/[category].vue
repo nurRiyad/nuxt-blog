@@ -42,7 +42,6 @@ useHead({
       content: `You will find all the ${category.value} related post here`,
     },
   ],
-  titleTemplate: 'Riyad\'s Blog - %s',
 })
 
 // Generate OG Image
