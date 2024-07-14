@@ -55,6 +55,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@stefanobartoletti/nuxt-social-share',
+    '@nuxtjs/i18n',
   ],
 
   content: {
@@ -62,4 +63,26 @@ export default defineNuxtConfig({
       theme: 'dracula',
     },
   },
+
+  i18n: {
+    lazy: true,
+    langDir: "locales",
+    strategy: "prefix",
+    locales: [
+      {
+        code: 'en-US',
+        iso: 'en-US',
+        name: "English(US)",
+        file: 'en-US.json'
+      },
+      {
+        code: 'bn-BD',
+        iso: 'bn-BD',
+        name: "বাংলা",
+        file: "bn-BD.json"
+      }
+
+    ],
+  },
+  
 })

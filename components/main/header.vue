@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { navbarData } from '../../data'
-
+const localPath = useLocalePath()
 const colorMode = useColorMode()
 function onClick(val: string) {
   colorMode.preference = val
 }
+
 </script>
 
 <template>
@@ -13,7 +14,7 @@ function onClick(val: string) {
       <ul class="flex items-baseline space-x-5">
         <li class="text-base sm:text-2xl font-bold">
           <NuxtLink to="/">
-            {{ navbarData.homeTitle }}
+            {{ $t('title_header') }}
           </NuxtLink>
         </li>
       </ul>
@@ -24,7 +25,7 @@ function onClick(val: string) {
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories">
+          <NuxtLink :to="localPath(`/categories`)">
             Categories
           </NuxtLink>
         </li>
@@ -58,6 +59,10 @@ function onClick(val: string) {
               <Icon name="svg-spinners:180-ring" size="20" />
             </template>
           </ClientOnly>
+        </li>
+        <li class="flex items-center">
+          <!-- Ensure alignment -->
+           <MainLocalization />
         </li>
       </ul>
     </div>
