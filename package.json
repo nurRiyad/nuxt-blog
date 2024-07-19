@@ -31,6 +31,7 @@
     "vue-content-loader": "^2.0.1"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "nuxt-papa-parse": "^1.0.8"
   }
 }
