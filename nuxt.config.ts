@@ -47,6 +47,10 @@ export default defineNuxtConfig({
     public: {
       baseUrl: 'https://blog.hoppr.tech',
     },
+    notion: {
+      apiKey: '',
+      databasePostsId: '',
+    },
   },
 
   modules: [
