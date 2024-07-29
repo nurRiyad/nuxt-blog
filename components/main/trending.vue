@@ -1,7 +1,10 @@
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
 // Get Last 6 Publish Post from the content/blog directory
 const { data } = await useAsyncData('trending-post', () =>
-  queryContent('/blogs').limit(3).sort({ _id: 1 }).find(),
+  queryContent(`/${locale.value}/blogs`).limit(3).sort({ _id: 1 }).find(),
 )
 
 const formattedData = computed(() => {

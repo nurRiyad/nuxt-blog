@@ -4,12 +4,9 @@ import { navbarData, seoData } from '~/data'
 
 const { path } = useRoute()
 
+
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
 
-if (error.value)
-{
-  console.log(error.value)
-}
 
 const data = computed<BlogPost>(() => {
   return {

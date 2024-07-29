@@ -70,13 +70,13 @@ export default defineNuxtConfig({
     strategy: "prefix",
     locales: [
       {
-        code: 'en-US',
+        code: 'en',
         iso: 'en-US',
         name: "English(US)",
         file: 'en-US.json'
       },
       {
-        code: 'bn-BD',
+        code: 'bn',
         iso: 'bn-BD',
         name: "বাংলা",
         file: "bn-BD.json"
