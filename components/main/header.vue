@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { navbarData } from '../../data'
+
 const localPath = useLocalePath()
 const colorMode = useColorMode()
 function onClick(val: string) {
@@ -14,24 +14,24 @@ function onClick(val: string) {
       <ul class="flex items-baseline space-x-5">
         <li class="text-base sm:text-2xl font-bold">
           <NuxtLink to="/">
-            {{ $t('title_header') }}
+            {{ $t('navbarData.homeTitle') }}
           </NuxtLink>
         </li>
       </ul>
       <ul class="flex items-center space-x-3 sm:space-x-6 text-sm sm:text-lg">
         <li>
-          <NuxtLink to="/blogs">
-            Blogs
+          <NuxtLink :to="localPath('/blogs')">
+            {{ $t('blogs') }}
           </NuxtLink>
         </li>
         <li>
           <NuxtLink :to="localPath(`/categories`)">
-            Categories
+            {{ $t('categories') }}
           </NuxtLink>
         </li>
         <li title="About Me">
-          <NuxtLink to="/about" aria-label="About me">
-            About
+          <NuxtLink :to="localPath('/about')" aria-label="About me">
+            {{ $t('about') }}
           </NuxtLink>
         </li>
         <li>

@@ -1,7 +1,10 @@
 <script lang="ts" setup>
 import { makeFirstCharUpper } from '@/utils/helper'
+import { useI18n } from 'vue-i18n';
 
-const { data } = await useAsyncData('all-blog-post-for-category', () => queryContent('/blogs').sort({ _id: -1 }).find())
+const { locale } = useI18n();
+
+const { data } = await useAsyncData('all-blog-post-for-category', () => queryContent(`${locale.value}/blogs`).sort({ _id: -1 }).find())
 
 const allTags = new Map()
 

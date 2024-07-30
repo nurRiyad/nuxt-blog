@@ -40,7 +40,7 @@ useHead({
     <div class="flex flex-row items-center space-x-3 pt-5 pb-3">
       <Icon name="mdi:star-three-points-outline" size="2em" class="text-black dark:text-zinc-300  " />
       <h2 class="text-4xl font-semibold text-black dark:text-zinc-300  ">
-        Trending Post
+        {{ $t('trending') }}
       </h2>
     </div>
     <div class="grid grid-cols-1 ">

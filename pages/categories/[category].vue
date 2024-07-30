@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
 const route = useRoute()
 
 // take category from route params & make first char upper
@@ -13,7 +17,7 @@ const category = computed(() => {
 })
 
 const { data } = await useAsyncData(`category-data-${category.value}`, () =>
-  queryContent('/blogs')
+  queryContent(`${locale.value}/blogs`)
     .where({ tags: { $contains: category.value } })
     .find(),
 )

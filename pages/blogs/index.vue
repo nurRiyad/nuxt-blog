@@ -1,5 +1,9 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
+const { data } = await useAsyncData('home', () => queryContent(`${locale.value}/blogs`).sort({ _id: -1 }).find())
 
 const elementPerPage = ref(5)
 const pageNumber = ref(1)
