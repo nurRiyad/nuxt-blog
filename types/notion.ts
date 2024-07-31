@@ -1,11 +1,10 @@
 export interface NotionPage {
   id: string
   properties: {
-    [x: string]: { people: { name: string; avatar_url: string }[] } | {
-      title: Array<{
-        plain_text: string
-      }>
-    }
+    [x: string]:
+    | { people: { name: string; avatar_url: string }[] }
+    | { title: Array<{ plain_text: string }> }
+    | { multi_select: Array<{ name: string }> }
   }
 }
 

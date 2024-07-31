@@ -59,13 +59,15 @@ export async function getAuthorsInfo(notionClient: Client, authorIds: string[]):
   return authors
 }
 
-export async function getPageContent(notionClient: Client, page: NotionPage): Promise<{ notionId: string; title: string; content: string; authors: Author[]; images: { url: string; alt: string }[] }> {
+export async function getPageContent(notionClient: Client, page: NotionPage): Promise<{ notionId: string; title: string; content: string; authors: Author[]; images: { url: string; alt: string }[]; tags: string[] }> {
   try {
     const blocks = await notionClient.blocks.children.list({ block_id: page.id })
     const { markdownContent, images } = convertBlocksToMarkdown(blocks.results as NotionBlock[])
     const authorsProperty = page.properties.Authors as { relation?: { id: string }[] }
     const authorIds = authorsProperty.relation?.map(author => author.id) || []
     const authors = await getAuthorsInfo(notionClient, authorIds)
+    const tags = page.properties.Tags as { multi_select?: { name: string }[] }
+    const tagsNames = tags.multi_select?.map(tag => tag.name) || []
 
     return {
       notionId: page.id,
@@ -73,6 +75,7 @@ export async function getPageContent(notionClient: Client, page: NotionPage): Pr
       content: markdownContent,
       authors,
       images,
+      tags: tagsNames,
     }
   }
   catch (error) {

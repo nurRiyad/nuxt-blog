@@ -79,6 +79,9 @@ describe('notionUtils', () => {
           ],
           has_more: false,
         },
+        Tags: {
+          multi_select: [{ name: 'Tag1' }, { name: 'Tag2' }],
+        },
       },
     }
 
@@ -135,5 +138,6 @@ describe('notionUtils', () => {
     expect(content.content).toContain('Hello\n\n')
     expect(content.authors[0].name).toEqual('Author Name')
     expect(content.authors[0].image).toEqual('http://example.com/avatar.png')
+    expect(content.tags).toEqual(['Tag1', 'Tag2'])
   })
 })
