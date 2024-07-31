@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Author } from '@/types/author'
+import type { Person } from '@/types/person'
 
 interface Props {
-  author: Author
+  authors: Person[]
 }
 
 const props = defineProps<Props>()
@@ -12,25 +12,27 @@ const props = defineProps<Props>()
   <div class="py-5 border-t dark:border-zinc-500 mt-5 text-zinc-700 dark:text-zinc-300">
     <div class="container max-w-5xl mx-auto text-center">
       <h3 class="text-xl font-semibold mb-4">
-        À propos de l'auteur
+        À propos des auteurs
       </h3>
-      <div class="flex items-center justify-center mb-4">
-        <img :src="props.author.image" :alt="props.author.name" class="w-16 h-16 rounded-full mr-4 object-cover">
+      <div v-for="author in props.authors" :key="author.notionId" class="flex items-center justify-center mb-4">
+        <img :src="author.image" :alt="author.name" class="w-16 h-16 rounded-full mr-4 object-cover">
         <div>
           <p class="font-semibold">
-            {{ props.author.name }}
+            {{ author.name }}
           </p>
         </div>
       </div>
       <div class="flex justify-center space-x-4 mt-3">
         <NuxtLink
-          :to="props.author.linkedin" target="_blank"
+          v-for="author in props.authors" :key="author.notionId"
+          :to="author.linkedin" target="_blank"
           class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="LinkedIn"
         >
           <Icon name="fa:linkedin-square" size="1em" />
         </NuxtLink>
         <NuxtLink
-          :to="props.author.x" target="_blank"
+          v-for="author in props.authors" :key="author.notionId"
+          :to="author.x" target="_blank"
           class="p-2 bg-hoppr-green text-gray-200 rounded-md hover:bg-opacity-80" aria-label="Twitter"
         >
           <Icon name="fa:twitter-square" size="1em" />

@@ -1,4 +1,4 @@
-export interface Author {
+export interface Person {
   notionId: string
   name: string
   image: string

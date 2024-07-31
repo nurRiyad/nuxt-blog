@@ -56,7 +56,6 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-icon',
-    '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'nuxt-content-assets', // make sure to add before @nuxt/content !
@@ -66,12 +65,16 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-simple-sitemap',
     '@nuxtjs/tailwindcss',
-    'nuxt-papa-parse',
   ],
 
   content: {
     highlight: {
       theme: 'dracula',
     },
+  },
+
+  contentAssets: {
+    // contentExtensions: 'mdx? csv',
+    debug: false,
   },
 })

@@ -1,4 +1,4 @@
-import type { Author } from '@/types/author'
+import type { Person } from '@/types/person'
 
 export interface BlogPost {
   notionId: string
@@ -9,7 +9,18 @@ export interface BlogPost {
   alt: string
   ogImage: string
   tags: string[]
-  authors: Author[]
+  authors: Person[]
+  reviewers: Person[]
   published: boolean
   content: string
+}
+
+export interface PageContent {
+  notionId: string
+  title: string
+  content: string
+  authors: Person[]
+  images: { url: string; alt: string }[]
+  tags: string[]
+  reviewers?: Person[]
 }

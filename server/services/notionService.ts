@@ -27,6 +27,7 @@ export async function fetchPostsToPublishFromNotion(): Promise<BlogPost[]> {
       ogImage: '',
       published: true,
       authors: post.authors,
+      reviewers: post.reviewers || [],
     }))
   }
   catch (error) {

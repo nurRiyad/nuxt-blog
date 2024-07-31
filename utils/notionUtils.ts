@@ -1,6 +1,7 @@
 import type { Client } from '@notionhq/client'
 import type { NotionBlock, NotionPage } from '@/types/notion'
-import type { Author } from '@/types/author'
+import type { Person } from '@/types/person'
+import type { PageContent } from '@/types/blog'
 
 export function safeGetProperty(obj: any, path: string[], defaultValue: any = undefined) {
   return path.reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : defaultValue, obj)
@@ -43,8 +44,8 @@ function codeToMarkdown(block: any): string {
   return `\`\`\`${language}\n${code}\n\`\`\`\n\n`
 }
 
-export async function getAuthorsInfo(notionClient: Client, authorIds: string[]): Promise<Author[]> {
-  const authors: Author[] = []
+export async function getAuthorsInfo(notionClient: Client, authorIds: string[]): Promise<Person[]> {
+  const authors: Person[] = []
   const promises = authorIds.map(async (id) => {
     const authorPage = await notionClient.pages.retrieve({ page_id: id })
     return {
@@ -59,7 +60,7 @@ export async function getAuthorsInfo(notionClient: Client, authorIds: string[]):
   return authors
 }
 
-export async function getPageContent(notionClient: Client, page: NotionPage): Promise<{ notionId: string; title: string; content: string; authors: Author[]; images: { url: string; alt: string }[]; tags: string[] }> {
+export async function getPageContent(notionClient: Client, page: NotionPage): Promise<PageContent> {
   try {
     const blocks = await notionClient.blocks.children.list({ block_id: page.id })
     const { markdownContent, images } = convertBlocksToMarkdown(blocks.results as NotionBlock[])

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import type { Client } from '@notionhq/client'
 import { convertBlocksToMarkdown, extractTitleFromPage, getAuthorsInfo, getPageContent, safeGetProperty } from '@/utils/notionUtils'
-import type { NotionPage } from '~/types/notion'
+import type { NotionPage } from '@/types/notion'
 
 describe('notionUtils', () => {
   it('should safely get a property from an object', () => {
@@ -82,6 +82,14 @@ describe('notionUtils', () => {
         Tags: {
           multi_select: [{ name: 'Tag1' }, { name: 'Tag2' }],
         },
+        Reviewers: {
+          id: '%3FW%3CJ',
+          type: 'relation',
+          relation: [
+            { id: '12345678-1234-1234-1234-123456789abc' },
+          ],
+          has_more: false,
+        },
       },
     }
 
@@ -97,23 +105,37 @@ describe('notionUtils', () => {
         },
       },
       pages: {
-        retrieve: async ({ page_id }: { page_id: string }) => {
-          // Simuler la récupération d'un auteur à partir de l'ID
-          if (page_id === '838dec96-f9fc-404f-a302-07719225d785') {
-            return {
-              id: page_id,
-              properties: {
-                Name: {
-                  title: [{ plain_text: 'Author Name' }],
+        retrieve:
+          async ({ page_id }: { page_id: string }) => {
+            // Simuler la récupération d'un auteur à partir de l'ID
+            if (page_id === '838dec96-f9fc-404f-a302-07719225d785') {
+              return {
+                id: page_id,
+                properties: {
+                  Name: {
+                    title: [{ plain_text: 'Author Name' }],
+                  },
+                  Avatar: {
+                    files: [{ file: { url: 'http://example.com/avatar.png' } }],
+                  },
                 },
-                Avatar: {
-                  files: [{ file: { url: 'http://example.com/avatar.png' } }],
-                },
-              },
+              }
             }
-          }
-          throw new Error('Auteur non trouvé')
-        },
+            else if (page_id === '12345678-1234-1234-1234-123456789abc') {
+              return {
+                id: page_id,
+                properties: {
+                  Name: {
+                    title: [{ plain_text: 'Reviewer Name' }],
+                  },
+                  Avatar: {
+                    files: [{ file: { url: 'http://example.com/reviewer-avatar.png' } }],
+                  },
+                },
+              }
+            }
+            throw new Error('Auteur ou Reviewer non trouvé')
+          },
       },
     } as unknown as Client // Client mock pour les tests
 
@@ -124,9 +146,16 @@ describe('notionUtils', () => {
         ...mockPage.properties,
         Authors: {
           ...mockPage.properties.Authors,
-          people: mockPage.properties.Authors.relation.map(author => ({
+          people: mockPage.properties.Authors.relation.map(() => ({
             name: 'Author Name',
             avatar_url: 'http://example.com/avatar.png',
+          })),
+        },
+        Reviewers: {
+          ...mockPage.properties.Reviewers,
+          people: mockPage.properties.Reviewers.relation.map(() => ({
+            name: 'Reviewer Name',
+            avatar_url: 'http://example.com/reviewer-avatar.png',
           })),
         },
       },
@@ -139,5 +168,10 @@ describe('notionUtils', () => {
     expect(content.authors[0].name).toEqual('Author Name')
     expect(content.authors[0].image).toEqual('http://example.com/avatar.png')
     expect(content.tags).toEqual(['Tag1', 'Tag2'])
+    if (content.reviewers && content.reviewers.length > 0) {
+      expect(content.reviewers[0].name).toEqual('Reviewer Name')
+      expect(content.reviewers[0].image).toEqual('http://example.com/reviewer-avatar.png')
+    }
   })
-})
+},
+)

@@ -1,80 +1,37 @@
 <script setup lang="ts">
-import type { Author } from '@/types/author'
+import type { Person } from '@/types/person'
 
 const { path } = useRoute()
 
-const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
+const { data: article, error } = await useAsyncData(`blog-post-${path}`, () => {
+  return queryContent(path).findOne()
+})
 
 if (error.value) {
-  if (error.value)
-    navigateTo('/404')
+  console.error('Error fetching article:', error.value)
+  navigateTo('/404')
 }
 
 const blogPostProps = computed(() => {
   return {
-    title: articles.value?.title || 'no-title available',
-    description: articles.value?.description || 'no-description available',
-    image: articles.value?.image || '/not-found.jpg',
-    alt: articles.value?.alt || 'no alter data available',
-    ogImage: articles.value?.ogImage || '/not-found.jpg',
-    date: articles.value?.date || 'not-date-available',
-    tags: articles.value?.tags || [],
-    published: articles.value?.published || false,
-    authorId: articles.value?.authorId || 0,
+    title: article.value?.title || 'no-title available',
+    description: article.value?.description || 'no-description available',
+    image: article.value?.image || '/not-found.jpg',
+    alt: article.value?.alt || 'no alter data available',
+    ogImage: article.value?.ogImage || '/not-found.jpg',
+    date: article.value?.date || 'not-date-available',
+    tags: article.value?.tags || [],
+    published: article.value?.published || false,
   }
 })
 
-const papa = usePapaParse()
-const author = await fetchAuthor(blogPostProps.value.authorId)
-
-async function fetchAuthor(id: string): Promise<Author> {
-  const { path } = useRoute()
-  const csvUrl = `${path}/author.csv`
-
-  let author: Author = {
-    notionId: '',
-    name: 'Auteur inconnu',
-    image: '/default-author-image.webp', // Ajoutez une image par défaut
-  }
-
-  try {
-    const response = await fetch(csvUrl)
-    if (!response.ok)
-      throw new Error('Failed to load the author CSV')
-    const csvText = await response.text()
-
-    papa.parse(csvText, {
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: true,
-      complete: (result: { data: Author[] }) => {
-        const authors: Author[] = result.data
-        const foundAuthor = authors.find(author => author.notionId === id)
-        if (foundAuthor) {
-          author = {
-            ...foundAuthor,
-            image: foundAuthor.image || '/default-author-image.webp', // Utilisez l'image de l'auteur ou une image par défaut
-          }
-        }
-      },
-    })
-  }
-  catch (error) {
-    console.error('Error fetching or parsing author CSV:', error)
-  }
-
-  return author
-}
+const authors: Person[] = article.value?.authors || []
+const reviewers: Person[] = article.value?.reviewers || []
 
 useHead({
   title: blogPostProps.value.title || '',
   meta: [
     { name: 'description', content: blogPostProps.value.description },
-    {
-      name: 'description',
-      content: blogPostProps.value.description,
-    },
-    // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
     { property: 'og:site_name', content: 'Blog HoppR' },
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
@@ -93,7 +50,6 @@ useHead({
       property: 'og:image',
       content: blogPostProps.value.ogImage || blogPostProps.value.image,
     },
-    // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
     { name: 'twitter:site', content: '@HoppR_Tech' },
     { name: 'twitter:card', content: 'summary_large_image' },
     {
@@ -134,20 +90,33 @@ defineOgImageComponent('Test', {
   <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
-        :title="blogPostProps.title" :image="blogPostProps.image" :alt="blogPostProps.alt" :date="blogPostProps.date"
-        :description="blogPostProps.description" :tags="blogPostProps.tags" :author="author"
+        :title="blogPostProps.title"
+        :image="blogPostProps.image"
+        :alt="blogPostProps.alt"
+        :date="blogPostProps.date"
+        :description="blogPostProps.description"
+        :tags="blogPostProps.tags"
+        :authors="authors"
       />
+      <div>
+        <h3>Reviewers:</h3>
+        <ul>
+          <li v-for="reviewer in reviewers" :key="reviewer.notionId">
+            {{ reviewer.name }}
+          </li>
+        </ul>
+      </div>
       <div
         class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
         prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
       >
-        <ContentRenderer v-if="articles" :value="articles">
+        <ContentRenderer v-if="article" :value="article">
           <template #empty>
             <p>No content found.</p>
           </template>
         </ContentRenderer>
       </div>
-      <BlogFooter :author="author" />
+      <BlogFooter :authors="authors" />
     </div>
     <BlogToc />
   </div>

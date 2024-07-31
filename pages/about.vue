@@ -48,9 +48,9 @@ defineOgImageComponent('About', {
               </NuxtLink>
             </div>
           </div>
-          <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
-            <NuxtImg src="/riyad.jpg" width="125" height="115" quality="50" class="rounded-md" />
-          </div>
+          <!-- <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
+            <img src="/riyad.jpg" width="125" height="115" quality="50" class="rounded-md">
+          </div> -->
         </div>
         <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
           Software Engineer, Problem Solver, Web Enthusiast.
@@ -63,7 +63,7 @@ defineOgImageComponent('About', {
         </p>
       </div>
       <div class="hidden sm:block col-span-3">
-        <NuxtImg src="/hoppr.png" width="450" height="500" quality="50" class="rounded-md" />
+        <img src="/hoppr.png" width="450" height="500" quality="50" class="rounded-md">
       </div>
     </div>
   </div>
