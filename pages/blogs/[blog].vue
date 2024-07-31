@@ -1,20 +1,16 @@
 <script setup lang="ts">
-import type { BlogPost } from '@/types/blog'
-
 import type { Author } from '@/types/author'
-
-const runtimeConfig = useRuntimeConfig()
-
-const BASE_URL = runtimeConfig.public.baseUrl
 
 const { path } = useRoute()
 
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
 
-if (error.value)
-  navigateTo('/404')
+if (error.value) {
+  if (error.value)
+    navigateTo('/404')
+}
 
-const blogPostProps = computed<BlogPost>(() => {
+const blogPostProps = computed(() => {
   return {
     title: articles.value?.title || 'no-title available',
     description: articles.value?.description || 'no-description available',
@@ -31,19 +27,20 @@ const blogPostProps = computed<BlogPost>(() => {
 const papa = usePapaParse()
 const author = await fetchAuthor(blogPostProps.value.authorId)
 
-async function fetchAuthor(id: number): Promise<Author> {
-  const csvUrl = `${BASE_URL}/config/authors.csv`
+async function fetchAuthor(id: string): Promise<Author> {
+  const { path } = useRoute()
+  const csvUrl = `${path}/author.csv`
 
   let author: Author = {
-    id: 0,
-    name: 'Anonymous',
-    surname: 'M.',
+    notionId: '',
+    name: 'Auteur inconnu',
+    image: '/default-author-image.webp', // Ajoutez une image par défaut
   }
 
   try {
     const response = await fetch(csvUrl)
     if (!response.ok)
-      throw new Error('Failed to load the authors CSV')
+      throw new Error('Failed to load the author CSV')
     const csvText = await response.text()
 
     papa.parse(csvText, {
@@ -52,13 +49,18 @@ async function fetchAuthor(id: number): Promise<Author> {
       skipEmptyLines: true,
       complete: (result: { data: Author[] }) => {
         const authors: Author[] = result.data
-        const foundAuthor = authors.find(author => author.id === id)
-        author = foundAuthor || author
+        const foundAuthor = authors.find(author => author.notionId === id)
+        if (foundAuthor) {
+          author = {
+            ...foundAuthor,
+            image: foundAuthor.image || '/default-author-image.webp', // Utilisez l'image de l'auteur ou une image par défaut
+          }
+        }
       },
     })
   }
   catch (error) {
-    console.error('Error fetching or parsing authors CSV:', error)
+    console.error('Error fetching or parsing author CSV:', error)
   }
 
   return author

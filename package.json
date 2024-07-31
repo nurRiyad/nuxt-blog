@@ -3,11 +3,21 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "NODE_ENV=development nuxt dev",
+    "test": "vitest --config vitest.config.ts",
+    "coverage": "vitest run --coverage",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "axios": "^1.7.2",
+    "nuxt-content-assets": "^1.4.4",
+    "nuxt-papa-parse": "^1.0.8",
+    "octokit": "^4.0.2",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.42.0",
@@ -28,10 +38,7 @@
     "nuxt-og-image": "^3.0.0-rc.38",
     "nuxt-simple-sitemap": "^4.2.0",
     "typescript": "^5.3.3",
+    "vitest": "^2.0.4",
     "vue-content-loader": "^2.0.1"
-  },
-  "dependencies": {
-    "@notionhq/client": "^2.2.15",
-    "nuxt-papa-parse": "^1.0.8"
   }
 }

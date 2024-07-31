@@ -11,10 +11,17 @@ const props = defineProps<Props>()
 <template>
   <div class="py-5 border-t dark:border-zinc-500 mt-5 text-zinc-700 dark:text-zinc-300">
     <div class="container max-w-5xl mx-auto text-center">
-      <h3 class="text-xl font-semibold">
+      <h3 class="text-xl font-semibold mb-4">
         À propos de l'auteur
       </h3>
-      <p>{{ props.author.surname }} {{ props.author.name }}</p>
+      <div class="flex items-center justify-center mb-4">
+        <img :src="props.author.image" :alt="props.author.name" class="w-16 h-16 rounded-full mr-4 object-cover">
+        <div>
+          <p class="font-semibold">
+            {{ props.author.name }}
+          </p>
+        </div>
+      </div>
       <div class="flex justify-center space-x-4 mt-3">
         <NuxtLink
           :to="props.author.linkedin" target="_blank"

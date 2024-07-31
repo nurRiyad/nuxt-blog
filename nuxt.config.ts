@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-og-image',
+    'nuxt-content-assets', // make sure to add before @nuxt/content !
     '@nuxt/content',
     '@nuxtjs/robots',
     '@nuxtjs/fontaine',

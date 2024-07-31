@@ -1,7 +1,7 @@
 export interface NotionPage {
   id: string
   properties: {
-    Name?: {
+    [x: string]: { people: { name: string; avatar_url: string }[] } | {
       title: Array<{
         plain_text: string
       }>

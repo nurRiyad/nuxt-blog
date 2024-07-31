@@ -19,9 +19,9 @@ const props = withDefaults(defineProps<Props>(), {
   date: 'no-date',
   tags: () => ([]),
   author: () => ({
-    id: 0,
-    name: 'Anonymous',
-    surname: 'M.',
+    notionId: '',
+    name: 'Auteur inconnu',
+    image: '/default-author-image.webp',
   }),
 })
 </script>
@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
       <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
         <div class="flex items-center font-semibold">
           <LogoAuthor />
-          <p>{{ props.author.surname || '' }} {{ props.author.name || '' }}</p>
+          <p>{{ props.author.name || '' }}</p>
         </div>
         <div class="md:flex text-black dark:text-zinc-300 content-center gap-8 text-xs sm:text-sm">
           <div class="flex items-center font-semibold">

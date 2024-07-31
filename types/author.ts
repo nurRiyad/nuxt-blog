@@ -1,7 +1,7 @@
 export interface Author {
-  id: number
+  notionId: string
   name: string
-  surname: string
+  image: string
   linkedin?: string
   x?: string
 }
