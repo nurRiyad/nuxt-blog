@@ -11,7 +11,6 @@ function toggleLanguage() {
   });
 }
 
-console.log(locales)
 </script>
 
 <template>
