@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import type { Client } from '@notionhq/client'
-import { convertBlocksToMarkdown, extractTitleFromPage, getAuthorsInfo, getPageContent, safeGetProperty } from '@/utils/notionUtils'
+import { convertBlocksToMarkdown, extractTitleFromPage, getPageContent, getPersonsInfo, safeGetProperty } from '@/utils/notionUtils'
 import type { NotionPage } from '@/types/notion'
 
 describe('notionUtils', () => {
@@ -17,6 +17,7 @@ describe('notionUtils', () => {
       { type: 'image', image: { file: { url: 'http://example.com/image.png' }, caption: [{ plain_text: 'An image' }] } },
     ]
     const { markdownContent, images } = convertBlocksToMarkdown(blocks)
+
     expect(markdownContent).toContain('Hello\n\n')
     expect(markdownContent).toContain('# Title\n\n')
     expect(images).toEqual([{ url: 'http://example.com/image.png', alt: 'An image' }])
@@ -50,7 +51,7 @@ describe('notionUtils', () => {
     } as unknown as Client
 
     const authorIds = ['author-id']
-    const authors = await getAuthorsInfo(mockClient, authorIds)
+    const authors = await getPersonsInfo(mockClient, authorIds, 'Author')
 
     expect(authors).toEqual([
       {
@@ -75,7 +76,7 @@ describe('notionUtils', () => {
           id: '%3FW%3CJ',
           type: 'relation',
           relation: [
-            { id: '838dec96-f9fc-404f-a302-07719225d785' }, // ID de l'auteur
+            { id: '838dec96-f9fc-404f-a302-07719225d785' },
           ],
           has_more: false,
         },
@@ -93,7 +94,6 @@ describe('notionUtils', () => {
       },
     }
 
-    // Mocking the notionClient response
     const mockClient = {
       blocks: {
         children: {
@@ -105,41 +105,38 @@ describe('notionUtils', () => {
         },
       },
       pages: {
-        retrieve:
-          async ({ page_id }: { page_id: string }) => {
-            // Simuler la récupération d'un auteur à partir de l'ID
-            if (page_id === '838dec96-f9fc-404f-a302-07719225d785') {
-              return {
-                id: page_id,
-                properties: {
-                  Name: {
-                    title: [{ plain_text: 'Author Name' }],
-                  },
-                  Avatar: {
-                    files: [{ file: { url: 'http://example.com/avatar.png' } }],
-                  },
+        retrieve: async ({ page_id }: { page_id: string }) => {
+          if (page_id === '838dec96-f9fc-404f-a302-07719225d785') {
+            return {
+              id: page_id,
+              properties: {
+                Name: {
+                  title: [{ plain_text: 'Author Name' }],
                 },
-              }
-            }
-            else if (page_id === '12345678-1234-1234-1234-123456789abc') {
-              return {
-                id: page_id,
-                properties: {
-                  Name: {
-                    title: [{ plain_text: 'Reviewer Name' }],
-                  },
-                  Avatar: {
-                    files: [{ file: { url: 'http://example.com/reviewer-avatar.png' } }],
-                  },
+                Avatar: {
+                  files: [{ file: { url: 'http://example.com/avatar.png' } }],
                 },
-              }
+              },
             }
-            throw new Error('Auteur ou Reviewer non trouvé')
-          },
+          }
+          else if (page_id === '12345678-1234-1234-1234-123456789abc') {
+            return {
+              id: page_id,
+              properties: {
+                Name: {
+                  title: [{ plain_text: 'Reviewer Name' }],
+                },
+                Avatar: {
+                  files: [{ file: { url: 'http://example.com/reviewer-avatar.png' } }],
+                },
+              },
+            }
+          }
+          throw new Error('Auteur ou Reviewer non trouvé')
+        },
       },
-    } as unknown as Client // Client mock pour les tests
+    } as unknown as Client
 
-    // Conversion du mockPage en un objet NotionPage compatible
     const notionPage: NotionPage = {
       ...mockPage,
       properties: {
@@ -162,6 +159,7 @@ describe('notionUtils', () => {
     }
 
     const content = await getPageContent(mockClient, notionPage)
+
     expect(content.notionId).toBe('page-id')
     expect(content.title).toBe('Test Title')
     expect(content.content).toContain('Hello\n\n')
@@ -173,5 +171,4 @@ describe('notionUtils', () => {
       expect(content.reviewers[0].image).toEqual('http://example.com/reviewer-avatar.png')
     }
   })
-},
-)
+})

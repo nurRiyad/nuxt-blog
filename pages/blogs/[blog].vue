@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Person } from '@/types/person'
+import type { Person } from '@/types/blog'
 
 const { path } = useRoute()
 
@@ -90,22 +90,10 @@ defineOgImageComponent('Test', {
   <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
-        :title="blogPostProps.title"
-        :image="blogPostProps.image"
-        :alt="blogPostProps.alt"
-        :date="blogPostProps.date"
-        :description="blogPostProps.description"
-        :tags="blogPostProps.tags"
-        :authors="authors"
+        :title="blogPostProps.title" :image="blogPostProps.image" :alt="blogPostProps.alt"
+        :date="blogPostProps.date" :description="blogPostProps.description" :tags="blogPostProps.tags"
+        :authors="authors" :reviewers="reviewers"
       />
-      <div>
-        <h3>Reviewers:</h3>
-        <ul>
-          <li v-for="reviewer in reviewers" :key="reviewer.notionId">
-            {{ reviewer.name }}
-          </li>
-        </ul>
-      </div>
       <div
         class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
         prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"

@@ -8,7 +8,7 @@ export function createFolderName(date: string, title: string): string {
   return `${formattedDate}-${slugifiedTitle}`
 }
 
-function slugify(text: string): string {
+export function slugify(text: string): string {
   return text
     .toString()
     .toLowerCase()

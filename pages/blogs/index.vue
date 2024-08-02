@@ -14,7 +14,7 @@ const formattedData = computed(() => {
       image: articles.image || '/not-found.jpg',
       alt: articles.alt || 'no alter data available',
       ogImage: articles.ogImage || '/not-found.jpg',
-      date: articles.date || 'not-date-available',
+      date: formatDate(articles.date) || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
     }

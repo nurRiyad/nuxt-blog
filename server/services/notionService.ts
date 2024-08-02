@@ -19,12 +19,12 @@ export async function fetchPostsToPublishFromNotion(): Promise<BlogPost[]> {
     const blogPosts = await Promise.all(response.results.map((result: any) => getPageContent(notionClient, result as NotionPage)))
     return blogPosts.map((post): BlogPost => ({
       ...post,
-      date: new Date().toISOString(), // Ajoutez la date de publication à aujourd'hui
+      date: new Date().toISOString(),
       description: post.content.replace(/#.*\n/g, '').replace(/\n/g, ' ').substring(0, 200), // Supprime les titres et les retours à la ligne, puis utilise les 200 premiers caractères comme description
-      image: post.images[0]?.url || '', // Utilisez la première image comme image principale, ou une chaîne vide si aucune image n'est disponible
-      alt: post.images[0]?.alt || '', // Utilisez l'alt de la première image, ou une chaîne vide si non disponible
+      image: post.coverImage,
+      alt: post.coverImageAlt,
       tags: post.tags,
-      ogImage: '',
+      ogImage: post.coverImage,
       published: true,
       authors: post.authors,
       reviewers: post.reviewers || [],

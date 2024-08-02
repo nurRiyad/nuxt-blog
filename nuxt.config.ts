@@ -52,6 +52,13 @@ export default defineNuxtConfig({
       apiKey: '',
       databasePostsId: '',
     },
+    github: {
+      owner: '',
+      repo: '',
+      branch: '',
+      appId: '',
+      privateKey: '',
+    },
   },
 
   modules: [

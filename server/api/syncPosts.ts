@@ -1,18 +1,20 @@
 import { defineEventHandler } from 'h3'
 import { fetchPostsToPublishFromNotion } from '@/server/services/notionService'
-import { pushToGitHub } from '@/server/services/githubService'
+import { publishPostToGitHub } from '@/server/services/githubService'
 
 export default defineEventHandler(async (event) => {
   try {
     const postsToPublish = await fetchPostsToPublishFromNotion()
 
-    for (const post of postsToPublish)
-      await pushToGitHub(post)
+    if (postsToPublish.length === 0)
+      return { message: 'No articles to publish.' }
 
-    return { posts: postsToPublish, message: 'Articles publiés avec succès sur GitHub' }
+    await Promise.all(postsToPublish.map(post => publishPostToGitHub(post)))
+
+    return { posts: postsToPublish, message: '✅ Articles successfully published on GitHub' }
   }
   catch (error) {
-    console.error('Erreur lors de la synchronisation des articles :', error)
-    return { error: 'Erreur lors de la synchronisation des articles' }
+    console.error('❌ Error while synchronizing articles:', error)
+    return { error: `❌ Error while synchronizing articles.\n${error}` }
   }
 })

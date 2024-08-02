@@ -13,12 +13,14 @@ const formattedData = computed(() => {
       image: articles.image || '/not-found.jpg',
       alt: articles.alt || 'no alter data available',
       ogImage: articles.ogImage || '/not-found.jpg',
-      date: articles.date || 'not-date-available',
+      date: formatDate(articles.date) || 'not-date-available',
       tags: articles.tags || [],
       published: articles.published || false,
     }
   })
 })
+
+const imageSize = 'h-48'
 
 useHead({
   title: 'Home',
@@ -41,11 +43,12 @@ useHead({
         Articles Populaires
       </h2>
     </div>
-    <div class="grid grid-cols-1 ">
+    <div class="grid grid-cols-1 gap-6">
       <template v-for="post in formattedData" :key="post.title">
         <ArchiveCard
           :path="post.path" :title="post.title" :date="post.date" :description="post.description"
           :image="post.image" :alt="post.alt" :og-image="post.ogImage" :tags="post.tags" :published="post.published"
+          :image-size="imageSize"
         />
       </template>
       <template v-if="data?.length === 0">

@@ -1,7 +1,7 @@
 import type { Client } from '@notionhq/client'
 import type { NotionBlock, NotionPage } from '@/types/notion'
-import type { Person } from '@/types/person'
-import type { PageContent } from '@/types/blog'
+import type { PageContent, Person } from '@/types/blog'
+import { downloadAndConvertImage } from '@/utils/imageUtils'
 
 export function safeGetProperty(obj: any, path: string[], defaultValue: any = undefined) {
   return path.reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : defaultValue, obj)
@@ -44,20 +44,24 @@ function codeToMarkdown(block: any): string {
   return `\`\`\`${language}\n${code}\n\`\`\`\n\n`
 }
 
-export async function getAuthorsInfo(notionClient: Client, authorIds: string[]): Promise<Person[]> {
-  const authors: Person[] = []
-  const promises = authorIds.map(async (id) => {
-    const authorPage = await notionClient.pages.retrieve({ page_id: id })
+export async function getPersonsInfo(notionClient: Client, personIds: string[], type: 'Author' | 'Reviewer'): Promise<Person[]> {
+  const persons: Person[] = []
+  const promises = personIds.map(async (id) => {
+    const personPage = await notionClient.pages.retrieve({ page_id: id })
+    const name = safeGetProperty(personPage, ['properties', 'Name', 'title', '0', 'plain_text'], `Unknown ${type}`)
+    const imageUrl = safeGetProperty(personPage, ['properties', 'Avatar', 'files', '0', 'file', 'url'], '')
+
     return {
-      notionId: authorPage.id,
-      name: safeGetProperty(authorPage, ['properties', 'Name', 'title', '0', 'plain_text'], 'Auteur inconnu'),
-      image: safeGetProperty(authorPage, ['properties', 'Avatar', 'files', '0', 'file', 'url'], ''),
-      linkedin: safeGetProperty(authorPage, ['properties', 'LinkedIn', 'url']),
-      x: safeGetProperty(authorPage, ['properties', 'X', 'url']),
+      notionId: personPage.id,
+      name,
+      image: imageUrl,
+      linkedin: safeGetProperty(personPage, ['properties', 'LinkedIn', 'url']),
+      x: safeGetProperty(personPage, ['properties', 'X', 'url']),
     }
   })
-  authors.push(...await Promise.all(promises))
-  return authors
+
+  persons.push(...await Promise.all(promises))
+  return persons
 }
 
 export async function getPageContent(notionClient: Client, page: NotionPage): Promise<PageContent> {
@@ -66,17 +70,25 @@ export async function getPageContent(notionClient: Client, page: NotionPage): Pr
     const { markdownContent, images } = convertBlocksToMarkdown(blocks.results as NotionBlock[])
     const authorsProperty = page.properties.Authors as { relation?: { id: string }[] }
     const authorIds = authorsProperty.relation?.map(author => author.id) || []
-    const authors = await getAuthorsInfo(notionClient, authorIds)
+    const authors = await getPersonsInfo(notionClient, authorIds, 'Author')
+    const reviewersProperty = page.properties.Reviewers as { relation?: { id: string }[] }
+    const reviewerIds = reviewersProperty.relation?.map(reviewer => reviewer.id) || []
+    const reviewers = await getPersonsInfo(notionClient, reviewerIds, 'Reviewer')
     const tags = page.properties.Tags as { multi_select?: { name: string }[] }
     const tagsNames = tags.multi_select?.map(tag => tag.name) || []
+    const coverImage = safeGetProperty(page, ['properties', 'Cover Image', 'files', '0', 'file', 'url'], '')
+    const coverImageAlt = safeGetProperty(page, ['properties', 'Cover Image', 'rich_text', '0', 'plain_text'], '')
 
     return {
       notionId: page.id,
       title: extractTitleFromPage(page),
-      content: markdownContent,
       authors,
-      images,
+      reviewers,
+      coverImage,
+      coverImageAlt,
       tags: tagsNames,
+      content: markdownContent,
+      images,
     }
   }
   catch (error) {

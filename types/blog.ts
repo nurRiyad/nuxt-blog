@@ -1,5 +1,3 @@
-import type { Person } from '@/types/person'
-
 export interface BlogPost {
   notionId: string
   title: string
@@ -17,10 +15,20 @@ export interface BlogPost {
 
 export interface PageContent {
   notionId: string
+  authors: Person[]
+  reviewers?: Person[]
+  coverImage: string
+  coverImageAlt: string
+  tags: string[]
   title: string
   content: string
-  authors: Person[]
   images: { url: string; alt: string }[]
-  tags: string[]
-  reviewers?: Person[]
+}
+
+export interface Person {
+  notionId: string
+  name: string
+  image: string
+  linkedin?: string
+  x?: string
 }

@@ -9,6 +9,7 @@ interface Props {
   ogImage?: string
   tags?: Array<string>
   published?: boolean
+  imageSize?: string
 }
 
 withDefaults(defineProps<Props>(), {
@@ -21,6 +22,7 @@ withDefaults(defineProps<Props>(), {
   ogImage: '/blogs-img/blog.jpg',
   tags: () => [],
   published: false,
+  imageSize: 'h-48',
 })
 </script>
 
@@ -31,7 +33,7 @@ withDefaults(defineProps<Props>(), {
     <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
       <div class="sm:col-span-3">
         <img
-          class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500"
+          :class="`w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500 ${imageSize}`"
           width="300" :src="image" :alt="alt"
         >
       </div>
