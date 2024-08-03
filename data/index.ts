@@ -31,11 +31,12 @@ export const aboutPage = {
 }
 
 export const seoData = {
+  name: navbarData.homeTitle,
   description: 'Riyad, Software Engineer at AppsCode, with over 2.5+ years experience in software development.',
   ogTitle: 'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving',
   twitterDescription: 'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc',
   image: 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
-  mySite: 'https://blog-nurriyad.vercel.app',
+  mySite: 'https://blog.nurriyad.xyz',
   twitterHandle: '@qdnvubp',
   mailAddress: 'asadnurriyad@gmail.com',
 }

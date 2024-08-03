@@ -2,6 +2,12 @@ import { navbarData, seoData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-08-03',
+
+  typescript: {
+    strict: true,
+  },
+
   app: {
     head: {
       charset: 'utf-16',
@@ -13,19 +19,18 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  sitemap: {
-    strictNuxtContentPaths: true,
-  },
   site: {
     url: seoData.mySite,
+    name: seoData.name,
+    description: seoData.description,
+    defaultLocale: 'en',
+    twitter: seoData.twitterHandle,
     identity: {
       type: 'Person',
     },
-    twitter: seoData.twitterHandle,
   },
-
-  typescript: {
-    strict: true,
+  sitemap: {
+    strictNuxtContentPaths: true,
   },
 
   nitro: {
@@ -43,23 +48,22 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
+  content: {
+    highlight: {
+      theme: 'dracula',
+    },
+  },
+
   modules: [
     'nuxt-icon',
     '@nuxt/image',
+    '@nuxtjs/seo',
     '@vueuse/nuxt',
-    'nuxt-og-image',
     '@nuxt/content',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@stefanobartoletti/nuxt-social-share',
   ],
 
-  content: {
-    highlight: {
-      theme: 'dracula',
-    },
-  },
 })
