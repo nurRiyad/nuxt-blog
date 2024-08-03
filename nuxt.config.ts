@@ -2,6 +2,8 @@ import { navbarData, seoData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-08-03',
+
   app: {
     head: {
       charset: 'utf-16',
@@ -16,6 +18,7 @@ export default defineNuxtConfig({
   sitemap: {
     strictNuxtContentPaths: true,
   },
+
   site: {
     url: seoData.mySite,
     identity: {
@@ -62,4 +65,5 @@ export default defineNuxtConfig({
       theme: 'dracula',
     },
   },
+
 })
