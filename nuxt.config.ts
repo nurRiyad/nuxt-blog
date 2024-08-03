@@ -2,6 +2,8 @@ import { navbarData, seoData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-08-03',
+
   app: {
     head: {
       charset: 'utf-16',
@@ -42,6 +44,11 @@ export default defineNuxtConfig({
     preference: 'dark',
     fallback: 'light',
   },
+  content: {
+    highlight: {
+      theme: 'dracula',
+    },
+  },
 
   modules: [
     'nuxt-icon',
@@ -57,9 +64,4 @@ export default defineNuxtConfig({
     '@stefanobartoletti/nuxt-social-share',
   ],
 
-  content: {
-    highlight: {
-      theme: 'dracula',
-    },
-  },
 })
