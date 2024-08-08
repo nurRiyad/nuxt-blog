@@ -1,46 +1,63 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { locale, setLocale, locales } = useI18n();
 const selectedLanguage = ref(locale.value);
+const showLanguages = ref(false);
 
-function toggleLanguage() {
-  setLocale(selectedLanguage.value).then(() => {
-    window.location.reload();
+function toggleLanguage(lang: string) {
+  setLocale(lang).then(() => {
+    showLanguages.value = false;
+    const url = new URL(window.location.href);
+    window.open(url.toString(), '_blank');
   });
 }
 
+function toggleDropdown() {
+  showLanguages.value = !showLanguages.value;
+}
+
+function handleClickOutside(event: MouseEvent) {
+  const dropdown = document.querySelector('.language-dropdown');
+  if (dropdown && !dropdown.contains(event.target as Node)) {
+    showLanguages.value = false;
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
 </script>
 
 <template>
-<ClientOnly>
-  <li class="flex items-center">
-    <select
-      v-model="selectedLanguage"
-      @change="toggleLanguage"
-      class="relative inline-flex items-center rounded-full border dark:bg-slate-600 border-gray-300 bg-gray-200 w-32 h-10 cursor-pointer"
-    >
-      <option
-        v-for="lang in locales"
-        :key="lang.code"
-        :value="lang.code"
-        :class="{
-          'bg-sky-700 text-white': selectedLanguage === lang.code,
-          'bg-gray-200 dark:bg-slate-600 text-black dark:text-white': selectedLanguage !== lang.code,
-        }"
+  <ClientOnly>
+    <li class="relative language-dropdown">
+      <div
+        @click="toggleDropdown"
+        class="cursor-pointer"
       >
-        {{ lang.name }}
-      </option>
-    </select>
-  </li>
-</ClientOnly>
+        <span>文A</span>
+      </div>
+      <ul
+        v-if="showLanguages"
+        class="absolute top-full left-0 mt-2 bg-white dark:bg-slate-700 border border-gray-300 rounded shadow-lg z-50"
+      >
+        <li
+          v-for="lang in locales"
+          :key="lang.code"
+          @click="toggleLanguage(lang.code)"
+          class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-600 cursor-pointer flex items-center justify-between"
+          :class="{ 'bg-sky-100 dark:bg-sky-800': selectedLanguage === lang.code }"
+        >
+          <span>{{ lang.name }}</span>
+          <Icon name="gridicons:external" size="20" />
+        </li>
+      </ul>
+    </li>
+  </ClientOnly>
 </template>
-
-<style>
-/* Add any additional styles you need here */
-option {
-  background-color: inherit;
-  color: inherit;
-}
-</style>
