@@ -31,5 +31,6 @@
     "nuxt-og-image": "^3.0.0-rc.38",
     "typescript": "^5.3.3",
     "vue-content-loader": "^2.0.1"
-  }
+  },
+  "version": "1.4.0"
 }
