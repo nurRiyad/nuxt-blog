@@ -18,6 +18,8 @@ const path = computed(() => route.fullPath.replace('/', ''))
         © 2020-2024 No Right is reserved. Who cares 🤷‍♂️? It's
         <a href="https://github.com/nurriyad/blog" target="_blank" rel="nofollow" class="underline">open source</a>
         anyway.
+
+        <a href="/rss.xml"> <span class="px-3"><Icon name="bi:rss-fill" /></span></a>
       </div>
     </div>
   </div>
