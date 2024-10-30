@@ -19,7 +19,7 @@ const path = computed(() => route.fullPath.replace('/', ''))
         <a href="https://github.com/nurriyad/blog" target="_blank" rel="nofollow" class="underline">open source</a>
         anyway.
 
-        <a href="/rss.xml"> <span class="px-3"><Icon name="bi:rss-fill" /></span></a>
+        <a href="/rss.xml" aria-label="Website RSS Feed"> <span class="px-3"><Icon name="bi:rss-fill" /></span></a>
       </div>
     </div>
   </div>
