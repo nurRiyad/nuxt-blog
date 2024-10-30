@@ -48,12 +48,12 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon',
     '@nuxt/image',
+    '@nuxt/fonts',
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@nuxt/content',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
