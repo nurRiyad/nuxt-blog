@@ -56,6 +56,7 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
+    '@formkit/auto-animate',
     '@stefanobartoletti/nuxt-social-share',
   ],
 

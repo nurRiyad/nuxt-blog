@@ -1,5 +1,8 @@
 {
+  "name": "@nurriyad/nuxt-blog",
+  "version": "1.4.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,7 +14,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.42.0",
-    "@formkit/auto-animate": "^0.8.1",
+    "@formkit/auto-animate": "^0.8.2",
     "@nuxt/content": "^2.12.1",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/color-mode": "^3.3.2",
@@ -29,8 +32,6 @@
     "nuxt": "^3.13.2",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
-    "typescript": "^5.3.3",
-    "vue-content-loader": "^2.0.1"
-  },
-  "version": "1.4.0"
+    "typescript": "^5.3.3"
+  }
 }

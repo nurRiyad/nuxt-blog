@@ -91,35 +91,27 @@ defineOgImage({
       >
     </div>
 
-    <ClientOnly>
-      <div v-auto-animate class="space-y-5 my-5 px-4">
-        <template v-for="post in paginatedData" :key="post.title">
-          <ArchiveCard
-            :path="post.path"
-            :title="post.title"
-            :date="post.date"
-            :description="post.description"
-            :image="post.image"
-            :alt="post.alt"
-            :og-image="post.ogImage"
-            :tags="post.tags"
-            :published="post.published"
-          />
-        </template>
-
+    <div v-auto-animate class="space-y-5 my-5 px-4">
+      <template v-for="post in paginatedData" :key="post.title">
         <ArchiveCard
-          v-if="paginatedData.length <= 0"
-          title="No Post Found"
-          image="/not-found.jpg"
+          :path="post.path"
+          :title="post.title"
+          :date="post.date"
+          :description="post.description"
+          :image="post.image"
+          :alt="post.alt"
+          :og-image="post.ogImage"
+          :tags="post.tags"
+          :published="post.published"
         />
-      </div>
-
-      <template #fallback>
-        <!-- this will be rendered on server side -->
-        <BlogLoader />
-        <BlogLoader />
       </template>
-    </ClientOnly>
+
+      <ArchiveCard
+        v-if="paginatedData.length <= 0"
+        title="No Post Found"
+        image="/not-found.jpg"
+      />
+    </div>
 
     <div class="flex justify-center items-center space-x-6 ">
       <button :disabled="pageNumber <= 1" @click="onPreviousPageClick">
