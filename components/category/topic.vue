@@ -8,8 +8,7 @@ const category = computed(() => {
   const name = route.params.category || ''
   let strName = ''
 
-  if (Array.isArray(name))
-    strName = name.at(0) || ''
+  if (Array.isArray(name)) strName = name.at(0) || ''
   else strName = name
   return makeFirstCharUpper(strName)
 })

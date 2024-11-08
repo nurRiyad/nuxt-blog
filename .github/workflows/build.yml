@@ -14,21 +14,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 22
+          cache: 'pnpm'
 
-      - name: Install dependency
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Check Linting
-        run: npm run lint
+        run: pnpm run lint
 
+      - name: Check Format
+        run: pnpm run format
 
       - name: Playgourd build check
-        run: npm run build
+        run: pnpm run build

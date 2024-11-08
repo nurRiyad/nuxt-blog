@@ -12,9 +12,10 @@
     <img width="200" src="./assets/images/logo.png">
 </p>
 
- Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
+Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.nuxtjs.org/blog/announcing-v2/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
 
 ## Features
+
 - Write blog with markdown file
 - Auto generate category from blog post
 - Blog list page with search and pagination
@@ -25,8 +26,8 @@
 - Dark and light mode
 - Server Side Rendered(SSR) with Nuxt3
 
-
 ## How to Make This Blog Template Yours in 5 Minutes
+
 - Clone this repo or use it as a template
 - Go to ./data/index.ts file & add your personal info
 - Then head over to the ./content/blogs folder to add new blogs

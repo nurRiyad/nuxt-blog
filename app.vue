@@ -10,7 +10,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-[#F1F2F4] dark:text-zinc-300   dark:bg-slate-950">
+  <div class="bg-[#F1F2F4] dark:text-zinc-300 dark:bg-slate-950">
     <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />
@@ -39,7 +39,7 @@ useHead({
   filter: blur(1rem);
 }
 
-html.dark{
+html.dark {
   color-scheme: dark;
 }
 </style>

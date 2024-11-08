@@ -21,11 +21,11 @@ defineOgImageComponent('About', {
 
 <template>
   <div class="py-5">
-    <div class="sm:grid grid-cols-8 px-6 py-5 sm:py-9 gap-5 container max-w-5xl  mx-auto">
-      <div class="col-span-5  max-w-md">
+    <div class="sm:grid grid-cols-8 px-6 py-5 sm:py-9 gap-5 container max-w-5xl mx-auto">
+      <div class="col-span-5 max-w-md">
         <div class="flex justify-between">
           <div>
-            <h1 class="text-xl sm:text-4xl  pb-2 font-bold ">
+            <h1 class="text-xl sm:text-4xl pb-2 font-bold">
               {{ aboutPage.title }}
             </h1>
 
@@ -65,13 +65,7 @@ defineOgImageComponent('About', {
             </div>
           </div>
           <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
-            <NuxtImg
-              src="/riyad.jpg"
-              width="125"
-              height="115"
-              quality="50"
-              class="rounded-md"
-            />
+            <NuxtImg src="/riyad.jpg" width="125" height="115" quality="50" class="rounded-md" />
           </div>
         </div>
         <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
@@ -81,13 +75,7 @@ defineOgImageComponent('About', {
         <p>{{ aboutPage.aboutMe }}</p>
       </div>
       <div class="hidden sm:block col-span-3">
-        <NuxtImg
-          src="/riyad.jpg"
-          width="450"
-          height="500"
-          quality="50"
-          class="rounded-md"
-        />
+        <NuxtImg src="/riyad.jpg" width="450" height="500" quality="50" class="rounded-md" />
       </div>
     </div>
   </div>
