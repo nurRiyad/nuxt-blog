@@ -2,6 +2,24 @@ import { navbarData, seoData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-09-30',
+
+  modules: [
+    'nuxt-icon',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    'nuxt-og-image',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@formkit/auto-animate',
+    '@stefanobartoletti/nuxt-social-share',
+  ],
+
   app: {
     head: {
       charset: 'utf-16',
@@ -42,27 +60,9 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
-  modules: [
-    'nuxt-icon',
-    '@nuxt/image',
-    '@nuxt/fonts',
-    '@vueuse/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/content',
-    'nuxt-og-image',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    '@formkit/auto-animate',
-    '@stefanobartoletti/nuxt-social-share',
-  ],
-
   content: {
     highlight: {
       theme: 'dracula',
     },
   },
-
-  compatibilityDate: '2024-09-30',
 })
