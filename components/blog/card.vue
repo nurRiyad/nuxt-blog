@@ -22,9 +22,6 @@ withDefaults(defineProps<Props>(), {
   tags: () => [],
   published: false,
 })
-
-const x = 10;
-console.log(x);
 </script>
 
 <template>
