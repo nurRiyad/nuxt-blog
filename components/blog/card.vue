@@ -22,6 +22,14 @@ withDefaults(defineProps<Props>(), {
   tags: () => [],
   published: false,
 })
+
+
+
+
+
+
+
+
 </script>
 
 <template>
