@@ -20,14 +20,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
       - name: Install dependency
-        run: npm ci
+        run: pnpm ci
 
       - name: Check Linting
-        run: npm run lint
+        run: pnpm run lint
+
+      - name: Check Format
+        run: pnpm run format
 
       - name: Playgourd build check
-        run: npm run build
+        run: pnpm run build
