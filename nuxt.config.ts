@@ -32,10 +32,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: [
-        '/',
-        '/rss.xml',
-      ],
+      routes: ['/', '/rss.xml'],
     },
   },
 
@@ -50,8 +47,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@vueuse/nuxt',
-    'nuxt-og-image',
+    '@nuxt/eslint',
     '@nuxt/content',
+    'nuxt-og-image',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/color-mode',

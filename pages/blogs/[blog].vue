@@ -4,10 +4,11 @@ import { navbarData, seoData } from '~/data'
 
 const { path } = useRoute()
 
-const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryContent(path).findOne())
+const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () =>
+  queryContent(path).findOne(),
+)
 
-if (error.value)
-  navigateTo('/404')
+if (error.value) navigateTo('/404')
 
 const data = computed<BlogPost>(() => {
   return {
@@ -83,12 +84,11 @@ defineOgImageComponent('Test', {
   title: data.value.title || '',
   description: data.value.description || '',
   link: data.value.ogImage,
-
 })
 </script>
 
 <template>
-  <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12 ">
+  <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
     <div class="col-span-12 lg:col-span-9">
       <BlogHeader
         :title="data.title"
@@ -99,8 +99,7 @@ defineOgImageComponent('Test', {
         :tags="data.tags"
       />
       <div
-        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg
-        prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
+        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
       >
         <ContentRenderer v-if="articles" :value="articles">
           <template #empty>
@@ -111,7 +110,7 @@ defineOgImageComponent('Test', {
     </div>
     <BlogToc />
 
-    <div class="flex flex-row  flex-wrap md:flex-nowrap mt-10 gap-2">
+    <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
       <SocialShare
         v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
         :key="network"

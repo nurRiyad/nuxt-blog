@@ -1,4 +1,0 @@
-{
-  "extends": "@antfu",
-  "ignorePatterns":["/content/**","/.github/**"]
-}
