@@ -1,10 +1,4 @@
 <script lang="ts" setup>
-/**
- * @credits NuxtLabs <https://nuxtlabs.com/>
- * @see https://github.com/nuxt/nuxt.com/blob/main/components/OgImage/OgImageDocs.vue
- */
-import { computed } from 'vue'
-
 interface Props {
   title?: string
   description?: string

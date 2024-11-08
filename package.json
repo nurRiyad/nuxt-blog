@@ -9,10 +9,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "yarn lint:eslint && yarn lint:prettier",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . --check",
-    "lintfix": "eslint . --fix && prettier --write --list-different ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ./"
   },
   "devDependencies": {
     "@formkit/auto-animate": "^0.8.2",
@@ -29,13 +28,12 @@
     "@tailwindcss/typography": "^0.5.10",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
-    "eslint": "^9.14.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-config-prettier": "^9.1.0",
     "feed": "^4.2.2",
     "nuxt": "^3.14.159",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
-    "prettier": "3.3.3",
+    "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },
   "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b"
