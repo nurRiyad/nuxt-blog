@@ -11,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write ./"
+    "format": "prettier --check ./",
+    "format:fix": "prettier --write ./"
   },
   "devDependencies": {
     "@formkit/auto-animate": "^0.8.2",
