@@ -25,7 +25,7 @@ Nuxt Blog built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://content.
 - Url preview with Nuxt ogImage
 - Dark and light mode
 - Server Side Rendered(SSR) with Nuxt3
-- RSS feed 
+- RSS feed
 
 ## How to Make This Blog Template Yours in 5 Minutes
 
