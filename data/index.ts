@@ -37,12 +37,10 @@ export const aboutPage = {
 }
 
 export const seoData = {
-  description:
-    'Riyad, Software Engineer at AppsCode, with over 2.5+ years experience in software development.',
-  ogTitle:
-    'Riyad codes and helps others learn Javascript, Typescript, Vue, Nuxt, & Problem Solving',
-  twitterDescription:
-    'My blog website, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc',
+  title: `Riyad's Blog | Riyads Blog`,
+  ogTitle: `Let's learn Javascript, Typescript, Vue, Nuxt, & Problem Solving - Riyads Blog | Riyad's Blog`,
+  description: `Hi I am Riyad. A Software Engineer at AppsCode, with over 2.5+ years experience in software development. - Riyads Blog | Riyad's Blog`,
+  twitterDescription: `Riyad's Blog, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc - Riyads Blog | Riyad's Blog`,
   image:
     'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
   mySite: 'https://blog-nurriyad.vercel.app',

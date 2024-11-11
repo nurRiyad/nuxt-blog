@@ -1,4 +1,4 @@
-import { navbarData, seoData } from './data'
+import { seoData } from './data'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -24,8 +24,8 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=device-width,initial-scale=1',
-      title: navbarData.homeTitle,
-      titleTemplate: `%s - ${navbarData.homeTitle}`,
+      title: seoData.title,
+      titleTemplate: `%s - ${seoData.title}`,
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
