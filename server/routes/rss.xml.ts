@@ -1,7 +1,7 @@
 import { Feed } from 'feed'
 import { serverQueryContent } from '#content/server'
 
-const basePath = 'https://nurriyad.xyz'
+const basePath = 'https://nurriyad.com'
 
 export default defineEventHandler(async (event) => {
   setHeader(event, 'content-type', 'text/xml')
