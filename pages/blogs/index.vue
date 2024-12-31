@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import Fuse from 'fuse.js'
+
 const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
 
 const elementPerPage = ref(5)
@@ -23,26 +25,28 @@ const formattedData = computed(() => {
   )
 })
 
+const fuse = computed(() => {
+  return new Fuse(formattedData.value, {
+    keys: ['title', 'description'],
+    threshold: 0.4,
+    includeScore: false,
+  })
+})
+
 const searchData = computed(() => {
-  return (
-    formattedData.value.filter((data) => {
-      const lowerTitle = data.title.toLocaleLowerCase()
-      if (lowerTitle.search(searchTest.value) !== -1) return true
-      else return false
-    }) || []
-  )
+  if (!searchTest.value.trim()) {
+    return formattedData.value
+  }
+
+  const results = fuse.value.search(searchTest.value)
+  return results.map(result => result.item)
 })
 
 const paginatedData = computed(() => {
-  return (
-    searchData.value.filter((data, idx) => {
-      const startInd = (pageNumber.value - 1) * elementPerPage.value
-      const endInd = pageNumber.value * elementPerPage.value - 1
+  const startInd = (pageNumber.value - 1) * elementPerPage.value
+  const endInd = pageNumber.value * elementPerPage.value
 
-      if (idx >= startInd && idx <= endInd) return true
-      else return false
-    }) || []
-  )
+  return searchData.value.slice(startInd, endInd)
 })
 
 function onPreviousPageClick() {
@@ -51,8 +55,7 @@ function onPreviousPageClick() {
 
 const totalPage = computed(() => {
   const ttlContent = searchData.value.length || 0
-  const totalPage = Math.ceil(ttlContent / elementPerPage.value)
-  return totalPage
+  return Math.ceil(ttlContent / elementPerPage.value)
 })
 
 function onNextPageClick() {
