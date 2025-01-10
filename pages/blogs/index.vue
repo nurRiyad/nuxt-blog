@@ -39,7 +39,7 @@ const searchData = computed(() => {
   }
 
   const results = fuse.value.search(searchTest.value)
-  return results.map(result => result.item)
+  return results.map((result) => result.item)
 })
 
 const paginatedData = computed(() => {
