@@ -1,21 +1,17 @@
 export const navbarData = {
-  homeTitle: "Riyad's Blog",
+  homeTitle: '会飞的一棵树',
 }
 
 export const footerData = {
-  author: 'Al Asad Nur Riyad',
-  aboutAuthor:
-    'Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently working at Appscode Inc.',
-  authorInterest:
-    "I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you have an interesting idea, either open source or paid let's connect.",
-  aboutTheSite:
-    "This is a personal blog site built with Nuxt3, TailwindCSS, NuxtContent, Nuxt Icon. Currently it's deployed in Vercel.",
+  author: '飞树',
+  aboutAuthor: 'Hi! 我是飞树，一个有点意思的程序猿.',
+  authorInterest: '喜欢各种有意思的东西',
+  aboutTheSite: '记录有点意思的代码日常',
 }
 
 export const homePage = {
-  title: 'Welcome To My Blog Site',
-  description:
-    'Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+  title: '会飞的一棵树',
+  description: '记录有点意思的代码日常',
 }
 
 export const blogsPage = {
@@ -30,29 +26,28 @@ export const categoryPage = {
 }
 
 export const aboutPage = {
-  title: 'Al Asad Nur Riyad',
-  description: 'Software Engineer, Problem Solver, Web Enthusiast.',
-  aboutMe:
-    "Hello, fellow human! I'm a software wizard who spends most of his day crafting code spells at @AppsCode in the Bytebuilders team. When I'm not crafting code, you can find me summoning solutions to problems on online judges. Just don't ask me to cast any love spells, my magic only works on machines!",
+  title: '飞树',
+  description: '一个有点意思的程序猿.',
+  aboutMe: '目前在主要在写前端',
 }
 
 export const seoData = {
-  title: `Riyad's Blog | Riyads Blog`,
-  ogTitle: `Let's learn Javascript, Typescript, Vue, Nuxt, & Problem Solving - Riyads Blog | Riyad's Blog`,
-  description: `Hi I am Riyad. A Software Engineer at AppsCode, with over 2.5+ years experience in software development. - Riyads Blog | Riyad's Blog`,
-  twitterDescription: `Riyad's Blog, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc - Riyads Blog | Riyad's Blog`,
+  title: `会飞的一棵树的博客`,
+  ogTitle: `记录有点意思的代码日常`,
+  description: `一个有点意思的程序猿 | 会飞的一棵树`,
+  twitterDescription: `x | 会飞的一棵树`,
   image:
     'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
   mySite: 'https://blog-nurriyad.vercel.app',
-  twitterHandle: '@qdnvubp',
-  mailAddress: 'asadnurriyad@gmail.com',
+  twitterHandle: '',
+  mailAddress: 'mashirodever@gmail.com',
 }
 
 export const socialLinks = {
-  githubLink: 'https://github.com/nurRiyad',
-  linkedinLink: 'https://www.linkedin.com/in/nur-riyad/',
-  twitterLink: 'https://twitter.com/qdnvubp',
-  stackoverflowLink: 'https://stackoverflow.com/users/16781395/nur-riyad',
+  githubLink: 'https://github.com/mashiro-cat',
+  // linkedinLink: 'https://www.linkedin.com/in/nur-riyad/',
+  // twitterLink: 'https://twitter.com/qdnvubp',
+  // stackoverflowLink: 'https://stackoverflow.com/users/16781395/nur-riyad',
 }
 
 export const siteMetaData = [
