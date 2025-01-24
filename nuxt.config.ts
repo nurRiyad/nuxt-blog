@@ -12,8 +12,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/content',
     'nuxt-og-image',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
@@ -29,10 +27,6 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
-  },
-
-  sitemap: {
-    strictNuxtContentPaths: true,
   },
 
   site: {
@@ -61,8 +55,12 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: {
-      theme: 'dracula',
-    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'dracula',
+        },
+      }
+    }
   },
 })
