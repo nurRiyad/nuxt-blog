@@ -66,4 +66,21 @@ export default defineNuxtConfig({
       preload: ['json', 'javascript', 'typescript', 'vue'], // Preload languages if needed
     },
   },
+  vite: {
+    optimizeDeps: {
+      include: ['shiki'], // Ensure Shiki is bundled
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name?.endsWith('.wasm')) {
+              return '_nuxt/assets/[name]-[hash][extname]' // Handle WASM correctly
+            }
+            return '_nuxt/assets/[name][extname]'
+          },
+        },
+      },
+    },
+  },
 })
