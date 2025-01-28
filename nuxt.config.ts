@@ -62,7 +62,8 @@ export default defineNuxtConfig({
 
   content: {
     highlight: {
-      theme: 'dracula',
+      theme: 'github-dark', // Use your preferred theme
+      preload: ['json', 'javascript', 'typescript', 'vue'], // Preload languages if needed
     },
   },
 })
