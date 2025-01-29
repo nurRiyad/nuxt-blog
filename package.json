@@ -21,6 +21,8 @@
     "@nuxt/fonts": "^0.10.2",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/color-mode": "^3.3.2",
+    "@nuxtjs/robots": "^5.2.2",
+    "@nuxtjs/sitemap": "^7.2.3",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@stefanobartoletti/nuxt-social-share": "^0.6.1",
     "@tailwindcss/forms": "^0.5.7",
