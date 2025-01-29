@@ -32,7 +32,7 @@
     "eslint-config-prettier": "^9.1.0",
     "feed": "^4.2.2",
     "fuse.js": "^7.0.0",
-    "nuxt": "^3.15.1",
+    "nuxt": "^3.15.3",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
     "prettier": "^3.3.3",
