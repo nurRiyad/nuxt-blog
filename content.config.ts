@@ -7,7 +7,7 @@ export default defineContentConfig({
       asSitemapCollection({
         source: '**',
         type: 'page',
-      })
+      }),
     ),
     blogs: defineCollection(
       asSitemapCollection({
@@ -24,6 +24,7 @@ export default defineContentConfig({
           date: z.string().optional(),
           published: z.boolean().optional().default(false),
         }),
-      })),
+      }),
+    ),
   },
 })
