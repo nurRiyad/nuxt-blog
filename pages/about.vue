@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { aboutPage, footerData, navbarData, socialLinks } from '~/data'
+import { aboutPage, footerData, socialLinks } from '~/data'
 
 useHead({
   title: 'About',
