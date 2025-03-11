@@ -35,13 +35,13 @@ export default defineNuxtConfig({
   //   strictNuxtContentPaths: true,
   // },
 
-  site: {
-    url: seoData.mySite,
-    identity: {
-      type: 'Person',
-    },
-    twitter: seoData.twitterHandle,
-  },
+  // site: {
+  //   url: seoData.mySite,
+  //   identity: {
+  //     type: 'Person',
+  //   },
+  //   twitter: seoData.twitterHandle,
+  // },
 
   typescript: {
     strict: true,
