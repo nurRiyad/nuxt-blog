@@ -38,11 +38,5 @@
     "prettier": "^3.5.3",
     "typescript": "^5.8.2",
     "unenv": "^1.10.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ]
-  },
-  "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b"
+  }
 }
