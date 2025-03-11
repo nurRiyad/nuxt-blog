@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import Fuse from 'fuse.js'
+import type { BlogPost } from '~/types/blog'
 
-const { data } = await useAsyncData('home', () => queryContent('/blogs').sort({ _id: -1 }).find())
+const { data } = await useAsyncData('all-blog-post', () => queryCollection('content').all())
 
 const elementPerPage = ref(5)
 const pageNumber = ref(1)
@@ -10,16 +11,17 @@ const searchTest = ref('')
 const formattedData = computed(() => {
   return (
     data.value?.map((articles) => {
+      const meta = articles.meta as unknown as BlogPost
       return {
-        path: articles._path,
+        path: articles.path,
         title: articles.title || 'no-title available',
         description: articles.description || 'no-description available',
-        image: articles.image || '/not-found.jpg',
-        alt: articles.alt || 'no alter data available',
-        ogImage: articles.ogImage || '/not-found.jpg',
-        date: articles.date || 'not-date-available',
-        tags: articles.tags || [],
-        published: articles.published || false,
+        image: meta.image || '/not-found.jpg',
+        alt: meta.alt || 'no alter data available',
+        ogImage: meta.ogImage || '/not-found.jpg',
+        date: meta.date || 'not-date-available',
+        tags: meta.tags || [],
+        published: meta.published || false,
       }
     }) || []
   )
@@ -73,14 +75,14 @@ useHead({
 })
 
 // Generate OG Image
-const siteData = useSiteConfig()
-defineOgImage({
-  props: {
-    title: 'Archive',
-    description: 'Here you will find all the blog posts I have written & published on this site.',
-    siteName: siteData.url,
-  },
-})
+// const siteData = useSiteConfig()
+// defineOgImage({
+//   props: {
+//     title: 'Archive',
+//     description: 'Here you will find all the blog posts I have written & published on this site.',
+//     siteName: siteData.url,
+//   },
+// })
 </script>
 
 <template>

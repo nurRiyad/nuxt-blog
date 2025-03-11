@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { makeFirstCharUpper } from '@/utils/helper'
 
-const { data } = await useAsyncData('all-blog-post-for-category', () =>
-  queryContent('/blogs').sort({ _id: -1 }).find(),
+const { data } = await useAsyncData('all-blog-post-by-category', () =>
+  queryCollection('content').all(),
 )
 
 const allTags = new Map()
 
 data.value?.forEach((blog) => {
-  const tags: Array<string> = blog.tags || []
+  const tags: Array<string> = (blog.meta.tags as string[]) || []
   tags.forEach((tag) => {
     if (allTags.has(tag)) {
       const cnt = allTags.get(tag)
@@ -31,15 +31,15 @@ useHead({
 })
 
 // Generate OG Image
-const siteData = useSiteConfig()
-defineOgImage({
-  props: {
-    title: 'Categories',
-    description:
-      'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
-    siteName: siteData.url,
-  },
-})
+// const siteData = useSiteConfig()
+// defineOgImage({
+//   props: {
+//     title: 'Categories',
+//     description:
+//       'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
+//     siteName: siteData.url,
+//   },
+// })
 </script>
 
 <template>

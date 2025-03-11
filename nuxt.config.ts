@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/nuxt',
     '@nuxt/content',
-    'nuxt-og-image',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
+    // 'nuxt-og-image',
+    // '@nuxtjs/robots',
+    // '@nuxtjs/sitemap',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
@@ -31,9 +31,9 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  sitemap: {
-    strictNuxtContentPaths: true,
-  },
+  // sitemap: {
+  //   strictNuxtContentPaths: true,
+  // },
 
   site: {
     url: seoData.mySite,
@@ -61,8 +61,13 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: {
-      theme: 'dracula',
+    build: {
+      markdown: {
+        highlight: {
+          // Theme used in all color schemes.
+          theme: 'github-light',
+        },
+      },
     },
   },
 })
