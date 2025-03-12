@@ -34,7 +34,7 @@ useHead({
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
     { property: 'og:site_name', content: navbarData.homeTitle },
-    { 'http-equiv': 'og:type', property: 'og:type', content: 'website' },
+    { property: 'og:type', content: 'website' },
     {
       property: 'og:url',
       content: `${seoData.mySite}/${path}`,
