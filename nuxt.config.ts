@@ -10,10 +10,10 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/eslint',
     '@vueuse/nuxt',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    'nuxt-og-image',
     '@nuxt/content',
-    // 'nuxt-og-image',
-    // '@nuxtjs/robots',
-    // '@nuxtjs/sitemap',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
@@ -31,17 +31,14 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  // sitemap: {
-  //   strictNuxtContentPaths: true,
-  // },
+  sitemap: {
+    sources: [seoData.mySite],
+  },
 
-  // site: {
-  //   url: seoData.mySite,
-  //   identity: {
-  //     type: 'Person',
-  //   },
-  //   twitter: seoData.twitterHandle,
-  // },
+  site: {
+    url: seoData.mySite,
+    name: 'Al Asad Nur Riyad',
+  },
 
   typescript: {
     strict: true,
@@ -64,8 +61,7 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
-          // Theme used in all color schemes.
-          theme: 'github-light',
+          theme: 'dracula',
         },
       },
     },

@@ -80,12 +80,12 @@ useHead({
 })
 
 // Generate OG Image
-// defineOgImageComponent('Test', {
-//   headline: 'Greetings 👋',
-//   title: data.value.title || '',
-//   description: data.value.description || '',
-//   link: data.value.ogImage,
-// })
+defineOgImageComponent('Test', {
+  headline: 'Greetings 👋',
+  title: data.value.title || '',
+  description: data.value.description || '',
+  link: data.value.ogImage,
+})
 </script>
 
 <template>

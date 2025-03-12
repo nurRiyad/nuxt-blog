@@ -21,8 +21,8 @@
     "@nuxt/fonts": "^0.10.2",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/color-mode": "^3.3.2",
-    "@nuxtjs/robots": "^4.1.7",
-    "@nuxtjs/sitemap": "^5.3.2",
+    "@nuxtjs/robots": "^5.2.6",
+    "@nuxtjs/sitemap": "^7.2.7",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@stefanobartoletti/nuxt-social-share": "^0.6.1",
     "@tailwindcss/forms": "^0.5.7",
@@ -34,9 +34,13 @@
     "fuse.js": "^7.0.0",
     "nuxt": "^3.16.0",
     "nuxt-icon": "^0.6.8",
-    "nuxt-og-image": "^3.1.1",
+    "nuxt-og-image": "^5.0.2",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2",
     "unenv": "^1.10.0"
+  },
+  "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^10.9.2"
   }
 }

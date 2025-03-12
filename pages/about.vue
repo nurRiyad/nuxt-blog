@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { aboutPage, footerData, socialLinks } from '~/data'
+import { aboutPage, footerData, navbarData, socialLinks } from '~/data'
 
 useHead({
   title: 'About',
@@ -11,12 +11,12 @@ useHead({
   ],
 })
 
-// defineOgImageComponent('About', {
-//   headline: 'Greetings 👋',
-//   title: navbarData.homeTitle,
-//   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-//   link: '/riyad.jpg',
-// })
+defineOgImageComponent('About', {
+  headline: 'Greetings 👋',
+  title: navbarData.homeTitle,
+  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  link: '/riyad.jpg',
+})
 </script>
 
 <template>
