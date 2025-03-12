@@ -17,7 +17,7 @@ const data = computed<BlogPost>(() => {
     description: articles.value?.description || 'no-description available',
     image: meta?.image || '/not-found.jpg',
     alt: meta?.alt || 'no alter data available',
-    ogImage: meta?.ogImage || '/not-found.jpg',
+    ogImage: (articles?.value?.ogImage as unknown as string) || '/not-found.jpg',
     date: meta?.date || 'not-date-available',
     tags: meta?.tags || [],
     published: meta?.published || false,
@@ -79,11 +79,13 @@ useHead({
   ],
 })
 
+console.log(articles.value)
+
 // Generate OG Image
 defineOgImageComponent('Test', {
-  headline: 'Greetings 👋',
-  title: data.value.title || '',
-  description: data.value.description || '',
+  headline: 'Riyads Blog 👋',
+  title: articles.value?.seo.title || '',
+  description: articles.value?.seo.description || '',
   link: data.value.ogImage,
 })
 </script>
