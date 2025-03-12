@@ -5,21 +5,22 @@ import { navbarData, seoData } from '~/data'
 const { path } = useRoute()
 
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () =>
-  queryContent(path).findOne(),
+  queryCollection('content').path(path).first(),
 )
 
 if (error.value) navigateTo('/404')
 
 const data = computed<BlogPost>(() => {
+  const meta = articles?.value?.meta as unknown as BlogPost
   return {
     title: articles.value?.title || 'no-title available',
     description: articles.value?.description || 'no-description available',
-    image: articles.value?.image || '/not-found.jpg',
-    alt: articles.value?.alt || 'no alter data available',
-    ogImage: articles.value?.ogImage || '/not-found.jpg',
-    date: articles.value?.date || 'not-date-available',
-    tags: articles.value?.tags || [],
-    published: articles.value?.published || false,
+    image: meta?.image || '/not-found.jpg',
+    alt: meta?.alt || 'no alter data available',
+    ogImage: (articles?.value?.ogImage as unknown as string) || '/not-found.jpg',
+    date: meta?.date || 'not-date-available',
+    tags: meta?.tags || [],
+    published: meta?.published || false,
   }
 })
 
@@ -33,7 +34,7 @@ useHead({
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
     { property: 'og:site_name', content: navbarData.homeTitle },
-    { hid: 'og:type', property: 'og:type', content: 'website' },
+    { property: 'og:type', content: 'website' },
     {
       property: 'og:url',
       content: `${seoData.mySite}/${path}`,
@@ -78,11 +79,13 @@ useHead({
   ],
 })
 
+console.log(articles.value)
+
 // Generate OG Image
 defineOgImageComponent('Test', {
-  headline: 'Greetings 👋',
-  title: data.value.title || '',
-  description: data.value.description || '',
+  headline: 'Riyads Blog 👋',
+  title: articles.value?.seo.title || '',
+  description: articles.value?.seo.description || '',
   link: data.value.ogImage,
 })
 </script>

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { BlogPost } from '@/types/blog'
 const route = useRoute()
 
 // take category from route params & make first char upper
@@ -12,23 +13,29 @@ const category = computed(() => {
 })
 
 const { data } = await useAsyncData(`category-data-${category.value}`, () =>
-  queryContent('/blogs')
-    .where({ tags: { $contains: category.value } })
-    .find(),
+  queryCollection('content')
+    .all()
+    .then((articles) =>
+      articles.filter((article) => {
+        const meta = article.meta as unknown as BlogPost
+        return meta.tags.includes(category.value)
+      }),
+    ),
 )
 
 const formattedData = computed(() => {
   return data.value?.map((articles) => {
+    const meta = articles.meta as unknown as BlogPost
     return {
-      path: articles._path,
+      path: articles.path,
       title: articles.title || 'no-title available',
       description: articles.description || 'no-description available',
-      image: articles.image || '/blogs-img/blog.jpg',
-      alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/blogs-img/blog.jpg',
-      date: articles.date || 'not-date-available',
-      tags: articles.tags || [],
-      published: articles.published || false,
+      image: meta.image || '/blogs-img/blog.jpg',
+      alt: meta.alt || 'no alter data available',
+      ogImage: meta.ogImage || '/blogs-img/blog.jpg',
+      date: meta.date || 'not-date-available',
+      tags: meta.tags || [],
+      published: meta.published || false,
     }
   })
 })

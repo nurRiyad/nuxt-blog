@@ -10,10 +10,10 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/eslint',
     '@vueuse/nuxt',
-    '@nuxt/content',
-    'nuxt-og-image',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    'nuxt-og-image',
+    '@nuxt/content',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
@@ -32,15 +32,12 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    strictNuxtContentPaths: true,
+    sources: [seoData.mySite],
   },
 
   site: {
     url: seoData.mySite,
-    identity: {
-      type: 'Person',
-    },
-    twitter: seoData.twitterHandle,
+    name: 'Al Asad Nur Riyad',
   },
 
   typescript: {
@@ -61,8 +58,12 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: {
-      theme: 'dracula',
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'dracula',
+        },
+      },
     },
   },
 })

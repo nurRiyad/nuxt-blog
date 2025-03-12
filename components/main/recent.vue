@@ -1,21 +1,42 @@
 <script lang="ts" setup>
+import type { BlogPost } from '~/types/blog'
+
+// Function to parse dates in the format "1st Mar 2023"
+function parseCustomDate(dateStr: string): Date {
+  // Remove ordinal indicators (st, nd, rd, th)
+  const cleanDateStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1')
+  // Parse the date
+  return new Date(cleanDateStr)
+}
+
 // Get Last 6 Publish Post from the content/blog directory
 const { data } = await useAsyncData('recent-post', () =>
-  queryContent('/blogs').limit(3).sort({ _id: -1 }).find(),
+  queryCollection('content')
+    .all()
+    .then((data) => {
+      return data
+        .sort((a, b) => {
+          const aDate = parseCustomDate(a.meta.date as string)
+          const bDate = parseCustomDate(b.meta.date as string)
+          return bDate.getTime() - aDate.getTime()
+        })
+        .slice(0, 3)
+    }),
 )
 
 const formattedData = computed(() => {
   return data.value?.map((articles) => {
+    const meta = articles.meta as unknown as BlogPost
     return {
-      path: articles._path,
+      path: articles.path,
       title: articles.title || 'no-title available',
       description: articles.description || 'no-description available',
-      image: articles.image || '/not-found.jpg',
-      alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/not-found.jpg',
-      date: articles.date || 'not-date-available',
-      tags: articles.tags || [],
-      published: articles.published || false,
+      image: meta.image || '/not-found.jpg',
+      alt: meta.alt || 'no alter data available',
+      ogImage: meta.ogImage || '/not-found.jpg',
+      date: meta.date || 'not-date-available',
+      tags: meta.tags || [],
+      published: meta.published || false,
     }
   })
 })
