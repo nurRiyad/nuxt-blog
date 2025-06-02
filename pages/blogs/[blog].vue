@@ -79,7 +79,7 @@ useHead({
   ],
 })
 
-console.log(articles.value)
+// console.log(articles.value)
 
 // Generate OG Image
 defineOgImageComponent('Test', {
