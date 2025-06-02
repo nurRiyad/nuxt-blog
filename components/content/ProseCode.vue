@@ -24,14 +24,18 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <code class="font-mono bg-neutral-200 dark:bg-neutral-800 rounded border-2 border-neutral-300 dark:border-neutral-700 p-0.5 no-backticks">
     <slot />
-  </div>
+  </code>
 </template>
 
 <style>
 pre code .line {
   display: block;
   min-height: 1rem;
+}
+.no-backticks::before,
+.no-backticks::after {
+  content: '' !important; /* Hide backticks */
 }
 </style>
