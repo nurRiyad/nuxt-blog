@@ -49,7 +49,7 @@ function isActive(path: string) {
               class="hover:scale-110 transition-all ease-out hover:cursor-pointer"
               @click="onClick('dark')"
             >
-              <Icon name="icon-park:moon" size="20" />
+              <Icon name="icon-park:moon" size="20" class="-translate-y-[-20%]" />
             </button>
             <button
               v-if="colorMode.value === 'dark'"
@@ -58,11 +58,11 @@ function isActive(path: string) {
               class="hover:scale-110 transition-all ease-out hover:cursor-pointer"
               @click="onClick('light')"
             >
-              <Icon name="noto:sun" size="20" />
+              <Icon name="noto:sun" size="20" class="-translate-y-[-20%]" />
             </button>
             <template #fallback>
               <!-- this will be rendered on server side -->
-              <Icon name="svg-spinners:180-ring" size="20" />
+              <Icon name="svg-spinners:180-ring" size="20" class="-translate-y-[-20%]" />
             </template>
           </ClientOnly>
         </li>

@@ -38,7 +38,7 @@ withDefaults(defineProps<Props>(), {
       <div class="px-3 pb-4">
         <div class="text-black dark:text-zinc-300 pt-3 pb-2">
           <div class="flex items-center">
-            <LogoDate />
+            <LogoDate class="-translate-y-[10%]" />
             {{ date }}
           </div>
           <div class="flex items-center gap-1 flex-wrap">

@@ -17,7 +17,7 @@ import { footerData, socialLinks } from '~/data'
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="Github"
       >
-        <Icon name="fa:github" size="1em" />
+        <Icon name="fa:github" size="1em" class="-translate-y-[-10%]" />
       </NuxtLink>
       <NuxtLink
         :to="socialLinks.linkedinLink"
@@ -25,7 +25,7 @@ import { footerData, socialLinks } from '~/data'
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="LinkedIn"
       >
-        <Icon name="fa:linkedin-square" size="1em" />
+        <Icon name="fa:linkedin-square" size="1em" class="-translate-y-[-10%]" />
       </NuxtLink>
       <NuxtLink
         :to="socialLinks.twitterLink"
@@ -33,7 +33,7 @@ import { footerData, socialLinks } from '~/data'
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="Twitter"
       >
-        <Icon name="fa:twitter-square" size="1em" />
+        <Icon name="fa:twitter-square" size="1em" class="-translate-y-[-10%]" />
       </NuxtLink>
       <NuxtLink
         :to="socialLinks.stackoverflowLink"
@@ -41,7 +41,7 @@ import { footerData, socialLinks } from '~/data'
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
         aria-label="StackOverflow"
       >
-        <Icon name="fa:stack-overflow" size="1em" />
+        <Icon name="fa:stack-overflow" size="1em" class="-translate-y-[-10%]" />
       </NuxtLink>
     </div>
   </div>

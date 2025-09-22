@@ -22,7 +22,7 @@ const path = computed(() => route.fullPath.replace('/', ''))
         anyway.
 
         <a href="/rss.xml" aria-label="Website RSS Feed">
-          <span class="px-3"><Icon name="bi:rss-fill" /></span
+          <span class="px-3"><Icon name="bi:rss-fill" class="-translate-y-[-20%]" /></span
         ></a>
       </div>
     </div>
