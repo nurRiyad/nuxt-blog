@@ -40,26 +40,32 @@ function isActive(path: string) {
             About
           </NuxtLink>
         </li>
-        <li>
+        <li class="flex items-center">
           <ClientOnly>
-            <button
-              v-if="colorMode.value === 'light'"
-              name="light-mode"
-              title="Light"
-              class="hover:scale-110 transition-all ease-out hover:cursor-pointer"
-              @click="onClick('dark')"
-            >
-              <Icon name="icon-park:moon" size="20" class="-translate-y-[-20%]" />
-            </button>
-            <button
-              v-if="colorMode.value === 'dark'"
-              name="dark-mode"
-              title="Dark"
-              class="hover:scale-110 transition-all ease-out hover:cursor-pointer"
-              @click="onClick('light')"
-            >
-              <Icon name="noto:sun" size="20" class="-translate-y-[-20%]" />
-            </button>
+            <div class="relative w-5 h-5 flex items-center justify-center">
+              <Transition name="icon-fade" mode="out-in">
+                <button
+                  v-if="colorMode.value === 'light'"
+                  key="light-mode"
+                  name="light-mode"
+                  title="Light"
+                  class="absolute inset-0 flex items-center justify-center hover:scale-110 transition-all ease-out hover:cursor-pointer"
+                  @click="onClick('dark')"
+                >
+                  <Icon name="icon-park:moon" size="20" />
+                </button>
+                <button
+                  v-else
+                  key="dark-mode"
+                  name="dark-mode"
+                  title="Dark"
+                  class="absolute inset-0 flex items-center justify-center hover:scale-110 transition-all ease-out hover:cursor-pointer"
+                  @click="onClick('light')"
+                >
+                  <Icon name="noto:sun" size="20" />
+                </button>
+              </Transition>
+            </div>
             <template #fallback>
               <!-- this will be rendered on server side -->
               <Icon name="svg-spinners:180-ring" size="20" class="-translate-y-[-20%]" />
@@ -70,3 +76,26 @@ function isActive(path: string) {
     </div>
   </div>
 </template>
+
+<style scoped>
+.icon-fade-enter-active,
+.icon-fade-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-fade-enter-from {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.8);
+}
+
+.icon-fade-leave-to {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.8);
+}
+
+.icon-fade-enter-to,
+.icon-fade-leave-from {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+</style>
