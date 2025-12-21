@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 interface Props {
-  path: string
-  title: string
-  date: string
-  description: string
-  image: string
-  alt: string
-  ogImage: string
-  tags: Array<string>
-  published: boolean
+  path?: string
+  title?: string
+  date?: string
+  description?: string
+  image?: string
+  alt?: string
+  ogImage?: string
+  tags?: Array<string>
+  published?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -37,25 +37,25 @@ withDefaults(defineProps<Props>(), {
       />
       <div class="px-3 pb-4">
         <div class="text-black dark:text-zinc-300 pt-3 pb-2">
-          <div class="flex items-center">
+          <div class="flex items-center text-xs">
             <LogoDate class="-translate-y-[10%]" />
             {{ date }}
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
             <template v-for="tag in tags" :key="tag">
-              <span class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 font-semibold">{{
+              <span class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 text-xs">{{
                 tag
               }}</span>
             </template>
           </div>
         </div>
         <h2
-          class="text-xl font-semibold text-black dark:text-zinc-300 pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400"
+          class="text-base font-semibold text-black dark:text-zinc-300 pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400"
         >
           {{ title }}
         </h2>
-        <p class="text-ellipsis line-clamp-2 text-base">
+        <p class="text-ellipsis line-clamp-2 text-xs">
           {{ description }}
         </p>
         <div class="flex group-hover:underline text-sky-700 dark:text-sky-400 items-center py-2">
