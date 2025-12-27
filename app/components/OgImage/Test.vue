@@ -13,12 +13,8 @@ const props = withDefaults(defineProps<Props>(), {
   link: '',
 })
 
-const formattedTitle = computed(() =>
-  props.title.length > 70 ? `${props.title.slice(0, 60)}...` : props.title,
-)
-const formattedDescription = computed(() =>
-  props.description.length > 100 ? `${props.description}...` : props.description,
-)
+const formattedTitle = computed(() => (props.title.length > 70 ? `${props.title.slice(0, 60)}...` : props.title))
+const formattedDescription = computed(() => (props.description.length > 100 ? `${props.description}...` : props.description))
 const formattedLink = computed(() => {
   if (props.link.endsWith('jpg') || props.link.endsWith('png')) return props.link
   else return '/blogs-img/blog.jpg'

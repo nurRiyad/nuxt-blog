@@ -69,10 +69,7 @@
         d="M320,198.12c-5.66,3-11.14,6-16.22,8.35-9.88,4.51-19.33,3.09-27.09,1.15,2.68,2.47,5.65,7.13,6,15.75.75,16.16-4.88,23.3,0,30.82s10.9,9.77,15,17.28,7.52,12,13.53,12,22.92-18,25.93-37.19C340.21,227.56,326.62,202.72,320,198.12Z"
         style="fill: #263238; stroke: #263238; stroke-linecap: round; stroke-linejoin: round"
       />
-      <path
-        d="M220,385s1.88-11.65,9.4-12"
-        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round"
-      />
+      <path d="M220,385s1.88-11.65,9.4-12" style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round" />
       <path
         d="M211.77,378.93s5.63-9.77,12-9"
         style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round"
@@ -87,73 +84,31 @@
       />
       <path
         d="M329.65,85.34s44.45,178.42,10,296.74"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M365.42,203.11c.29,4.17.48,8.15.54,11.82"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M353.44,117.27s8.25,43.42,11.37,78.19"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M372.85,164.85s8.76,55.71,6.88,105.17"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M369.09,245.6s.54,50-4.38,78.26"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M394.53,285.59c-.28,3-.62,6-1,8.84"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M392.88,192.39s4.56,45.1,2.4,83.22"
-        style="
-          fill: none;
-          stroke: #263238;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-width: 2px;
-        "
+        style="fill: none; stroke: #263238; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px"
       />
       <path
         d="M265,151.59s-38.76-16.54-42.07-16.54S218.69,145.45,213,154s-15.6,9.92-17.49,17,3.31,26.94,8.51,32.62,13.7-2.37,18.43,1.89,6.62,10.87,14.18,9,25.53-9.93,27.89-15.6-1.42-17-1.42-26.47S266.9,156.32,265,151.59Z"
@@ -167,14 +122,8 @@
         d="M252.46,169.79a1.19,1.19,0,0,1-.37-.06,1.13,1.13,0,0,1-.69-1.44,6,6,0,0,0-2-6.46c-3.25-2.6-7.49.44-7.67.57a1.14,1.14,0,0,1-1.58-.25,1.13,1.13,0,0,1,.24-1.57c.24-.17,5.81-4.19,10.42-.51a8.27,8.27,0,0,1,2.75,9A1.14,1.14,0,0,1,252.46,169.79Z"
         style="fill: #fff"
       />
-      <path
-        d="M246.88,178.23a2.13,2.13,0,1,1-2.13-2.12A2.13,2.13,0,0,1,246.88,178.23Z"
-        style="fill: #fff"
-      />
-      <path
-        d="M220.83,168.4a2.13,2.13,0,1,1-2.13-2.13A2.12,2.12,0,0,1,220.83,168.4Z"
-        style="fill: #fff"
-      />
+      <path d="M246.88,178.23a2.13,2.13,0,1,1-2.13-2.12A2.13,2.13,0,0,1,246.88,178.23Z" style="fill: #fff" />
+      <path d="M220.83,168.4a2.13,2.13,0,1,1-2.13-2.13A2.12,2.12,0,0,1,220.83,168.4Z" style="fill: #fff" />
       <path
         d="M212.61,204.31s5.92,5.35,11.84,6.2,3.94-4.23,1.41-6.2S210.92,197.54,212.61,204.31Z"
         style="fill: #fff; stroke: #263238; stroke-linecap: round; stroke-linejoin: round"

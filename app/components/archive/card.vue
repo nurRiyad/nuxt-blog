@@ -25,9 +25,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <article
-    class="group border dark:border-gray-800 m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300"
-  >
+  <article class="group border dark:border-gray-800 m-2 rounded-2xl overflow-hidden shadow-sm text-zinc-700 dark:text-zinc-300">
     <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
       <div class="sm:col-span-3">
         <NuxtImg
@@ -53,11 +51,7 @@ withDefaults(defineProps<Props>(), {
           </div>
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
-            <p
-              v-for="tag in tags"
-              :key="tag"
-              class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 font-semibold"
-            >
+            <p v-for="tag in tags" :key="tag" class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 font-semibold">
               {{ tag }}
             </p>
           </div>

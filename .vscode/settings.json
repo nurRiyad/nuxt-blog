@@ -4,20 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "tailwindCSS.files.exclude": [
-    "**/.git/**",
-    "**/node_modules/**",
-    "**/.hg/**",
-    "**/.svn/**",
-    "**/.nuxt/**"
-  ],
-  "cSpell.words": [
-    "cloudinary",
-    "Namecheap",
-    "nurriyad",
-    "Nuxt",
-    "spacegrotesk",
-    "Tailwindcss",
-    "vuex"
-  ]
+  "tailwindCSS.files.exclude": ["**/.git/**", "**/node_modules/**", "**/.hg/**", "**/.svn/**", "**/.nuxt/**"],
+  "cSpell.words": ["cloudinary", "Namecheap", "nurriyad", "Nuxt", "spacegrotesk", "Tailwindcss", "vuex"]
 }

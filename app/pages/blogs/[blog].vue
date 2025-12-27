@@ -2,33 +2,64 @@
 import type { BlogPost } from '@/types/blog'
 import { navbarData, seoData } from '~/data'
 
+// Define interface for content collection structure
+interface ContentItem {
+  path: string
+  title?: string
+  description?: string
+  body?: {
+    toc?: {
+      links?: Array<{ id: string; text: string }>
+    }
+    [key: string]: unknown
+  }
+  meta?: {
+    date?: string
+    image?: string
+    alt?: string
+    ogImage?: string
+    tags?: string[]
+    published?: boolean
+    [key: string]: unknown
+  }
+  seo?: {
+    title?: string
+    description?: string
+    [key: string]: unknown
+  }
+  ogImage?: string
+  [key: string]: unknown
+}
+
 const { path } = useRoute()
 
-const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () =>
-  queryCollection('content').path(path).first(),
-)
+const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryCollection('content').path(path).first())
 
 if (error.value) navigateTo('/404')
 
 const data = computed<BlogPost>(() => {
-  const meta = articles?.value?.meta as unknown as BlogPost
+  const article = articles.value as ContentItem | null
+  const meta = article?.meta || {}
+
   return {
-    title: articles.value?.title || 'no-title available',
-    description: articles.value?.description || 'no-description available',
-    image: meta?.image || '/not-found.jpg',
-    alt: meta?.alt || 'no alter data available',
-    ogImage: (articles?.value?.ogImage as unknown as string) || '/not-found.jpg',
-    date: meta?.date || 'not-date-available',
-    tags: meta?.tags || [],
-    published: meta?.published || false,
+    title: article?.title || 'no-title available',
+    description: article?.description || 'no-description available',
+    image: meta.image || '/not-found.jpg',
+    alt: meta.alt || 'no alter data available',
+    ogImage: article?.ogImage || meta.ogImage || '/not-found.jpg',
+    date: meta.date || 'not-date-available',
+    tags: meta.tags || [],
+    published: meta.published || false,
   }
 })
 
 // Calculate reading time based on word count (average 200 words per minute)
 const readingTime = computed(() => {
-  if (!articles.value?.body) return '1 min read'
+  const article = articles.value as ContentItem | null
+  const body = article?.body
+  if (!body) return '1 min read'
 
-  const text = JSON.stringify(articles.value.body)
+  const text = JSON.stringify(body)
   const wordCount = text.split(/\s+/).length
   const minutes = Math.ceil(wordCount / 200)
 
@@ -90,13 +121,12 @@ useHead({
   ],
 })
 
-// console.log(articles.value)
-
 // Generate OG Image
+const article = articles.value as ContentItem | null
 defineOgImageComponent('Test', {
   headline: 'Riyads Blog 👋',
-  title: articles.value?.seo.title || '',
-  description: articles.value?.seo.description || '',
+  title: article?.seo?.title || '',
+  description: article?.seo?.description || '',
   link: data.value.ogImage,
 })
 </script>

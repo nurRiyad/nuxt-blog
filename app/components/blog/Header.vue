@@ -31,9 +31,7 @@ withDefaults(defineProps<Props>(), {
       width="600"
       class="m-auto rounded-2xl shadow-lg h-32 md:h-72 w-4/6 md:w-4/5 content-center object-cover"
     />
-    <p
-      class="text-xs sm:text-sm my-3 max-w-xl mx-auto text-center text-zinc-600 dark:text-zinc-400"
-    >
+    <p class="text-xs sm:text-sm my-3 max-w-xl mx-auto text-center text-zinc-600 dark:text-zinc-400">
       {{ description }}
     </p>
     <div class="flex w-full justify-center text-xs md:text-base my-8">
