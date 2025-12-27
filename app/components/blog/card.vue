@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
         :alt="alt"
       />
       <div class="px-3 pb-4">
-        <div class="text-black dark:text-zinc-300 pt-3 pb-2">
+        <div class="text-black dark:text-zinc-300 space-y-3 pt-3 pb-2">
           <div class="flex items-center text-xs">
             <LogoDate class="-translate-y-[10%]" />
             {{ date }}
@@ -44,9 +44,9 @@ withDefaults(defineProps<Props>(), {
           <div class="flex items-center gap-1 flex-wrap">
             <LogoTag />
             <template v-for="tag in tags" :key="tag">
-              <span class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 text-xs">{{
-                tag
-              }}</span>
+              <span class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 space-x-2 text-xs">
+                {{ tag }}
+              </span>
             </template>
           </div>
         </div>
