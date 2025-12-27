@@ -4,8 +4,7 @@ export const navbarData = {
 
 export const footerData = {
   author: 'Al Asad Nur Riyad',
-  aboutAuthor:
-    'Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently working at FieldNation LLC.',
+  aboutAuthor: 'Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently working at FieldNation LLC.',
   authorInterest:
     "I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you have an interesting idea, either open source or paid let's connect.",
   aboutTheSite:
@@ -25,8 +24,7 @@ export const blogsPage = {
 
 export const categoryPage = {
   title: 'Categories',
-  description:
-    'Blow this category is generated from all the tags are mentioned in the different blog post',
+  description: 'Blow this category is generated from all the tags are mentioned in the different blog post',
 }
 
 export const aboutPage = {
@@ -41,8 +39,7 @@ export const seoData = {
   ogTitle: `Let's learn Javascript, Typescript, Vue, Nuxt, & Problem Solving - Riyads Blog | Riyad's Blog`,
   description: `Hi I am Riyad. A Software Engineer at FieldNation, with over 3.5+ years experience in software development. - Riyads Blog | Riyad's Blog`,
   twitterDescription: `Riyad's Blog, where I play around with Nuxt, Vue, and more and showcase my blog, resources, etc - Riyads Blog | Riyad's Blog`,
-  image:
-    'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
+  image: 'https://res.cloudinary.com/dmecmyphj/image/upload/v1673548905/nuxt-blog/cover_ntgs6u.webp',
   mySite: 'https://blog-nurriyad.vercel.app',
   twitterHandle: '@qdnvubp',
   mailAddress: 'asadnurriyad@gmail.com',

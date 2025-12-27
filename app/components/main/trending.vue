@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import type { BlogPost } from '~/types/blog'
 
-const { data } = await useAsyncData('trending-post', () =>
-  queryCollection('content').limit(3).all(),
-)
+const { data } = await useAsyncData('trending-post', () => queryCollection('content').limit(3).all())
 
 const formattedData = computed(() => {
   return data.value?.map((articles) => {

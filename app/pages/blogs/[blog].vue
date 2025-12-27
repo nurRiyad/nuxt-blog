@@ -2,26 +2,68 @@
 import type { BlogPost } from '@/types/blog'
 import { navbarData, seoData } from '~/data'
 
+// Define interface for content collection structure
+interface ContentItem {
+  path: string
+  title?: string
+  description?: string
+  body?: {
+    toc?: {
+      links?: Array<{ id: string; text: string }>
+    }
+    [key: string]: unknown
+  }
+  meta?: {
+    date?: string
+    image?: string
+    alt?: string
+    ogImage?: string
+    tags?: string[]
+    published?: boolean
+    [key: string]: unknown
+  }
+  seo?: {
+    title?: string
+    description?: string
+    [key: string]: unknown
+  }
+  ogImage?: string
+  [key: string]: unknown
+}
+
 const { path } = useRoute()
 
-const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () =>
-  queryCollection('content').path(path).first(),
-)
+const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryCollection('content').path(path).first())
 
 if (error.value) navigateTo('/404')
 
 const data = computed<BlogPost>(() => {
-  const meta = articles?.value?.meta as unknown as BlogPost
+  const article = articles.value as ContentItem | null
+  const meta = article?.meta || {}
+
   return {
-    title: articles.value?.title || 'no-title available',
-    description: articles.value?.description || 'no-description available',
-    image: meta?.image || '/not-found.jpg',
-    alt: meta?.alt || 'no alter data available',
-    ogImage: (articles?.value?.ogImage as unknown as string) || '/not-found.jpg',
-    date: meta?.date || 'not-date-available',
-    tags: meta?.tags || [],
-    published: meta?.published || false,
+    title: article?.title || 'no-title available',
+    description: article?.description || 'no-description available',
+    image: meta.image || '/not-found.jpg',
+    alt: meta.alt || 'no alter data available',
+    ogImage: article?.ogImage || meta.ogImage || '/not-found.jpg',
+    date: meta.date || 'not-date-available',
+    tags: meta.tags || [],
+    published: meta.published || false,
   }
+})
+
+// Calculate reading time based on word count (average 200 words per minute)
+const readingTime = computed(() => {
+  const article = articles.value as ContentItem | null
+  const body = article?.body
+  if (!body) return '1 min read'
+
+  const text = JSON.stringify(body)
+  const wordCount = text.split(/\s+/).length
+  const minutes = Math.ceil(wordCount / 200)
+
+  return `${minutes} min read`
 })
 
 useHead({
@@ -79,50 +121,57 @@ useHead({
   ],
 })
 
-// console.log(articles.value)
-
 // Generate OG Image
+const article = articles.value as ContentItem | null
 defineOgImageComponent('Test', {
   headline: 'Riyads Blog 👋',
-  title: articles.value?.seo.title || '',
-  description: articles.value?.seo.description || '',
+  title: article?.seo?.title || '',
+  description: article?.seo?.description || '',
   link: data.value.ogImage,
 })
 </script>
 
 <template>
-  <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
-    <div class="col-span-12 lg:col-span-9">
-      <BlogHeader
-        :title="data.title"
-        :image="data.image"
-        :alt="data.alt"
-        :date="data.date"
-        :description="data.description"
-        :tags="data.tags"
-      />
-      <div
-        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
-      >
-        <ContentRenderer v-if="articles" :value="articles">
-          <template #empty>
-            <p>No content found.</p>
-          </template>
-        </ContentRenderer>
+  <div>
+    <!-- Reading Progress Bar -->
+    <BlogReadingProgress />
+
+    <div class="px-6 container max-w-5xl mx-auto">
+      <div>
+        <BlogHeader
+          :title="data.title"
+          :image="data.image"
+          :alt="data.alt"
+          :date="data.date"
+          :description="data.description"
+          :tags="data.tags"
+          :reading-time="readingTime"
+        />
+        <div
+          class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
+        >
+          <ContentRenderer v-if="articles" :value="articles">
+            <template #empty>
+              <p>No content found.</p>
+            </template>
+          </ContentRenderer>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
+        <SocialShare
+          v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
+          :key="network"
+          :network="network"
+          :styled="true"
+          :label="true"
+          class="p-1"
+          aria-label="Share with {network}"
+        />
       </div>
     </div>
-    <BlogToc />
 
-    <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
-      <SocialShare
-        v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
-        :key="network"
-        :network="network"
-        :styled="true"
-        :label="true"
-        class="p-1"
-        aria-label="Share with {network}"
-      />
-    </div>
+    <!-- TOC positioned outside main content area -->
+    <BlogToc />
   </div>
 </template>
