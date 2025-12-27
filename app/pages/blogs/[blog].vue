@@ -91,40 +91,42 @@ defineOgImageComponent('Test', {
 </script>
 
 <template>
-  <div class="px-6 container max-w-5xl mx-auto">
-    <div>
-      <BlogHeader
-        :title="data.title"
-        :image="data.image"
-        :alt="data.alt"
-        :date="data.date"
-        :description="data.description"
-        :tags="data.tags"
-      />
-      <div
-        class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
-      >
-        <ContentRenderer v-if="articles" :value="articles">
-          <template #empty>
-            <p>No content found.</p>
-          </template>
-        </ContentRenderer>
+  <div>
+    <div class="px-6 container max-w-5xl mx-auto">
+      <div>
+        <BlogHeader
+          :title="data.title"
+          :image="data.image"
+          :alt="data.alt"
+          :date="data.date"
+          :description="data.description"
+          :tags="data.tags"
+        />
+        <div
+          class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
+        >
+          <ContentRenderer v-if="articles" :value="articles">
+            <template #empty>
+              <p>No content found.</p>
+            </template>
+          </ContentRenderer>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
+        <SocialShare
+          v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
+          :key="network"
+          :network="network"
+          :styled="true"
+          :label="true"
+          class="p-1"
+          aria-label="Share with {network}"
+        />
       </div>
     </div>
 
-    <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
-      <SocialShare
-        v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
-        :key="network"
-        :network="network"
-        :styled="true"
-        :label="true"
-        class="p-1"
-        aria-label="Share with {network}"
-      />
-    </div>
+    <!-- TOC positioned outside main content area -->
+    <BlogToc />
   </div>
-
-  <!-- TOC positioned outside main content area -->
-  <BlogToc />
 </template>
