@@ -1,41 +1,15 @@
 <script setup lang="ts">
-import type { BlogPost } from '@/types/blog'
+import type { BlogPost, ContentItem } from '@/types/blog'
 import { navbarData, seoData } from '~/data'
-
-// Define interface for content collection structure
-interface ContentItem {
-  path: string
-  title?: string
-  description?: string
-  body?: {
-    toc?: {
-      links?: Array<{ id: string; text: string }>
-    }
-    [key: string]: unknown
-  }
-  meta?: {
-    date?: string
-    image?: string
-    alt?: string
-    ogImage?: string
-    tags?: string[]
-    published?: boolean
-    [key: string]: unknown
-  }
-  seo?: {
-    title?: string
-    description?: string
-    [key: string]: unknown
-  }
-  ogImage?: string
-  [key: string]: unknown
-}
 
 const { path } = useRoute()
 
 const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => queryCollection('content').path(path).first())
 
 if (error.value) navigateTo('/404')
+
+// Get previous and next post navigation
+const { previousPost, nextPost } = await useBlogNavigation(path)
 
 const data = computed<BlogPost>(() => {
   const article = articles.value as ContentItem | null
@@ -169,6 +143,9 @@ defineOgImageComponent('Test', {
           aria-label="Share with {network}"
         />
       </div>
+
+      <!-- Previous and Next Blog Navigation -->
+      <BlogNavigation :previous-post="previousPost" :next-post="nextPost" />
     </div>
 
     <!-- TOC positioned outside main content area -->
