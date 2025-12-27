@@ -24,6 +24,17 @@ const data = computed<BlogPost>(() => {
   }
 })
 
+// Calculate reading time based on word count (average 200 words per minute)
+const readingTime = computed(() => {
+  if (!articles.value?.body) return '1 min read'
+
+  const text = JSON.stringify(articles.value.body)
+  const wordCount = text.split(/\s+/).length
+  const minutes = Math.ceil(wordCount / 200)
+
+  return `${minutes} min read`
+})
+
 useHead({
   title: data.value.title || '',
   meta: [
@@ -92,6 +103,9 @@ defineOgImageComponent('Test', {
 
 <template>
   <div>
+    <!-- Reading Progress Bar -->
+    <BlogReadingProgress />
+
     <div class="px-6 container max-w-5xl mx-auto">
       <div>
         <BlogHeader
@@ -101,6 +115,7 @@ defineOgImageComponent('Test', {
           :date="data.date"
           :description="data.description"
           :tags="data.tags"
+          :reading-time="readingTime"
         />
         <div
           class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-lg prose-h1:no-underline max-w-5xl mx-auto prose-zinc dark:prose-invert prose-img:rounded-lg"
