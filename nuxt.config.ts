@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-09-30',
 
   modules: [
+    'nuxt-llms',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/fonts',
@@ -19,6 +20,12 @@ export default defineNuxtConfig({
     '@formkit/auto-animate',
     '@stefanobartoletti/nuxt-social-share',
   ],
+
+  llms: {
+    domain: seoData.mySite,
+    title: seoData.title,
+    description: seoData.description,
+  },
 
   app: {
     head: {

@@ -43,5 +43,8 @@
     "prettier": "^3.6.2",
     "typescript": "^5.8.2",
     "unenv": "^1.10.0"
+  },
+  "dependencies": {
+    "nuxt-llms": "^0.1.3"
   }
 }
