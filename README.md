@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://blog.nurriyad.com" target="_blank">
+  <a href="https://blog-nurriyad.vercel.app" target="_blank">
     <img  src="./app/assets/images/dark.png">
   </a>
 </p>
@@ -37,7 +37,7 @@ Nuxt Blog built with [Nuxt4](https://nuxt.com), [Nuxt-Content3](https://content.
 ## Preview
 
 <p align="center">
-  <a href="https://blog.nurriyad.com" target="_blank">
+  <a href="https://blog-nurriyad.vercel.app" target="_blank">
     <img width="1090" src="./app/assets/images/preview1.png">
     <img width="1090" src="./app/assets/images/preview2.png">
     <img width="1090" src="./app/assets/images/preview3.png">
@@ -49,7 +49,7 @@ Nuxt Blog built with [Nuxt4](https://nuxt.com), [Nuxt-Content3](https://content.
 
 ## Demo
 
-https://blog.nurriyad.com
+https://blog-nurriyad.vercel.app
 
 > Hosted on [Vercel](https://vercel.com/): `npm run build`
 
