@@ -8,6 +8,31 @@ const { data: articles, error } = await useAsyncData(`blog-post-${path}`, () => 
 
 if (error.value) navigateTo('/404')
 
+// Reading progress (reuses Nuxt's built-in loading indicator via CSS var)
+const updateReadingProgress = () => {
+  const windowHeight = window.innerHeight
+  const documentHeight = document.documentElement.scrollHeight
+  const scrollTop = window.scrollY
+
+  const totalScroll = documentHeight - windowHeight
+  const progress = totalScroll > 0 ? (scrollTop / totalScroll) * 100 : 0
+  const clamped = Math.min(100, Math.max(0, progress))
+
+  document.documentElement.style.setProperty('--reading-progress', `${clamped}%`)
+}
+
+onMounted(() => {
+  document.documentElement.classList.add('reading-progress')
+  window.addEventListener('scroll', updateReadingProgress, { passive: true })
+  updateReadingProgress()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateReadingProgress)
+  document.documentElement.classList.remove('reading-progress')
+  document.documentElement.style.removeProperty('--reading-progress')
+})
+
 // Get previous and next post navigation
 const { previousPost, nextPost } = await useBlogNavigation(path)
 
@@ -33,12 +58,15 @@ const readingTime = computed(() => {
   const body = article?.body
   if (!body) return '1 min read'
 
+  // More stable word count calculation
   const text = JSON.stringify(body)
   const wordCount = text.split(/\s+/).length
   const minutes = Math.ceil(wordCount / 200)
 
   return `${minutes} min read`
 })
+
+const tocLinks = computed(() => (articles.value as ContentItem | null)?.body?.toc?.links || [])
 
 useHead({
   title: data.value.title || '',
@@ -107,9 +135,6 @@ defineOgImageComponent('Test', {
 
 <template>
   <div>
-    <!-- Reading Progress Bar -->
-    <BlogReadingProgress />
-
     <div class="px-6 container max-w-5xl mx-auto">
       <div>
         <BlogHeader
@@ -133,15 +158,17 @@ defineOgImageComponent('Test', {
       </div>
 
       <div class="flex flex-row flex-wrap md:flex-nowrap mt-10 gap-2">
-        <SocialShare
-          v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
-          :key="network"
-          :network="network"
-          :styled="true"
-          :label="true"
-          class="p-1"
-          aria-label="Share with {network}"
-        />
+        <ClientOnly>
+          <SocialShare
+            v-for="network in ['facebook', 'twitter', 'linkedin', 'email']"
+            :key="network"
+            :network="network"
+            :styled="true"
+            :label="true"
+            class="p-1"
+            aria-label="Share with {network}"
+          />
+        </ClientOnly>
       </div>
 
       <!-- Previous and Next Blog Navigation -->
@@ -149,6 +176,10 @@ defineOgImageComponent('Test', {
     </div>
 
     <!-- TOC positioned outside main content area -->
-    <BlogToc />
+    <ClientOnly>
+      <Teleport to="body">
+        <BlogToc :links="tocLinks" />
+      </Teleport>
+    </ClientOnly>
   </div>
 </template>
