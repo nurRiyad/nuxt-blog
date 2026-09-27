@@ -6,16 +6,16 @@ Add each post as a Markdown file under `content/blogs/`. The file name becomes p
 
 Every post should include these fields:
 
-| Field | Purpose | Example |
-| --- | --- | --- |
-| `title` | Post title shown in the archive and post page | `A practical Nuxt guide` |
-| `date` | Publication date; existing posts use human-readable dates | `27th Sep 2026` |
-| `description` | Short summary used in listings and metadata | `A concise introduction to the topic.` |
-| `image` | Main post image URL | `/blogs-img/nuxt-guide.jpg` |
-| `alt` | Accessible description of the main image | `Nuxt logo on a dark background` |
-| `ogImage` | Social sharing image URL | `/blogs-img/nuxt-guide.jpg` |
-| `tags` | YAML list of category/tag names | `[nuxt, vue, typescript]` |
-| `published` | Whether the post is published | `true` |
+| Field         | Purpose                                                   | Example                                |
+| ------------- | --------------------------------------------------------- | -------------------------------------- |
+| `title`       | Post title shown in the archive and post page             | `A practical Nuxt guide`               |
+| `date`        | Publication date; existing posts use human-readable dates | `27th Sep 2026`                        |
+| `description` | Short summary used in listings and metadata               | `A concise introduction to the topic.` |
+| `image`       | Main post image URL                                       | `/blogs-img/nuxt-guide.jpg`            |
+| `alt`         | Accessible description of the main image                  | `Nuxt logo on a dark background`       |
+| `ogImage`     | Social sharing image URL                                  | `/blogs-img/nuxt-guide.jpg`            |
+| `tags`        | YAML list of category/tag names                           | `[nuxt, vue, typescript]`              |
+| `published`   | Whether the post is published                             | `true`                                 |
 
 Use this template:
 

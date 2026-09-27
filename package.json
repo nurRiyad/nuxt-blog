@@ -23,7 +23,7 @@
     "@iconify-json/svg-spinners": "^1.2.4",
     "@nuxt/content": "^3.3.0",
     "@nuxt/eslint": "^1.4.1",
-    "@nuxt/fonts": "^0.11.4",
+    "@nuxt/fonts": "^0.13.0",
     "@nuxt/icon": "^2.0.0",
     "@nuxt/image": "^1.11.0",
     "@nuxtjs/color-mode": "^3.3.2",
@@ -39,12 +39,14 @@
     "feed": "^4.2.2",
     "fuse.js": "^7.0.0",
     "nuxt": "^4.5.2",
-    "nuxt-og-image": "^5.1.11",
+    "nuxt-og-image": "^5.1.13",
     "prettier": "^3.6.2",
     "typescript": "^5.8.2",
-    "unenv": "^1.10.0"
+    "unenv": "^1.10.0",
+    "tailwindcss": "^3.4.19"
   },
   "dependencies": {
+    "@takumi-rs/core": "^2.14.0",
     "nuxt-llms": "^0.1.3"
   }
 }
