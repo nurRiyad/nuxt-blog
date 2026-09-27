@@ -36,6 +36,8 @@ Run `npm run lint` and `npm run format` after code changes. Run `npm run build` 
 
 Read [`content/README.md`](content/README.md) before adding or changing blog posts. Preserve the existing frontmatter fields and use root-relative paths for files in `public/`.
 
+For Nuxt-specific changes, follow [`skills/nuxt-development/SKILL.md`](skills/nuxt-development/SKILL.md). Check the installed dependency versions and Nuxt 4 documentation before choosing framework APIs.
+
 ## Change practices
 
 - Keep changes focused and preserve the current site behavior unless the task asks for a behavior change.
