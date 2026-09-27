@@ -9,7 +9,7 @@ useHead({
   ],
 })
 
-defineOgImageComponent('About', {
+defineOgImage('About', {
   headline: 'Wrong Path',
   title: '404',
   description: 'Page Not Found',

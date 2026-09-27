@@ -11,7 +11,7 @@ useHead({
   ],
 })
 
-defineOgImageComponent('About', {
+defineOgImage('About', {
   headline: 'Greetings 👋',
   title: navbarData.homeTitle,
   description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',

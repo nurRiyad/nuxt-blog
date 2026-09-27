@@ -52,12 +52,10 @@ useHead({
 
 // Generate OG Image
 const siteData = useSiteConfig()
-defineOgImage({
-  props: {
-    title: category.value?.toUpperCase(),
-    description: `You will find all the ${category.value} related post here`,
-    siteName: siteData.url,
-  },
+defineOgImage('NuxtSeo', {
+  title: category.value?.toUpperCase(),
+  description: `You will find all the ${category.value} related post here`,
+  siteName: siteData.url,
 })
 </script>
 

@@ -1,8 +1,15 @@
 import { seoData } from './app/data'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-09-30',
+
+  css: ['~/assets/css/tailwind.css'],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
   modules: [
     'nuxt-llms',
@@ -16,7 +23,6 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxt/content',
     '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
     '@formkit/auto-animate',
     '@stefanobartoletti/nuxt-social-share',
   ],
@@ -36,10 +42,6 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
-  },
-
-  sitemap: {
-    sources: [seoData.mySite],
   },
 
   site: {
