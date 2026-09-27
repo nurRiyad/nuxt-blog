@@ -55,19 +55,25 @@ https://blog-nurriyad.vercel.app
 
 ## Build Setup
 
-**Requires Node.js 20.19+**
+Requires Node.js `22.14.0` (see `.nvmrc`) and npm.
 
 ```bash
-# install dependencies
-yarn install
+# install dependencies from the lockfile
+npm ci
 
-# serve in dev mode, with hot reload at localhost:5173
-yarn run dev
+# start the development server
+npm run dev
 
 # build for production
-yarn run build
+npm run build
 
 # serve in production mode
-yarn run preview
+npm run preview
+
+# lint and check formatting
+npm run lint
+npm run format
 
 ```
+
+See [content/README.md](content/README.md) for blog post frontmatter and authoring instructions. See [AGENTS.md](AGENTS.md) for repository guidance for coding agents.
