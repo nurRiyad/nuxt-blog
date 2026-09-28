@@ -8,11 +8,11 @@ export default defineContentConfig({
     content: defineCollection({
       ...asRobotsCollection({
         type: 'page',
-        source: '**/*.md',
+        source: 'blogs/**/*.md',
       }),
       ...asSitemapCollection({
         type: 'page',
-        source: '**/*.md',
+        source: 'blogs/**/*.md',
       }),
       schema: defineOgImageSchema(),
     }),

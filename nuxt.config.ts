@@ -27,6 +27,10 @@ export default defineNuxtConfig({
     '@stefanobartoletti/nuxt-social-share',
   ],
 
+  fonts: {
+    families: [{ name: 'Space Grotesk', provider: 'google', weights: [400, 600], global: true }],
+  },
+
   llms: {
     domain: seoData.mySite,
     title: seoData.title,

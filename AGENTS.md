@@ -34,7 +34,39 @@ Run `npm run lint` and `npm run format` after code changes. Run `npm run build` 
 
 ## Content conventions
 
-Read [`content/README.md`](content/README.md) before adding or changing blog posts. Preserve the existing frontmatter fields and use root-relative paths for files in `public/`.
+Add each blog post as a Markdown file under `content/blogs/`. Use a descriptive, URL-friendly filename; its filename becomes part of the URL. Keep agent and repository documentation outside `content/`, which is indexed as site content.
+
+Every post should preserve these frontmatter fields:
+
+| Field         | Purpose                                                   | Example                                |
+| ------------- | --------------------------------------------------------- | -------------------------------------- |
+| `title`       | Post title shown in the archive and post page             | `A practical Nuxt guide`               |
+| `date`        | Publication date; existing posts use human-readable dates | `27th Sep 2026`                        |
+| `description` | Short summary used in listings and metadata               | `A concise introduction to the topic.` |
+| `image`       | Main post image URL                                       | `/blogs-img/nuxt-guide.jpg`            |
+| `alt`         | Accessible description of the main image                  | `Nuxt logo on a dark background`       |
+| `ogImage`     | Social sharing image URL                                  | `/blogs-img/nuxt-guide.jpg`            |
+| `tags`        | YAML list of category/tag names                           | `[nuxt, vue, typescript]`              |
+| `published`   | Whether the post is published                             | `true`                                 |
+
+Use this template:
+
+```md
+---
+title: A practical Nuxt guide
+date: 27th Sep 2026
+description: A concise introduction to the topic.
+image: /blogs-img/nuxt-guide.jpg
+alt: Nuxt logo on a dark background
+ogImage: /blogs-img/nuxt-guide.jpg
+tags: [nuxt, vue, typescript]
+published: true
+---
+
+Write the post content here in Markdown.
+```
+
+Use `published: false` for a draft. Keep descriptions complete and on one line. Ensure image URLs point to files in `public/`, use root-relative URLs, and provide meaningful `alt` text. Keep post dates in the existing human-readable format unless the date handling is updated.
 
 For Nuxt-specific changes, follow [`skills/nuxt-development/SKILL.md`](skills/nuxt-development/SKILL.md). Check the installed dependency versions and Nuxt 4 documentation before choosing framework APIs.
 

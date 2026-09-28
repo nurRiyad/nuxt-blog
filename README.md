@@ -76,4 +76,4 @@ npm run format
 
 ```
 
-See [content/README.md](content/README.md) for blog post frontmatter and authoring instructions. See [AGENTS.md](AGENTS.md) for repository guidance for coding agents.
+See [AGENTS.md](AGENTS.md) for blog post frontmatter, authoring instructions, and repository guidance for coding agents.

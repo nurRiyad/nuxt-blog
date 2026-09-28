@@ -5,5 +5,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-sans: 'Space Grotesk', sans-serif;
   --font-spacegrotesk: 'Space Grotesk', sans-serif;
 }

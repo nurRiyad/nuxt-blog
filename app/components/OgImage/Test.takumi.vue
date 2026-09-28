@@ -22,7 +22,7 @@ const formattedLink = computed(() => {
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col justify-center bg-[#020420]">
+  <div class="w-full h-full flex flex-col justify-center bg-[#020420] font-sans">
     <svg
       class="absolute right-0 top-0"
       width="629"
