@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { BlogPost } from '~/types/blog'
+import type { BlogPost, ContentItem } from '~/types/blog'
+import { toBlogCardPost } from '~/utils/blog'
 
 // Parse dates in the format "1st Mar 2023" and skip content without a valid date.
 function parseCustomDate(dateValue: unknown): Date | null {
@@ -27,20 +28,7 @@ const { data } = await useAsyncData('recent-post', () =>
 )
 
 const formattedData = computed(() => {
-  return data.value?.map((articles) => {
-    const meta = articles.meta as unknown as BlogPost
-    return {
-      path: articles.path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-description available',
-      image: meta.image || '/not-found.jpg',
-      alt: meta.alt || 'no alter data available',
-      ogImage: meta.ogImage || '/not-found.jpg',
-      date: meta.date || 'not-date-available',
-      tags: meta.tags || [],
-      published: meta.published || false,
-    }
-  })
+  return data.value?.map((article) => toBlogCardPost(article as ContentItem))
 })
 
 useHead({

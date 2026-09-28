@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { aboutPage, footerData, navbarData, socialLinks } from '~/data'
+import { aboutPage, footerData, navbarData, socialProfiles } from '~/data'
 
 useHead({
   title: 'About',
@@ -31,36 +31,15 @@ defineOgImage('About', {
 
             <div class="my-3 space-x-2 md:space-x-3 pb-10">
               <NuxtLink
-                :to="socialLinks.githubLink"
+                v-for="profile in socialProfiles"
+                :key="profile.label"
+                :to="profile.url"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="Github"
+                :aria-label="profile.label"
               >
-                <Icon name="fa:github" size="1em" class="-translate-y-[-10%]" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.linkedinLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="LinkedIn"
-              >
-                <Icon name="fa:linkedin-square" size="1em" class="-translate-y-[-10%]" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.twitterLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="Twitter"
-              >
-                <Icon name="fa:twitter-square" size="1em" class="-translate-y-[-10%]" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.stackoverflowLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="StackOverflow"
-              >
-                <Icon name="fa:stack-overflow" size="1em" class="-translate-y-[-10%]" />
+                <Icon :name="profile.icon" size="1em" class="-translate-y-[-10%]" />
               </NuxtLink>
             </div>
           </div>

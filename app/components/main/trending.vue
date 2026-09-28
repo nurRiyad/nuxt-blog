@@ -1,25 +1,13 @@
 <script lang="ts" setup>
-import type { BlogPost } from '~/types/blog'
+import type { ContentItem } from '~/types/blog'
+import { toBlogCardPost } from '~/utils/blog'
 
 const { data } = await useAsyncData('trending-post', () =>
   queryCollection('content').where('path', 'LIKE', '/blogs/%').limit(3).all(),
 )
 
 const formattedData = computed(() => {
-  return data.value?.map((articles) => {
-    const meta = articles.meta as unknown as BlogPost
-    return {
-      path: articles.path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-description available',
-      image: meta.image || '/not-found.jpg',
-      alt: meta.alt || 'no alter data available',
-      ogImage: meta.ogImage || '/not-found.jpg',
-      date: meta.date || 'not-date-available',
-      tags: meta.tags || [],
-      published: meta.published || false,
-    }
-  })
+  return data.value?.map((article) => toBlogCardPost(article as ContentItem))
 })
 
 useHead({

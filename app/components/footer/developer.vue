@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { footerData, socialLinks } from '~/data'
+import { footerData, socialProfiles } from '~/data'
 </script>
 
 <template>
@@ -12,36 +12,15 @@ import { footerData, socialLinks } from '~/data'
     </p>
     <div class="my-3 space-x-3 pb-3">
       <NuxtLink
-        :to="socialLinks.githubLink"
+        v-for="profile in socialProfiles"
+        :key="profile.label"
+        :to="profile.url"
         target="_blank"
+        rel="noopener noreferrer"
         class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
-        aria-label="Github"
+        :aria-label="profile.label"
       >
-        <Icon name="fa:github" size="1em" class="-translate-y-[-10%]" />
-      </NuxtLink>
-      <NuxtLink
-        :to="socialLinks.linkedinLink"
-        target="_blank"
-        class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
-        aria-label="LinkedIn"
-      >
-        <Icon name="fa:linkedin-square" size="1em" class="-translate-y-[-10%]" />
-      </NuxtLink>
-      <NuxtLink
-        :to="socialLinks.twitterLink"
-        target="_blank"
-        class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
-        aria-label="Twitter"
-      >
-        <Icon name="fa:twitter-square" size="1em" class="-translate-y-[-10%]" />
-      </NuxtLink>
-      <NuxtLink
-        :to="socialLinks.stackoverflowLink"
-        target="_blank"
-        class="p-2 bg-gray-300 text-gray-800 rounded-md dark:bg-sky-700 dark:text-[#F1F2F4]"
-        aria-label="StackOverflow"
-      >
-        <Icon name="fa:stack-overflow" size="1em" class="-translate-y-[-10%]" />
+        <Icon :name="profile.icon" size="1em" class="-translate-y-[-10%]" />
       </NuxtLink>
     </div>
   </div>

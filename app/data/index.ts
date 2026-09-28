@@ -52,6 +52,13 @@ export const socialLinks = {
   stackoverflowLink: 'https://stackoverflow.com/users/16781395/nur-riyad',
 }
 
+export const socialProfiles = [
+  { label: 'Github', icon: 'fa:github', url: socialLinks.githubLink },
+  { label: 'LinkedIn', icon: 'fa:linkedin-square', url: socialLinks.linkedinLink },
+  { label: 'Twitter', icon: 'fa:twitter-square', url: socialLinks.twitterLink },
+  { label: 'StackOverflow', icon: 'fa:stack-overflow', url: socialLinks.stackoverflowLink },
+]
+
 export const siteMetaData = [
   {
     name: 'description',
