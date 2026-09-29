@@ -28,37 +28,37 @@ withDefaults(defineProps<Props>(), {
   <article
     class="group m-2 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/70 text-zinc-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/40 dark:text-zinc-300"
   >
-    <NuxtLink :to="path" class="grid grid-cols-1 sm:grid-cols-10 gap-1">
+    <NuxtLink :to="path" class="grid grid-cols-1 gap-1 sm:grid-cols-10">
       <div class="sm:col-span-3">
         <NuxtImg
-          class="h-full w-full object-cover object-center rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none shadow-lg group-hover:scale-[1.02] transition-all duration-500"
+          class="h-full w-full rounded-t-2xl object-cover object-center shadow-lg transition-all duration-500 group-hover:scale-[1.02] sm:rounded-l-2xl sm:rounded-t-none"
           width="300"
           :src="image"
           :alt="alt"
         />
       </div>
-      <div class="sm:col-span-7 p-5">
+      <div class="p-5 sm:col-span-7">
         <h2
-          class="text-xl font-semibold text-black dark:text-zinc-300 pb-1 group-hover:text-sky-700 dark:group-hover:text-sky-400"
+          class="pb-1 text-xl font-semibold text-black dark:text-zinc-300 group-hover:text-sky-700 dark:group-hover:text-sky-400"
         >
           {{ title }}
         </h2>
         <p class="text-ellipsis line-clamp-2">
           {{ description }}
         </p>
-        <div class="text-black dark:text-zinc-300 text-sm mt-2 mb-1 md:flex md:space-x-6">
+        <div class="mb-1 mt-2 text-sm text-black dark:text-zinc-300 md:flex md:space-x-6">
           <div class="flex items-center">
             <LogoDate class="-translate-y-[10%]" />
             <p>{{ date }}</p>
           </div>
-          <div class="flex items-center gap-1 flex-wrap">
+          <div class="flex flex-wrap items-center gap-1">
             <LogoTag />
-            <p v-for="tag in tags" :key="tag" class="bg-gray-200 dark:bg-slate-900 rounded-md px-2 py-1 font-semibold">
+            <p v-for="tag in tags" :key="tag" class="rounded-md bg-gray-200 px-2 py-1 font-semibold dark:bg-slate-900">
               {{ tag }}
             </p>
           </div>
         </div>
-        <div class="flex group-hover:underline text-sky-700 dark:text-sky-400 items-center pt-2">
+        <div class="flex items-center pt-2 text-sky-700 group-hover:underline dark:text-sky-400">
           <p>Read More</p>
           <LogoArrow />
         </div>

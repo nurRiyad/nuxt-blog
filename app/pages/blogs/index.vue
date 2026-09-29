@@ -5,7 +5,7 @@ import { toBlogCardPost } from '~/utils/blog'
 
 const { data } = await useAsyncData('all-blog-post', () => queryCollection('content').all())
 
-const elementPerPage = ref(5)
+const elementPerPage = ref(8)
 const pageNumber = ref(1)
 const searchTest = ref('')
 
@@ -89,9 +89,9 @@ defineOgImage('Test', {
       />
     </div>
 
-    <div v-auto-animate class="space-y-5 my-5 px-4">
+    <div v-auto-animate class="my-4 space-y-3 px-4">
       <template v-for="post in paginatedData" :key="post.title">
-        <ArchiveCard
+        <ArchiveListCard
           :path="post.path"
           :title="post.title"
           :date="post.date"
@@ -104,7 +104,7 @@ defineOgImage('Test', {
         />
       </template>
 
-      <ArchiveCard v-if="paginatedData.length <= 0" title="No Post Found" image="/not-found.jpg" />
+      <ArchiveListCard v-if="paginatedData.length <= 0" title="No Post Found" image="/not-found.jpg" />
     </div>
 
     <div class="flex justify-center items-center space-x-6">
