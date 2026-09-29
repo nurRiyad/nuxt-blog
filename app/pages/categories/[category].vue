@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import type { BlogPost } from '@/types/blog'
-import type { ContentItem } from '~/types/blog'
 import { toBlogCardPost } from '~/utils/blog'
+
 const route = useRoute()
 
 // take category from route params & make first char upper
@@ -17,16 +16,11 @@ const category = computed(() => {
 const { data } = await useAsyncData(`category-data-${category.value}`, () =>
   queryCollection('content')
     .all()
-    .then((articles) =>
-      articles.filter((article) => {
-        const tags = (article as ContentItem).tags
-        return Array.isArray(tags) && tags.includes(category.value)
-      }),
-    ),
+    .then((articles) => articles.filter((article) => article.tags?.includes(category.value))),
 )
 
 const formattedData = computed(() => {
-  return data.value?.map((article) => toBlogCardPost(article as ContentItem, '/blogs-img/blog.jpg'))
+  return data.value?.map((article) => toBlogCardPost(article, '/blogs-img/blog.jpg'))
 })
 const title = computed(() => category.value.toUpperCase())
 const description = computed(() => `You will find all the ${category.value} related posts here.`)
