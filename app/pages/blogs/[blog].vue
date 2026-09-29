@@ -40,7 +40,7 @@ useHead({
     { property: 'og:type', content: 'website' },
     {
       property: 'og:url',
-      content: `${siteUrl}/${path}`,
+      content: `${siteUrl}${path}`,
     },
     {
       property: 'og:title',
@@ -59,7 +59,7 @@ useHead({
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
-      content: `${siteUrl}/${path}`,
+      content: `${siteUrl}${path}`,
     },
     {
       name: 'twitter:title',
@@ -77,17 +77,16 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `${siteUrl}/${path}`,
+      href: `${siteUrl}${path}`,
     },
   ],
 })
 
 // Generate OG Image
-const article = articles.value as ContentItem | null
 defineOgImage('Test', {
-  headline: 'Riyads Blog 👋',
-  title: article?.seo?.title || '',
-  description: article?.seo?.description || '',
+  headline: seoData.title,
+  title: data.value.title,
+  description: data.value.description,
   link: data.value.ogImage,
 })
 </script>

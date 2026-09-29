@@ -50,22 +50,29 @@ function onNextPageClick() {
   if (pageNumber.value < totalPage.value) pageNumber.value += 1
 }
 
+const archiveTitle = 'Archive'
+const archiveDescription = 'Here you will find all the blog posts I have written and published on this site.'
+
 useHead({
-  title: 'Archive',
+  title: archiveTitle,
   meta: [
     {
       name: 'description',
-      content: 'Here you will find all the blog posts I have written & published on this site.',
+      content: archiveDescription,
     },
+    { property: 'og:title', content: archiveTitle },
+    { property: 'og:description', content: archiveDescription },
+    { name: 'twitter:title', content: archiveTitle },
+    { name: 'twitter:description', content: archiveDescription },
   ],
 })
 
 // Generate OG Image
 const siteData = useSiteConfig()
-defineOgImage('NuxtSeo', {
-  title: 'Archive',
-  description: 'Here you will find all the blog posts I have written & published on this site.',
-  siteName: siteData.url,
+defineOgImage('Test', {
+  headline: siteData.name,
+  title: archiveTitle,
+  description: archiveDescription,
 })
 </script>
 

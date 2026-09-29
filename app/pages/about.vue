@@ -1,20 +1,27 @@
 <script setup lang="ts">
-import { aboutPage, footerData, navbarData, socialProfiles } from '~/data'
+import { aboutPage, footerData, socialProfiles } from '~/data'
+
+const aboutTitle = aboutPage.title
+const aboutDescription = footerData.aboutAuthor
 
 useHead({
   title: 'About',
   meta: [
     {
       name: 'description',
-      content: footerData.aboutAuthor,
+      content: aboutDescription,
     },
+    { property: 'og:title', content: aboutTitle },
+    { property: 'og:description', content: aboutDescription },
+    { name: 'twitter:title', content: aboutTitle },
+    { name: 'twitter:description', content: aboutDescription },
   ],
 })
 
 defineOgImage('About', {
   headline: 'Greetings 👋',
-  title: navbarData.homeTitle,
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  title: aboutTitle,
+  description: aboutDescription,
   link: '/riyad.jpg',
 })
 </script>

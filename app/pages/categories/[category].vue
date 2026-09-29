@@ -28,23 +28,29 @@ const { data } = await useAsyncData(`category-data-${category.value}`, () =>
 const formattedData = computed(() => {
   return data.value?.map((article) => toBlogCardPost(article as ContentItem, '/blogs-img/blog.jpg'))
 })
+const title = computed(() => category.value.toUpperCase())
+const description = computed(() => `You will find all the ${category.value} related posts here.`)
 
 useHead({
   title: category.value,
   meta: [
     {
       name: 'description',
-      content: `You will find all the ${category.value} related post here`,
+      content: description,
     },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
   ],
 })
 
 // Generate OG Image
 const siteData = useSiteConfig()
-defineOgImage('NuxtSeo', {
-  title: category.value?.toUpperCase(),
-  description: `You will find all the ${category.value} related post here`,
-  siteName: siteData.url,
+defineOgImage('Test', {
+  headline: siteData.name,
+  title,
+  description,
 })
 </script>
 

@@ -6,13 +6,17 @@ useHead({
       name: 'description',
       content: 'Page not found',
     },
+    { property: 'og:title', content: 'Page not found' },
+    { property: 'og:description', content: 'The requested page could not be found.' },
+    { name: 'twitter:title', content: 'Page not found' },
+    { name: 'twitter:description', content: 'The requested page could not be found.' },
   ],
 })
 
 defineOgImage('About', {
-  headline: 'Wrong Path',
-  title: '404',
-  description: 'Page Not Found',
+  headline: 'Riyad’s Blog',
+  title: 'Page not found',
+  description: 'The requested page could not be found.',
 })
 </script>
 

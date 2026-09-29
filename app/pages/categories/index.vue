@@ -2,6 +2,8 @@
 import { makeFirstCharUpper } from '@/utils/helper'
 
 const { data } = await useAsyncData('all-blog-post-by-category', () => queryCollection('content').all())
+const title = 'Categories'
+const description = 'Below are the topics I have written about or plan to cover in future blog posts.'
 
 const allTags = new Map()
 
@@ -18,21 +20,25 @@ data.value?.forEach((blog) => {
 })
 
 useHead({
-  title: 'Categories',
+  title,
   meta: [
     {
       name: 'description',
-      content: 'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
+      content: description,
     },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
   ],
 })
 
 // Generate OG Image
 const siteData = useSiteConfig()
-defineOgImage('NuxtSeo', {
-  title: 'Categories',
-  description: 'Below All the topics are listed on which either I have written a blog or will write a blog in near future.',
-  siteName: siteData.url,
+defineOgImage('Test', {
+  headline: siteData.name,
+  title,
+  description,
 })
 </script>
 

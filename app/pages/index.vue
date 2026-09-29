@@ -1,22 +1,28 @@
 <script lang="ts" setup>
 import { navbarData } from '~/data'
 
+const homeTitle = navbarData.homeTitle
+const homeDescription = 'Explore articles about JavaScript, TypeScript, Vue, Nuxt, Docker, Kubernetes, and problem solving.'
+
 useHead({
   title: 'Home',
   meta: [
     {
       name: 'description',
-      content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+      content: homeDescription,
     },
+    { property: 'og:title', content: homeTitle },
+    { property: 'og:description', content: homeDescription },
+    { name: 'twitter:title', content: homeTitle },
+    { name: 'twitter:description', content: homeDescription },
   ],
 })
 
 // Generate OG Image
 defineOgImage('About', {
   headline: 'Greetings 👋',
-  title: navbarData.homeTitle,
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  title: homeTitle,
+  description: homeDescription,
   link: '/riyad.jpg',
 })
 </script>
