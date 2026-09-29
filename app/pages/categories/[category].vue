@@ -19,8 +19,8 @@ const { data } = await useAsyncData(`category-data-${category.value}`, () =>
     .all()
     .then((articles) =>
       articles.filter((article) => {
-        const meta = article.meta as unknown as BlogPost
-        return meta.tags.includes(category.value)
+        const tags = (article as ContentItem).tags
+        return Array.isArray(tags) && tags.includes(category.value)
       }),
     ),
 )

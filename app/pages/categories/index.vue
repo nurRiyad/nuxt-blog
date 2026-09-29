@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { ContentItem } from '~/types/blog'
 import { makeFirstCharUpper } from '@/utils/helper'
 
 const { data } = await useAsyncData('all-blog-post-by-category', () => queryCollection('content').all())
@@ -8,7 +9,7 @@ const description = 'Below are the topics I have written about or plan to cover 
 const allTags = new Map()
 
 data.value?.forEach((blog) => {
-  const tags: Array<string> = (blog.meta.tags as string[]) || []
+  const tags = (blog as ContentItem).tags || []
   tags.forEach((tag) => {
     if (allTags.has(tag)) {
       const cnt = allTags.get(tag)
