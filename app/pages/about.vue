@@ -58,7 +58,17 @@ defineOgImage('About', {
           {{ aboutPage.description }}
         </h3>
 
-        <p>{{ aboutPage.aboutMe }}</p>
+        <p>
+          {{ aboutPage.aboutMe }} You can find out more about me on my
+          <a
+            href="https://nurriyad.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 underline hover:text-blue-800 dark:text-sky-400 dark:hover:text-sky-300"
+          >
+            website </a
+          >.
+        </p>
       </div>
       <div class="hidden sm:block col-span-3">
         <NuxtImg src="/riyad.jpg" width="450" height="500" quality="50" class="rounded-md" />

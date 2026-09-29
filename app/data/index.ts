@@ -31,7 +31,7 @@ export const aboutPage = {
   title: 'Al Asad Nur Riyad',
   description: 'Software Engineer, Problem Solver, Web Enthusiast.',
   aboutMe:
-    "Hello, fellow human! I'm a software wizard who spends most of his day crafting code spells at @FieldNation in the Workplace Operation team. When I'm not crafting code, you can find me summoning solutions to problems on online judges. Just don't ask me to cast any love spells, my magic only works on machines!",
+    "I'm a software engineer at Field Nation, working with the Workplace Operations team. I enjoy learning about system design, how large-scale systems are built, technical blogging, and AI. I occasionally practice problem solving, too.",
 }
 
 export const seoData = {
@@ -50,6 +50,7 @@ export const socialLinks = {
   linkedinLink: 'https://www.linkedin.com/in/nur-riyad/',
   twitterLink: 'https://twitter.com/qdnvubp',
   stackoverflowLink: 'https://stackoverflow.com/users/16781395/nur-riyad',
+  personalSiteLink: 'https://nurriyad.vercel.app/',
 }
 
 export const socialProfiles = [
@@ -57,6 +58,7 @@ export const socialProfiles = [
   { label: 'LinkedIn', icon: 'fa:linkedin-square', url: socialLinks.linkedinLink },
   { label: 'Twitter', icon: 'fa:twitter-square', url: socialLinks.twitterLink },
   { label: 'StackOverflow', icon: 'fa:stack-overflow', url: socialLinks.stackoverflowLink },
+  { label: 'Personal website', icon: 'fa:globe', url: socialLinks.personalSiteLink },
 ]
 
 export const siteMetaData = [
