@@ -12,7 +12,7 @@
     <img width="200" src="./app/assets/images/logo.png">
 </p>
 
-Nuxt Blog built with [Nuxt4](https://nuxt.com), [Nuxt-Content3](https://content.nuxt.com/), [Vue3](https://vuejs.org) & [TailwindCss](https://tailwindcss.com/)
+Nuxt Blog is a personal blog built with [Nuxt 4](https://nuxt.com), [Nuxt Content 3](https://content.nuxt.com/), [Vue 3](https://vuejs.org), and [Tailwind CSS](https://tailwindcss.com/). It is deployed on [Vercel](https://vercel.com/).
 
 ## Features
 
@@ -24,7 +24,7 @@ Nuxt Blog built with [Nuxt4](https://nuxt.com), [Nuxt-Content3](https://content.
 - Auto generate Sitemap
 - Url preview with Nuxt ogImage
 - Dark and light mode
-- Server Side Rendered(SSR) with Nuxt4
+- Server-side rendering (SSR) with Nuxt 4
 - RSS feed
 
 ## How to Make This Blog Template Yours in 5 Minutes
