@@ -1,5 +1,7 @@
 <template>
-  <article class="group border dark:border-gray-800 m-2 rounded-2xl overflow-hidden shadow-lg text-zinc-700">
+  <article
+    class="group m-2 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/70 text-zinc-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/40 dark:text-zinc-300"
+  >
     <NuxtLink to="/">
       <div class="lg:h-48 md:h-36 w-full object-cover object-center group-hover:scale-[1.05] transition-all duration-500">
         <LogoConfused />

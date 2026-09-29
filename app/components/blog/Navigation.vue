@@ -17,7 +17,7 @@ defineProps<Props>()
     <NuxtLink
       v-if="previousPost"
       :to="previousPost.path"
-      class="group flex items-center gap-3 p-5 rounded-lg border dark:border-gray-800 bg-white/90 backdrop-blur-sm dark:bg-slate-900 hover:shadow-lg hover:border-sky-600 dark:hover:border-sky-400 transition-all duration-300"
+      class="group flex items-center gap-3 p-5 rounded-lg border border-zinc-200 bg-white/90 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900 hover:shadow-lg hover:border-sky-600 dark:hover:border-sky-400 transition-all duration-300"
     >
       <Icon
         name="mdi:arrow-left"
@@ -39,7 +39,7 @@ defineProps<Props>()
     <NuxtLink
       v-if="nextPost"
       :to="nextPost.path"
-      class="group flex items-center gap-3 p-5 rounded-lg border dark:border-gray-800 bg-white/90 backdrop-blur-sm dark:bg-slate-900 hover:shadow-lg hover:border-sky-600 dark:hover:border-sky-400 transition-all duration-300"
+      class="group flex items-center gap-3 p-5 rounded-lg border border-zinc-200 bg-white/90 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900 hover:shadow-lg hover:border-sky-600 dark:hover:border-sky-400 transition-all duration-300"
       :class="{ 'md:col-start-2': !previousPost }"
     >
       <div class="flex-1 text-right min-w-0">

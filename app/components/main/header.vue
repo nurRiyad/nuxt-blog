@@ -13,7 +13,7 @@ function isActive(path: string) {
 </script>
 
 <template>
-  <div class="py-5 border-b dark:border-gray-800 font-semibold">
+  <div class="py-5 border-b border-zinc-200 dark:border-slate-800 font-semibold">
     <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline">
       <ul class="flex items-baseline space-x-5">
         <li class="text-base sm:text-2xl font-bold">

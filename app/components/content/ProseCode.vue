@@ -36,6 +36,11 @@ pre code .line {
   display: block;
   min-height: 1rem;
 }
+pre code {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
 .no-backticks::before,
 .no-backticks::after {
   content: '' !important; /* Hide backticks */
