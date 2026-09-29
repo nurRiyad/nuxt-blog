@@ -68,6 +68,13 @@ Write the post content here in Markdown.
 
 Use `published: false` for a draft. Keep descriptions complete and on one line. Ensure image URLs point to files in `public/`, use root-relative URLs, and provide meaningful `alt` text. Keep post dates in the existing human-readable format unless the date handling is updated.
 
+### Nuxt Content authoring and display
+
+- Quote YAML titles that contain a colon, for example `title: 'Durable Execution: The Problem It Solves'`. An unquoted colon can be parsed as a YAML mapping and Nuxt Content may store the title as `[object Object]`.
+- This project's Nuxt Content query rows use a built-in `title` field and `seo.title`/`seo.description` for Markdown title and description; other declared frontmatter fields such as `date`, `image`, `alt`, `ogImage`, `tags`, and `published` are top-level. Do not assume these fields live in `article.meta`.
+- When changing content display code, map rows through `toBlogCardPost` in `app/utils/blog.ts`. Do not pass raw query `title` or `description` values into Vue text, head metadata, or OG image props; validate that values are strings.
+- Keep the explicit blog frontmatter schema in `content.config.ts` aligned with the required fields. After adding a post, check generated content/build output for the expected string title, date, image, and publication status. If modifying recent-post date handling, ensure ordinal dates like `29th Sep 2026` parse correctly.
+
 For Nuxt-specific changes, follow [`skills/nuxt-development/SKILL.md`](skills/nuxt-development/SKILL.md). Check the installed dependency versions and Nuxt 4 documentation before choosing framework APIs.
 
 ## Change practices

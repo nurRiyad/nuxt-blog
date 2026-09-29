@@ -1,4 +1,5 @@
 import { Feed } from 'feed'
+import { queryCollection } from '@nuxt/content/server'
 
 const basePath = 'https://blog-nurriyad.vercel.app'
 

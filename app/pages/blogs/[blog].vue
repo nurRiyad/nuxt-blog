@@ -13,7 +13,7 @@ if (error.value) navigateTo('/404')
 // Get previous and next post navigation
 const { previousPost, nextPost } = await useBlogNavigation(path)
 
-const data = computed<BlogPost>(() => toBlogCardPost(articles.value as ContentItem))
+const data = computed<BlogPost>(() => toBlogCardPost(articles.value as ContentItem, '/not-found.jpg'))
 
 // Calculate reading time based on word count (average 200 words per minute)
 const readingTime = computed(() => {
